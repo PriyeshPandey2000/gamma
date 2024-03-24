@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended" // Add this line to extend the React recommended rules
+  ],
+  "rules": {
+    "react/no-unescaped-entities": "off" // Disable the rule for unescaped entities
+  }
 }
