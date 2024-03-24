@@ -9,8 +9,12 @@ const inter = Inter({ subsets: ['latin'] });
 
 const RootLayout = ({ children }) => {
   useEffect(() => {
-    inter.load();
-    return () => inter.cleanup();
+    // Load the Inter font
+    inter.load().catch((error) => console.error('Failed to load font:', error));
+    return () => {
+      // Clean up the Inter font
+      inter.cleanup();
+    };
   }, []);
 
   return (
