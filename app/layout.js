@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect } from "react"; // Import useEffect if necessary
 import PropTypes from "prop-types"; // Import PropTypes for prop validation
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
