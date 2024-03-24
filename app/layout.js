@@ -1,4 +1,4 @@
-"use client"
+
 import { useEffect } from "react"; // Import useEffect if necessary
 import PropTypes from "prop-types"; // Import PropTypes for prop validation
 import { Inter } from "next/font/google";
