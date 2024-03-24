@@ -1,3 +1,4 @@
+import React from 'react';
 import JobBanner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
