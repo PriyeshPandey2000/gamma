@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 
 const Card = ({ profilePic, name, description, companyLogo }) => {
   return (
@@ -13,6 +14,14 @@ const Card = ({ profilePic, name, description, companyLogo }) => {
       <img src={companyLogo} alt="Company" className="company-logo w-16 h-8 self-start mt-2" />
     </div>
   );
+};
+
+// Prop type validation
+Card.propTypes = {
+  profilePic: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  companyLogo: PropTypes.string.isRequired,
 };
 
 export default Card;
