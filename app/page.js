@@ -6,6 +6,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import CirclesWithLines from "@/components/CircleWithLines";
 import Placement from "@/components/Placement";
 import CoursesOffered from "@/components/CoursesOffered";
+import "../styles/fonts.css"
+import StudentsPlaced from "@/components/StudentsPlaced";
+import CourseDetails from "@/components/CourseDetails";
+import MentorsSection from "@/components/MentorsSection";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -16,7 +21,11 @@ export default function Home() {
           <JobBanner />
         </div>
         <Placement/>
+        <StudentsPlaced/>
         <CoursesOffered/>
+        <CourseDetails/>
+        <MentorsSection/>
+        <Faq/>
       </div>
       {/* <CirclesWithLines/> */}
     </div>

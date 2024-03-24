@@ -1,0 +1,24 @@
+@keyframes scrollRightToLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Define animation */
+  @keyframes scrollRightToLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Apply animation to the cards */
+  .animate-scrollRightToLeft {
+    animation: scrollRightToLeft 10s linear infinite;
+  }
+  

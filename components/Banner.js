@@ -1,13 +1,14 @@
 import React from 'react';
 import BulletPoints from './CircleWithLines';
 
+
 const JobBanner = () => (
   <div className="bg-white py-4 px-2 md:px-8"> {/* Reduced padding */}
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="md:col-span-1 bg-white rounded-lg  p-2 md:p-4"> {/* Reduced padding */}
           <div className="job-content-block mb-4"> {/* Reduced margin */}
-            <h1 className="text-2xl md:text-3xl font-bold text-blue-800 mb-2 md:mb-4">Get your Dream Job/Internship in just 90 Days with Gamma Prep</h1> {/* Reduced font size and margin */}
+          <h1 className="text-2xl md:text-3xl font-bold text-custom-blue mb-2 md:mb-4 font-hiragino-mincho-pro">Get your Dream Job/Internship in just 90 Days with Gamma Prep</h1> {/* Reduced font size and margin */}
             
             {/* Content container with grey background */}
             <div className="bg-gray-200 p-2 md:p-4 rounded-lg"> {/* Reduced padding */}

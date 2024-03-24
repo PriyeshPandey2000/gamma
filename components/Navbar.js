@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -47,7 +46,7 @@ const Navbar = () => {
         )}
 
         {/* Logo on the left side */}
-        <div className="flex items-center">
+        <div className="flex items-center ml-4">
           <a href="#" className={`ml-4 ${isMobile && showMenu ? 'ml-8' : ''}`}>
             <img src="/images/logo.png" alt="Logo" className="h-8" />
           </a>
@@ -65,9 +64,9 @@ const Navbar = () => {
         )}
 
         {/* Login and Signup buttons */}
-        <div className="flex items-center space-x-4 mr-8">
+        <div className="flex items-center space-x-4">
           <button className="border border-blue-900 text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Login</button>
-          <button className="bg-blue-900 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-800 mr-4">Sign Up</button> {/* Added mr-4 for margin */}
+          <button className="bg-blue-900 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-800 mr-4">Sign Up</button>
         </div>
       </div>
     </nav>

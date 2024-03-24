@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Hiragino Mincho Pro';
+    src: url('/fonts/HiraginoMin.woff') format('woff');
+  }
+  
+
+  .font-hiragino-mincho-pro {
+    font-family: 'Hiragino Mincho Pro', serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: left;
+}
+.text-sm {
+  font-size: 14px; /* Adjust the font size as needed */
+}
+.font-hiragino-mincho-pro-center {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+}
+.font-hiragino-mincho-pro-center-small {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+.font-hiragino-mincho-pro-center-left {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+}

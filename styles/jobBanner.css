@@ -1,0 +1,13 @@
+/* styles/jobBanner.css */
+
+/* Reorder for mobile devices */
+@media (max-width: 768px) {
+    .order-1 {
+      order: 2;
+    }
+    
+    .order-2 {
+      order: 1;
+    }
+  }
+  
