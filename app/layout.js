@@ -1,19 +1,22 @@
 "use client";
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
+// Import the Inter font directly from Google Fonts
 const RootLayout = ({ children }) => {
   useEffect(() => {
+    // No need to import Inter from next/font/google, as we are loading it directly from Google Fonts
     // Load the Inter font
-    inter.load().catch((error) => console.error('Failed to load font:', error));
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
     return () => {
       // Clean up the Inter font
-      inter.cleanup();
+      document.head.removeChild(link);
     };
   }, []);
 
@@ -22,10 +25,9 @@ const RootLayout = ({ children }) => {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href={`https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap`} rel="stylesheet" />
       </Head>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body>{children}</body>
       </html>
     </>
   );
