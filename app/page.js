@@ -12,6 +12,7 @@ import StudentsPlaced from "@/components/StudentsPlaced";
 import CourseDetails from "@/components/CourseDetails";
 import MentorsSection from "@/components/MentorsSection";
 import Faq from "@/components/Faq";
+import CourseCard from '@/components/CourseCard';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Placement/>
         <StudentsPlaced/>
         <CoursesOffered/>
+        {/* <CourseCard icon="/images/Tools.png" title="Specialised Skills and Tools " column1Heading="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects" column1Para="Learn with real work experience and get guaranteed placement as a Full-Stack or Backend Developer at product-based companies.srgsmgsdmglsdmglmdl;gm;lsdmglsdmlgsmldglsdgmm;" /> */}
         <CourseDetails/>
         <MentorsSection/>
         <Faq/>

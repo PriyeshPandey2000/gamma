@@ -18,7 +18,7 @@ const MentorsSection = () => {
           <img src="/images/drishti.png" alt="Mentor 2" className="w-16 h-auto rounded-full mb-4" />
           <h3 className="text-xl font-bold mb-2 font-hiragino-mincho-pro-center-small">Drishti Mamtani</h3>
           <img src="/images/google.png" alt="Company 2" className="w-20 h-auto mb-4" />
-          <p className="text-sm text-gray-700 mb-12">Drishti is a Software Engineer at Google. She has also interned at Oracle in the Data Science team and at Amazon in the Amazon Pay team. She is a graduate from BITS Pilani Hyderabad Campus with Majors in B.E. Computer Science and MSc. Physics and Minor in Data Science. She has also worked on various projects like Product Recommender Models, Test Automation, etc.</p>
+          <p className="text-sm text-gray-700 mb-9">Drishti is a Software Engineer at Google. She has also interned at Oracle in the Data Science team and at Amazon in the Amazon Pay team. She is a graduate from BITS Pilani Hyderabad Campus with Majors in B.E. Computer Science and MSc. Physics and Minor in Data Science. She has also worked on various projects like Product Recommender Models, Test Automation, etc.</p>
           <p className="text-lg font-bold">Data Science and Analytics Part</p>
         </div>
         {/* Mentor Card 3 */}
@@ -27,7 +27,7 @@ const MentorsSection = () => {
           <h3 className="text-xl font-bold mb-2 font-hiragino-mincho-pro-center-small">Shubham Mondal</h3>
           <img src="/images/mastercard.png" alt="Company 3" className="w-20 h-auto mb-4" />
           <p className="text-sm text-gray-700 mb-12">Shubham is a Software Developer in Mastercard India. He has also interned in Mastercard as a Software intern and in Pine Labs as a Data Intern. He is a graduate from IIT Kharagpur, having a Masters in Mathematics and Computing. He has a passion for teaching and solving problems with his students.</p>
-          <p className="text-lg font-bold ">DSA and Coding</p>
+          <p className="text-lg font-bold mt-6">DSA and Coding</p>
         </div>
       </div>
     </section>
