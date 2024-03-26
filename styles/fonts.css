@@ -35,3 +35,18 @@
   line-height: 20px;
   text-align: left;
 }
+.font-hiragino-mincho-pro-center-xs {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+.font-hiragino-mincho-pro-center-small-left {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+
+}

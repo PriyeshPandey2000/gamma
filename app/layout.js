@@ -4,19 +4,53 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import './globals.css';
 
-// Import the Inter font directly from Google Fonts
 const RootLayout = ({ children }) => {
   useEffect(() => {
-    // No need to import Inter from next/font/google, as we are loading it directly from Google Fonts
-    // Load the Inter font
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
+    const loadFonts = () => {
+      const link = document.createElement('link');
+      link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    };
+
+    loadFonts(); // Load fonts on initial render
+
+    // Event listener for window resizing
+    const handleResize = () => {
+      const customScreens = {
+        'xs': '(min-width: 300px) and (max-width: 640px)',
+        'sm': '(min-width: 641px) and (max-width: 768px)',
+        'md': '(min-width: 769px) and (max-width: 1024px)',
+        'lg': '(min-width: 1025px) and (max-width: 1280px)',
+        'xl': '(min-width: 1281px) and (max-width: 1536px)',
+        '2xl': '(min-width: 1537px)',
+      };
+
+      let isMobile = false;
+
+      // Check if any custom screen matches
+      Object.keys(customScreens).forEach((size) => {
+        if (window.matchMedia(customScreens[size]).matches) {
+          isMobile = true;
+          document.documentElement.style.setProperty('--is-mobile', '1');
+
+          // Adjust viewport scale for xs size
+          if (size === 'xs') {
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+          }
+        }
+      });
+
+      if (!isMobile) {
+        document.documentElement.style.setProperty('--is-mobile', '0');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial value
 
     return () => {
-      // Clean up the Inter font
-      document.head.removeChild(link);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -25,6 +59,7 @@ const RootLayout = ({ children }) => {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <html lang="en">
         <body>{children}</body>

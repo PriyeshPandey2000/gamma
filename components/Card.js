@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 
 const Card = ({ profilePic, name, description, companyLogo }) => {
   return (
-    <div className="card mx-2 my-2 p-2 rounded-lg bg-gray-200 text-xl max-w-md flex flex-col items-start">
+    <div className="card mx-2 my-2 p-2 rounded-lg bg-gray-200 text-xl max-w-md xs:max-w-full" style={{ maxWidth: '100%' }}>
       <div className="flex items-center">
         <img src={profilePic} alt="Profile" className="profile-pic w-12 h-12 rounded-full mr-4" />
         <div className="info flex flex-col">

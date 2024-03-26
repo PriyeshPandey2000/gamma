@@ -1,0 +1,23 @@
+/* placement.css */
+
+/* CSS rules for extra small (xs) screens */
+@media (max-width: 640px) {
+    .placement-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .placement-content {
+      order: 2;
+      width: 100%; /* Make content take full width */
+      margin-bottom: 1rem; /* Add some space between content and image */
+    }
+  
+    .placement-image {
+      order: 1;
+      width: 100%; /* Make image take full width */
+      justify-content: flex-end;
+      margin-bottom: 0;
+    }
+  }
+  

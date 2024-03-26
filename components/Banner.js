@@ -2,17 +2,17 @@ import React from 'react';
 import BulletPoints from './CircleWithLines';
 
 const JobBanner = () => (
-  <div className="bg-white py-4 px-2 md:px-8"> {/* Reduced padding */}
-    <div className="container mx-auto">
+  <div className="bg-white py-4 px-2 md:px-8  "> {/* Reduced padding for xs screens */}
+    <div className="container mx-auto xs:w-full "> {/* Adjusted width for xs screens */}
       {/* Adjusted width for the heading container */}
-      <h1 className="text-2xl md:text-3xl font-bold text-custom-blue mb-2 md:mb-4 font-hiragino-mincho-pro md:w-1/2">
+      <h1 className="text-2xl md:text-3xl font-bold text-custom-blue mb-2 md:mb-4 md:w-1/2 font-hiragino-mincho-pro xs:w-full xs:font-hiragino-mincho-pro-center-xs">
         Get your Dream Job/Internship in just 90 Days with Gamma Prep
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="md:col-span-1 bg-white rounded-lg p-2 md:p-4"> {/* Reduced padding */}
-          <div className="job-content-block mb-4"> {/* Reduced margin */}
+          <div className="job-content-block mb-4 xs:w-full xs:mr-0 ml-0"> {/* Reduced margin */}
             {/* Content container with grey background */}
-            <div className="bg-gray-200 p-2 md:p-4 rounded-lg"> {/* Reduced padding */}
+            <div className="bg-gray-200 p-2 md:p-4 rounded-lg xs:w-full xs:mr-0 ml-0 "> {/* Reduced padding */}
               <div className="all-steps mb-2"> {/* Reduced margin */}
                 <h4 className="text-xs md:text-sm font-bold text-info mb-2 md:mb-4">WANT TO GET PLACED AS A SOFTWARE ENGINEER?</h4> {/* Reduced font size and margin */}
                 {/* Steps */}
@@ -41,7 +41,7 @@ const JobBanner = () => (
           </div>
         </div>
 
-        <div className="md:col-span-1 bg-white rounded-lg p-2 md:p-4 relative"> {/* Reduced padding */}
+        <div className="md:col-span-1 bg-white rounded-lg p-2 md:p-4 relative  "> {/* Reduced padding */}
           {/* Single image with four circles */}
           <img className="img-responsive mt-[-30px]" src="/images/job-hunt.png" alt="Banner"/>
           {/* Headings positioned in front of the image */}
