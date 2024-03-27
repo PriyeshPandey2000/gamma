@@ -50,3 +50,10 @@
   text-align: left;
 
 }
+.font-hiragino-mincho-s {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+}
