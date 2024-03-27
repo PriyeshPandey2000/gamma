@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto max-w-[1200px]"> {/* Set specific width */}
+      <div className="container mx-auto max-w-[1300px]"> {/* Set specific width */}
       <div className="my-8 flex flex-col"> {/* Flexbox layout for vertical stacking */}
           <div className="relative mb-0"> {/* Added relative positioning and margin bottom */}
             <JobBanner />

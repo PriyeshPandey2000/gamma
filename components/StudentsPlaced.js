@@ -12,42 +12,42 @@ const StudentsPlaced = () => {
           name="Brinda A"
           description="Placed at Zoho"
           companyLogo="/images/zoho.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         <Card
           profilePic="/images/kunjika.png"
           name="Kunjika Arora"
           description="Placed at Zoho"
           companyLogo="/images/amdocs.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         <Card
-          profilePic="/images/zohopic.png"
-          name="Brinda A"
+          profilePic="/images/kunjika.png"
+          name="Kunjika Arora"
           description="Placed at Zoho"
-          companyLogo="/images/zoho.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          companyLogo="/images/amdocs.png"
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         <Card
-          profilePic="/images/zohopic.png"
-          name="Brinda A"
+          profilePic="/images/kunjika.png"
+          name="Kunjika Arora"
           description="Placed at Zoho"
-          companyLogo="/images/zoho.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          companyLogo="/images/amdocs.png"
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         <Card
-          profilePic="/images/zohopic.png"
-          name="Brinda A"
+          profilePic="/images/kunjika.png"
+          name="Kunjika Arora"
           description="Placed at Zoho"
-          companyLogo="/images/zoho.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          companyLogo="/images/amdocs.png"
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         <Card
-          profilePic="/images/zohopic.png"
-          name="Brinda A"
+          profilePic="/images/kunjika.png"
+          name="Kunjika Arora"
           description="Placed at Zoho"
-          companyLogo="/images/zoho.png"
-          className="max-w-full xs:max-w-md" // Apply max-w-full for xs screens
+          companyLogo="/images/amdocs.png"
+          className="max-w-full sm:max-w-md" // Apply max-w-full for sm screens and max-w-md for others
         />
         {/* Repeat for other cards */}
       </div>
