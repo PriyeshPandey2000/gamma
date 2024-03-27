@@ -4,12 +4,12 @@ import React from 'react';
 
 const CoursesOffered = () => {
   return (
-    <div className="container mx-auto my-8">
+    <div className="w-full mx-auto my-8">
       <h1 className="text-3xl font-bold text-black-800 mb-4 text-center font-hiragino-mincho-pro-center">Courses Offered</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Card 1 */}
-        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col">
+        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col xs:mx-8">
           <div className="flex items-center mb-2">
             <img src="/images/trending.png" alt="Course 1 Image" className="w-6 h-6 rounded-full mr-4" />
             <h2 className="text-xl font-semibold text-red-500 mb-0.5">Most Popular Course</h2>
@@ -23,7 +23,7 @@ const CoursesOffered = () => {
         </div>
         
         {/* Card 2 */}
-        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col">
+        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col xs:mx-8">
           <div className="flex items-center mb-2">
             <img src="/images/Graph.png" alt="Course 2 Image" className="w-6 h-6 rounded-full mr-4" />
             <h2 className="text-xl font-semibold text-green-500 mb-0.5">For Career Growth</h2>
@@ -37,7 +37,7 @@ const CoursesOffered = () => {
         </div>
         
         {/* Card 3 */}
-        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col">
+        <div className="bg-white rounded-lg shadow-md p-4 md:col-span-1 flex flex-col xs:mx-8">
           <div className="flex items-center mb-2">
             <img src="/images/Tools.png" alt="Course 3 Image" className="w-6 h-6 rounded-full mr-4" />
             <h2 className="text-xl font-semibold text-custom-blue mb-0.5">Specialised Skills and Tools</h2>
