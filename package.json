@@ -16,6 +16,7 @@
     "next-font-inter": "^1.0.0",
     "nextjs-google-fonts": "^3.4.0",
     "react": "^18",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18"
   },
   "devDependencies": {
