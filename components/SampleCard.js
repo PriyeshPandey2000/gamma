@@ -111,7 +111,7 @@ import * as React from "react";
 
 export default function Component() {
   return (
-    <div>
+    <div className="w-full mx-auto px-4 ">
     <h2 className="text-2xl font-bold text-center mb-6 font-hiragino-mincho-heading">All Courses</h2>
     <div className="flex flex-col justify-center px-5 py-6 rounded-2xl border border-solid shadow-sm border-zinc-300 ">
       <div className="flex gap-2 self-start text-lg font-bold text-sky-800">
@@ -124,7 +124,7 @@ export default function Component() {
       </div>
       <div className="mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[61%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col w-full max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow justify-center max-md:mt-10 max-md:max-w-full">
               <div className="self-center text-lg font-semibold leading-8 text-center text-sky-800 max-md:max-w-full">
                 DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental
