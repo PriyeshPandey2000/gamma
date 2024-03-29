@@ -57,3 +57,17 @@
   line-height: 30px;
   text-align: center;
 }
+.font-hiragino-mincho-heading {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+}
+.font-hiragino-mincho-pro-center-left-heading {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+}

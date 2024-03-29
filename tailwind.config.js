@@ -23,6 +23,7 @@ module.exports = {
       colors: {
         'custom-blue': '#0B4B7F',
         'custom-gray': 'linear-gradient(99.28deg, #FFFFFF 2.04%, #F2F4FB 149.73%)',
+        "x-0b-4b-7f": "var(--x-0b-4b-7f)",
       },
     },
   },

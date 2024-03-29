@@ -33,7 +33,7 @@ const Placement = () => {
         <p className={`text-gray-700 mb-4 ${isXsScreen ? 'text-center px-4' : ''}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis odio, posuere eget fringilla ac, sodales a metus. Sed nec risus tincidunt, faucibus dui nec, suscipit justo. dolor sit amet, consectetur adipiscing elit. Nulla felis odio, posuere eget fringilla ac, sodales a metus. Sed nec risus tincidunt, faucibus dui nec, suscipit justo.
         </p>
-        <button className={`btn btn-primary-new bg-blue-800 text-white py-2 px-4 rounded-full ${isXsScreen ? 'block mx-auto' : ''}`}>Download Placement Report</button>
+        <button className={`btn btn-primary-new bg-custom-blue text-white py-2 px-4 rounded-full ${isXsScreen ? 'block mx-auto' : ''}`}>Download Placement Report</button>
       </div>
       
       {/* Right side image */}
