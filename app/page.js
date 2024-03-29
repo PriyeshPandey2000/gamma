@@ -24,6 +24,7 @@ import { FollowUs } from '@/components/FollowUs';
 import Strip3 from '@/components/Strip3';
 import Strip1 from '@/components/Strip1';
 import Strip2 from '@/components/Strip2';
+import FrameComponent4 from '@/components/SampleDpiit';
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
         <Strip2/>
         <WhyGamma/>
         <Dppit/>
+        {/* <FrameComponent4/> */}
         <div className="container mx-auto max-w-[1300px] mb-18">
         <Faq/>
         </div>

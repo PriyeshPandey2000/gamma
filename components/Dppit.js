@@ -2,12 +2,12 @@ import React from "react";
 
 export const Dppit = () => {
   return (
-    <div className="flex justify-center  h-screen ml-12 ">
+    <div className="flex justify-center h-screen ml-12">
       <div className="relative w-full max-w-screen-lg mx-auto">
         <div className="top-4 left-4 absolute w-full">
           <div className="top-0 left-0 absolute w-full">
-            <div className="inline-flex items-center gap-8 absolute top-0 left-0 w-full"> {/* Adjusted gap */}
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12"> {/* Adjusted width */}
+            <div className="inline-flex items-center gap-8 absolute top-0 left-0 w-full">
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12">
                 <p className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Still looking to find a tech job? Gammaprep is your solution
                 </p>
@@ -26,7 +26,7 @@ export const Dppit = () => {
                   </div>
                 </div>
               </div>
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12"> {/* Adjusted width */}
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12">
                 <div className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Startup India DPIIT Recognised
                 </div>
@@ -35,9 +35,9 @@ export const Dppit = () => {
                 </div>
               </div>
             </div>
-            <img className="w-10 h-px top-44 right-4 absolute object-cover" alt="Line" src="/images/Line 5.png" />
+            <img className="w-10 h-px top-48 right-40 absolute object-cover" alt="Line" src="/images/Line 5.png" />
           </div>
-          <img className="w-px h-14 top-35 right-8 absolute object-cover" alt="Line" src="images/Line 6.png" />
+          <img className="w-px h-14 top-35 right-8 absolute object-cover" alt="Line" src="images/Line 6.png" style={{ right: '150px' }} /> {/* Adjusted right value */}
         </div>
         <img className="w-10 h-px top-0 left-0 absolute object-cover" alt="Line" src="images/Line 3.png" />
         <img className="w-px h-14 top-0 -left-0 absolute object-cover" alt="Line" src="images/Line 7.png" />
@@ -45,10 +45,6 @@ export const Dppit = () => {
     </div>
   );
 };
-
-
-
-
 
 
 
