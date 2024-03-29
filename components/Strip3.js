@@ -1,5 +1,5 @@
 // Strip.js
-
+import React from 'react';
 const Strip3 = () => {
     return (
         <div className="bg-custom-blue text-white text-center py-7 w-full font-hiragino-mincho-heading ">
