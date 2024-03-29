@@ -11,7 +11,7 @@ export const GetInTouch = () => {
           We will catch you as early as we receive the message
         </p>
       </div>
-      <div className="flex items-start gap-[80px] relative w-full">
+      <div className="flex items-start gap-[80px] relative w-full xs:gap-[30px]">
         <div className="flex flex-col items-start relative flex-1 grow">
           <div className="flex flex-col items-start gap-[16px] px-0 py-[20px] relative self-stretch w-full">
             <div className="relative w-fit font-normal text-[#3c3c4399] text-[17px] tracking-[0] leading-[normal] whitespace-nowrap">

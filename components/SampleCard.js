@@ -265,7 +265,7 @@ export default function Component() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center items-center px-16 py-5 mt-6 text-base font-bold text-center text-white capitalize bg-sky-800 rounded-[58px] max-md:px-5 max-md:max-w-full">
+              <div className="flex justify-center items-center px-16 py-3 mt-6 text-base font-bold text-center text-white capitalize bg-sky-800 rounded-[58px] max-md:px-5 max-md:max-w-full">
                 <div className="flex gap-3.5">
                   <div className="my-auto">Apply Now</div>
                   <img

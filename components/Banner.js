@@ -32,18 +32,18 @@ const JobBanner = () => {
                   </div>
                   <div className="all-steps course">
                     <span className="text-red-500 text-xs"><del>₹ 14,999/-</del></span>&nbsp;&nbsp;<span className="text-xs block"><b>Starting at:</b></span>
-                    <span className="inline-block text-blue-900 rounded px-0 py-1 mb-2 text-xl font-bold mr-0">₹ <span className="text-blue-900 text-xl">7999/-</span></span>&nbsp;<span className="text-xs text-yellow-500">Filling Fast</span><br></br>
+                    <span className="inline-block text-blue-900 rounded px-0 py-1 mb-2 text-xl font-bold mr-0">₹ <span className="text-custom-blue text-xl">7999/-</span></span>&nbsp;<span className="text-xs text-yellow-500">Filling Fast</span><br></br>
                     <span><b>Next Live Batch:</b> From 10th March, 2024 <br/><br/></span>
                     <div className="flex mb-4">
-                      <button className="btn btn-primary-new bg-blue-800 text-white rounded-full py-1 px-3 mr-4">Enroll now</button>
+                      <button className="btn btn-primary-new bg-custom-blue text-white rounded-full py-1 px-3 mr-4">Enroll now</button>
                       <button className="btn btn-primary-new border border-green-500 flex items-center px-3 rounded-full text-green-500">
                         <img src="/images/whatsapp.png" className="w-6 h-6 mr-2 " alt="WhatsApp Icon" />
                         Contact on Whatsapp
                       </button>
                     </div>
-                    <button className="btn btn-primary-new w-100px px-10 py-1 rounded-full bg-blue-800 text-white">Take self-assessment test for free!</button>
+                    <button className="btn btn-primary-new w-100px px-10 py-1 rounded-full bg-custom-blue text-white">Take self-assessment test for free!</button>
                     {/* Add new items here */}
-                    <div className="flex justify-between mt-4 flex-col flex-row">
+                    <div className="flex justify-between mt-4 flex-col ">
                       <div className="flex items-center">
                         <img src="/images/ok.png" className="w-4 h-4 mr-2" alt="Icon1" />
                         <span className="text-sm">Assured referral on completion</span>
@@ -72,7 +72,7 @@ const JobBanner = () => {
                   </div>
                   <div className="all-steps course ">
                     <span className="text-red-500 text-xs"><del>₹ 14,999/-</del></span>&nbsp;&nbsp;<span className="text-xs block"><b>Starting at:</b></span>
-                    <span className="inline-block text-blue-900 rounded px-0 py-1 mb-2 text-xl font-bold mr-0">₹ <span className="text-blue-900 text-xl">7999/-</span></span>&nbsp;<span className="text-xs text-yellow-500">Filling Fast</span><br></br>
+                    <span className="inline-block text-blue-900 rounded px-0 py-1 mb-2 text-xl font-bold mr-0">₹ <span className="text-custom-blue text-xl">7999/-</span></span>&nbsp;<span className="text-xs text-yellow-500">Filling Fast</span><br></br>
                     <span><b>Next Live Batch:</b> From 10th March, 2024 <br/><br/></span>
                     <div className="flex mb-4">
                       <button className="btn btn-primary-new bg-custom-blue text-white rounded-full py-1 px-3 mr-4">Enroll now</button>

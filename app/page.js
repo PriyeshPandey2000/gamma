@@ -39,11 +39,15 @@ export default function Home() {
             <Placement/>
           </div>
         </div>
+        {/* <div> */}
+        </div>
+        <div>
         <StudentsPlaced/>
-        <Frame/>
+        
+        {/* <Frame/> */}
         <CoursesOffered/>
         {/* <CourseCard icon="/images/Tools.png" title="Specialised Skills and Tools " column1Heading="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects" column1Para="Learn with real work experience and get guaranteed placement as a Full-Stack or Backend Developer at product-based companies.srgsmgsdmglsdmglmdl;gm;lsdmglsdmlgsmldglsdgmm;" /> */}
-        <div className="mb-16"><Component/>
+        <div className="mb-16 container mx-auto max-w-[1300px]"><Component/>
         </div>
         
         <CourseDetails />
