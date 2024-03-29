@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Frame = ({ name, desc, logo, company }) => {
   return (
@@ -18,5 +19,12 @@ const Frame = ({ name, desc, logo, company }) => {
     </div>
   );
 };
+MovingCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired
+};
+
 
 export default Frame;
