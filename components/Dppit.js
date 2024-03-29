@@ -2,12 +2,12 @@ import React from "react";
 
 export const Dppit = () => {
   return (
-    <div className="flex justify-center h-screen ml-12">
+    <div className="flex justify-center h-screen ml-0 mr-6">
       <div className="relative w-full max-w-screen-lg mx-auto">
         <div className="top-4 left-4 absolute w-full">
           <div className="top-0 left-0 absolute w-full">
-            <div className="inline-flex items-center gap-8 absolute top-0 left-0 w-full">
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12">
+            <div className="inline-flex items-center gap-8 xs:gap-2 absolute top-0 left-0 w-full ">
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-5/12">
                 <p className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Still looking to find a tech job? Gammaprep is your solution
                 </p>
@@ -26,7 +26,7 @@ export const Dppit = () => {
                   </div>
                 </div>
               </div>
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-5/12">
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-5/12">
                 <div className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Startup India DPIIT Recognised
                 </div>
