@@ -19,7 +19,7 @@ const Frame = ({ name, desc, logo, company }) => {
     </div>
   );
 };
-MovingCard.propTypes = {
+Frame.propTypes = {
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
