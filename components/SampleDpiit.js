@@ -1,3 +1,4 @@
+import React from 'react';
 const FrameComponent4 = () => {
     return (
       <section className="w-[1708px] flex flex-row items-start justify-center pt-0 px-5 pb-[60px] box-border max-w-full text-left text-21xl text-labels-primary font-hiragino-mincho-pro mq800:pb-[39px] mq800:box-border mq450:pb-[25px] mq450:box-border">
