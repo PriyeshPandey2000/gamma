@@ -28,10 +28,12 @@ const StudentsPlaced = () => {
   const isExtraSmallScreen = useMediaQuery('(max-width:575px)');
 
   return (
-    <div className="w-full flex flex-col items-center overflow-x-hidden "> {/* Add overflow-x-hidden */}
+    <div>
+    <h2 className={`text-center ${isExtraSmallScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Student Placed Stories</h2>
+    <div className="w-full flex flex-row items-center overflow-x-hidden "> {/* Add overflow-x-hidden */}
       {/* Apply different font based on the media query */}
-      <h2 className={`text-center ${isExtraSmallScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Student Placed Stories</h2>
-      <div className="cards flex justify-center mt-8 animate-scrollRightToLeft">
+      
+      <div className="cards flex justify-center mt-8 animate-scrollLeftToLeft">
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
@@ -40,6 +42,17 @@ const StudentsPlaced = () => {
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         {/* Repeat for other cards */}
+      </div>
+      <div className="cards flex justify-center mt-8 animate-scrollLeftToLeft">
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        {/* Repeat for other cards */}
+      </div>
       </div>
     </div>
   );

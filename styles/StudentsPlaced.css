@@ -1,16 +1,9 @@
-@keyframes scrollRightToLeft {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+
   
   /* Define animation */
-  @keyframes scrollRightToLeft {
+  @keyframes scrollLeftToLeft {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
     100% {
       transform: translateX(-100%);
@@ -18,16 +11,6 @@
   }
   
   /* Apply animation to the cards */
-  .animate-scrollRightToLeft {
-    animation: scrollRightToLeft 10s linear infinite;
+  .animate-scrollLeftToLeft {
+    animation: scrollLeftToLeft 10s linear infinite;
   }
-
-  /* .text-center {
-    font-family: 'font-hiragino-mincho-pro-center', serif; 
-  }
-  @media (max-width: 575px) {
-    .text-center {
-      font-family: 'font-hiragino-mincho-xs', serif; 
-    }
-  }
-   */
