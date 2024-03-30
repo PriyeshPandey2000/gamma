@@ -25,17 +25,19 @@ import Strip3 from '@/components/Strip3';
 import Strip1 from '@/components/Strip1';
 import Strip2 from '@/components/Strip2';
 import FrameComponent4 from '@/components/SampleDpiit';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function Home() {
+ 
   return (
     <div>
       <Navbar />
       <div className="container mx-auto max-w-[1300px] mb-10"> {/* Set specific width */}
-      <div className="my-4 flex flex-col"> {/* Flexbox layout for vertical stacking */}
+      <div className="my-4 flex flex-col "> {/* Flexbox layout for vertical stacking */}
           <div className="relative mb-0"> {/* Added relative positioning and margin bottom */}
             <JobBanner />
           </div>
-          <div className="relative"> {/* Added relative positioning */}
+          <div className="relative "> {/* Added relative positioning */}
             <Placement/>
           </div>
         </div>

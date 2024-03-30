@@ -1,9 +1,12 @@
+"use client"
 import React from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const MentorsSection = () => {
+  const isXsScreen = useMediaQuery('(max-width: 639px)');
   return (
     <section className="p-8">
-      <h2 className="text-3xl font-bold mb-8 font-hiragino-mincho-pro-center">Our Mentors</h2>
+      <h2 className={`text-3xl font-bold mb-8 ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Our Mentors</h2>
       <div className="flex flex-col sm:flex-row justify-between">
         {/* Mentor Card 1 */}
         <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center mb-4 sm:mb-0">

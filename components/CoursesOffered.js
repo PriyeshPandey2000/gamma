@@ -1,11 +1,13 @@
 // CoursesOffered.js
-
+"use client"
 import React from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const CoursesOffered = () => {
+  const isXsScreen = useMediaQuery('(max-width: 639px)');
   return (
     <div className="w-full mx-auto my-8">
-      <h1 className="text-3xl font-bold text-black-800 mb-4 text-center font-hiragino-mincho-pro-center">Courses Offered</h1>
+      <h1 className={`text-3xl font-bold text-black-800 mb-4 text-center ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Courses Offered</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Card 1 */}

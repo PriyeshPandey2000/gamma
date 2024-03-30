@@ -29,7 +29,7 @@ const Placement = () => {
     <div className={`w-full mx-auto flex flex-col sm:flex-row justify-between items-center my-8 ${isXsScreen ? 'xs-screen' : ''}`}>
       {/* Left side content */}
       <div className={`w-full sm:w-full md:w-1/2 pr-4 ${isXsScreen ? 'text-center' : ''}`}>
-        <h2 className={`text-3xl font-bold text-black mb-4 font-hiragino-mincho-pro ${isXsScreen ? 'font-hiragino-mincho-s' : ''}`}>Placement Report</h2>
+        <h2 className={`text-3xl font-bold text-black mb-4 font-hiragino-mincho-pro ${isXsScreen ? 'font-hiragino-mincho-xs' : ''}`}>Placement Report</h2>
         <p className={`text-gray-700 mb-4 ${isXsScreen ? 'text-center px-4' : ''}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis odio, posuere eget fringilla ac, sodales a metus. Sed nec risus tincidunt, faucibus dui nec, suscipit justo. dolor sit amet, consectetur adipiscing elit. Nulla felis odio, posuere eget fringilla ac, sodales a metus. Sed nec risus tincidunt, faucibus dui nec, suscipit justo.
         </p>
@@ -37,8 +37,12 @@ const Placement = () => {
       </div>
       
       {/* Right side image */}
-      <div className={`w-full sm:w-full md:w-1/2 pl-4 flex justify-center sm:justify-end ${isXsScreen ? 'text-center' : ''}`}>
-        <img src="/images/frame.png" alt="Frame" className={`rounded-lg ${isXsScreen ? 'w-80 h-72  mx-auto' : 'w-68 h-48'}`} />
+      <div className={`w-full sm:w-full md:w-1/2 pl-4  flex justify-center sm:justify-end ${isXsScreen ? 'text-center' : ''}`}>
+      {isXsScreen ? (
+          <img src="/images/frame-xs.png" alt="Alternate Image" className={`rounded-lg w-98 h-72 mx-auto`} />
+        ) : (
+          <img src="/images/frame.png" alt="Frame" className={`rounded-lg w-68 h-48 `} />
+        )}
       </div>
     </div>
   );

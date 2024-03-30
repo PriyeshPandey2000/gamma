@@ -1,10 +1,13 @@
+"use client"
 import React from "react";
+import { useMediaQuery } from '@react-hook/media-query';
 
 export const WhyGamma = () => {
+  const isXsScreen = useMediaQuery('(max-width: 639px)');
   return (
-    <div className="flex flex-wrap items-center justify-between relative max-w-screen-xl mx-auto px-4">
-      <div className="w-full md:w-1/2 lg:w-7/12 flex flex-col items-start gap-6 mt-5">
-        <div className="text-4xl font-semibold leading-tight">
+    <div className={`flex flex-wrap items-center justify-between relative max-w-screen-xl mx-auto px-4 `}>
+      <div className={`w-full md:w-1/2 lg:w-7/12 flex flex-col ${isXsScreen ? 'items-center' : 'items-start'} gap-6 mt-5`}>
+        <div className={`text-4xl font-semibold leading-tight ${isXsScreen ? 'text-center font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`} >
           Why GammaPrep?
         </div>
         <p className="text-base leading-normal lg:w-full">

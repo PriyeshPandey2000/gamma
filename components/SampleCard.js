@@ -1,115 +1,16 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
-
-// export default function Component() {
-//   return (
-//     <div className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200">
-//       <div className="flex items-center space-x-2">
-//         <img
-//           src="https://file.rendit.io/n/8nCSSckyDnD5HSHF9MOX.svg"
-//           alt="Tools"
-//           className="w-6"
-//         />
-//         <h2 className="text-lg font-bold text-blue-800">
-//           Specialized Skills and Tools
-//         </h2>
-//       </div>
-
-//       <div className="mt-4">
-//         <h3 className="text-lg text-blue-800 font-semibold text-center">
-//           DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjectsT
-//         </h3>
-//         <p className="mt-2 text-sm text-center">
-//           Learn with real work experience and get guaranteed placement as a
-//           Full-Stack or Backend Developer at product-based companies.
-//         </p>
-//       </div>
-
-//       <div className="mt-4 bg-gray-100 p-4 rounded-lg">
-//         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//           <div className="space-y-2">
-//             <p className="text-sm">Project-led MERN or Backend Specialisation</p>
-//             <p className="text-sm">Externships with Real Tech Companies</p>
-//           </div>
-//           <div className="space-y-2">
-//             <p className="text-sm">DS, Algo, and System Design curriculum</p>
-//             <p className="text-sm">Guaranteed Placement in top dev roles</p>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-//         <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-//           <h4 className="text-sm text-center text-blue-800">Offline</h4>
-//           <ul className="text-xs list-disc pl-5 space-y-1">
-//             <li>Content goes here</li>
-//             <li>Content goes here</li>
-//             <li>Content goes here</li>
-//           </ul>
-//           <div className="text-sm font-bold text-white bg-blue-800 rounded-full px-3 py-1 text-center self-start">
-//             ₹14,999/-
-//           </div>
-//         </div>
-//         <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-//           <h4 className="text-sm text-center text-blue-800">Online</h4>
-//           <ul className="text-xs list-disc pl-5 space-y-1">
-//             <li>Content goes here</li>
-//             <li>Content goes here</li>
-//             <li>Content goes here</li>
-//           </ul>
-//           <div className="text-sm font-bold text-white bg-blue-800 rounded-full px-3 py-1 text-center self-start">
-//             ₹7,999/-
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="mt-4 space-y-4">
-//         <div className="flex items-start space-x-3 bg-gray-50 p-4 rounded-lg">
-//           <img
-//             src="https://file.rendit.io/n/XnTNE1vRQWjQIDXRjBTd.svg"
-//             alt="Interview Icon"
-//             className="flex-shrink-0 w-8"
-//           />
-//           <div>
-//             <h5 className="text-xs text-gray-600">Interview</h5>
-//             <p className="text-sm font-medium">Assured Interview call</p>
-//           </div>
-//         </div>
-
-//         <div className="flex items-start space-x-3 bg-gray-50 p-4 rounded-lg">
-//           <img
-//             src="https://file.rendit.io/n/BSWzBCP9bxEm2o2qeIB4.svg"
-//             alt="Benefits Icon"
-//             className="flex-shrink-0 w-8"
-//           />
-//           <div>
-//             <h5 className="text-xs text-gray-600">Benefits</h5>
-//             <p className="text-sm font-medium">Complete Refund if not placed</p>
-//           </div>
-//         </div>
-
-//         <button className="w-full flex items-center justify-center bg-blue-800 rounded-full px-6 py-3 text-white font-semibold hover:bg-blue-700 transition duration-300">
-//           Apply Now
-//           <img
-//             src="https://file.rendit.io/n/iAyHbqCqFxJCfh2BE6Z1.svg"
-//             alt="Arrow"
-//             className="ml-2"
-//           />
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
+import { useMediaQuery } from '@react-hook/media-query';
+import dynamic from "next/dynamic";
 
 import * as React from "react";
 
-export default function Component() {
+const Component=()=> {
+  const isXsScreen = useMediaQuery('(max-width: 639px)');
+  if (isXsScreen) {
+    return null;
+  }
+
   return (
     <div className="w-full mx-auto px-4 ">
     <h2 className="text-2xl font-bold text-center mb-6 font-hiragino-mincho-heading">All Courses</h2>
@@ -283,5 +184,8 @@ export default function Component() {
     </div>
   );
 }
+
+
+export default dynamic (() => Promise.resolve(Component), {ssr: false});
 
 
