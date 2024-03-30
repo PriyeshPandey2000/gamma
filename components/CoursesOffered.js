@@ -1,10 +1,37 @@
 // CoursesOffered.js
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 
+
+
+
+
+
 const CoursesOffered = () => {
-  const isXsScreen = useMediaQuery('(max-width: 639px)');
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="w-full mx-auto my-8">
       <h1 className={`text-3xl font-bold text-black-800 mb-4 text-center ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Courses Offered</h1>

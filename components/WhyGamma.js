@@ -1,9 +1,31 @@
 "use client"
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 
 export const WhyGamma = () => {
-  const isXsScreen = useMediaQuery('(max-width: 639px)');
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className={`flex flex-wrap items-center justify-between relative max-w-screen-xl mx-auto px-4 `}>
       <div className={`w-full md:w-1/2 lg:w-7/12 flex flex-col ${isXsScreen ? 'items-center' : 'items-start'} gap-6 mt-5`}>

@@ -1,10 +1,38 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from "react";
+import { useMediaQuery } from '@react-hook/media-query';
+
+
+
 
 export const Placed = () => {
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
       <div className="flex flex-col justify-center gap-4 items-start w-full md:w-auto">
-        <p className="font-normal text-black text-2xl md:text-3xl leading-normal font-hiragino-mincho-heading">
+        <p className={`font-normal text-black text-2xl md:text-3xl leading-normal ${isXsScreen ? 'text-center font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>
           Where will you get Placed?
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center justify-center xs:mx-auto"> {/* Center grid for xs screens */}

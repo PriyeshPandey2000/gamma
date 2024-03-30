@@ -1,10 +1,35 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export const GetInTouch = () => {
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="inline-flex flex-col items-start gap-[40px] relative w-full max-w-screen-xl mx-auto px-4 mb-10">
       <div className="inline-flex flex-col items-start relative">
-        <div className="relative w-fit mt-[-1.00px] font-normal text-black text-[40px] tracking-[0] leading-[normal]">
+        <div className={`relative w-fit mt-[-1.00px] font-normal text-black text-[40px] tracking-[0] leading-[normal] ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>
           Get in Touch
         </div>
         <p className="relative w-fit font-normal text-[#3c3c4399] text-[15px] tracking-[0] leading-[normal] whitespace-nowrap">
