@@ -28,7 +28,7 @@ export const GetInTouch = () => {
   const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="inline-flex flex-col items-start gap-[40px] relative w-full max-w-screen-xl mx-auto px-4 mb-10">
-      <div className="inline-flex flex-col items-start relative">
+      <div className={`inline-flex flex-col ${isXsScreen ? 'items-center' : 'items-start'}  relative`}>
         <div className={`relative w-fit mt-[-1.00px] font-normal text-black text-[40px] tracking-[0] leading-[normal] ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>
           Get in Touch
         </div>
