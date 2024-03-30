@@ -26,7 +26,7 @@ import Strip1 from '@/components/Strip1';
 import Strip2 from '@/components/Strip2';
 import FrameComponent4 from '@/components/SampleDpiit';
 import { useMediaQuery } from '@react-hook/media-query';
-import ChartBar from '@/components/Chart';
+
 
 
 export default function Home() {
