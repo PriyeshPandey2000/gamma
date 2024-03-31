@@ -7,12 +7,11 @@ const Slider = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [middleCardIndex, setMiddleCardIndex] = useState(0);
   const [animateMiddleCard, setAnimateMiddleCard] = useState(false);
-
   const slides = [1, 2, 3]; // Number of slides
   
   useEffect(() => {
-    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
     const containerWidth = sliderRef.current.offsetWidth;
+    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
     const totalSlidesWidth = slides.length * slideWidth;
     const newScrollPosition = (totalSlidesWidth - containerWidth) / 2;
     setScrollPosition(newScrollPosition);
@@ -28,13 +27,11 @@ const Slider = () => {
   useEffect(() => {
     if (sliderRef.current && scrollPosition !== null) {
       sliderRef.current.scrollLeft = scrollPosition;
-      // Save scroll position to local storage
       localStorage.setItem('sliderScrollPosition', scrollPosition);
     }
   }, [scrollPosition]);
 
   useEffect(() => {
-    // Retrieve scroll position from local storage on component mount
     const savedScrollPosition = localStorage.getItem('sliderScrollPosition');
     if (savedScrollPosition !== null) {
       setScrollPosition(Number(savedScrollPosition));
@@ -45,14 +42,8 @@ const Slider = () => {
     const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
     const newScrollPosition = middleCardIndex * slideWidth;
     setScrollPosition(newScrollPosition);
-    setAnimateMiddleCard(false); // Reset animateMiddleCard to false after updating scroll position
+    setAnimateMiddleCard(false);
   }, [middleCardIndex]);
-
-  const slideWidth = useRef(0);
-
-  useEffect(() => {
-    slideWidth.current = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
-  }, []);
 
   return (
     <div className="slider-container" ref={sliderRef}>
