@@ -38,12 +38,12 @@ const Slider = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
-    const newScrollPosition = middleCardIndex * slideWidth;
-    setScrollPosition(newScrollPosition);
-    setAnimateMiddleCard(false);
-  }, [middleCardIndex]);
+//   useEffect(() => {
+//     const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
+//     const newScrollPosition = middleCardIndex * slideWidth;
+//     setScrollPosition(newScrollPosition);
+//     setAnimateMiddleCard(false);
+//   }, [middleCardIndex]);
 
   return (
     <div className="slider-container" ref={sliderRef}>
