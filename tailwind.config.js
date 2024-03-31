@@ -26,6 +26,7 @@ module.exports = {
         "x-0b-4b-7f": "var(--x-0b-4b-7f)",
         'custom-red':"#FC3A3A",
         'custom-green':'#008F42',
+        'custom-gray':'#0000000D',
         
       },
     },

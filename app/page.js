@@ -65,11 +65,8 @@ export default function Home() {
         <div className="mb-16 container mx-auto max-w-[1300px]">
           <Component/>
           
-          
-          
-          
-      
-        </div>
+           </div>
+           <Slider/>
         
         <CourseDetails />
         </div>
