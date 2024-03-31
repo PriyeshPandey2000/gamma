@@ -27,11 +27,11 @@ const MentorsSection = () => {
 
   const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
-    <section className="p-8">
+    <section className="p-8 ">
       <h2 className={`text-3xl font-bold mb-8 ${isXsScreen ? 'font-hiragino-mincho-xs' : 'font-hiragino-mincho-pro-center'}`}>Our Mentors</h2>
-      <div className="flex flex-col sm:flex-row justify-between">
+      <div className="flex flex-col justify-between md:w-4/5 md:mx-auto lg:justify-center sm:flex-row ">
         {/* Mentor Card 1 */}
-        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center mb-4 sm:mb-0">
+        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center mb-4 sm:mb-0 lg:ml-11">
           <img src="/images/vaibhav.png" alt="Mentor 1" className="w-16 h-auto rounded-full mb-4" />
           <h3 className="text-xl font-bold mb-2 font-hiragino-mincho-pro-center-small">Vaibhav Goyal</h3>
           <img src="/images/oracle.png" alt="Company 1" className="w-20 h-auto mb-4" />
@@ -39,7 +39,7 @@ const MentorsSection = () => {
           <p className="text-lg font-bold">DSA and Full Stack</p>
         </div>
         {/* Mentor Card 2 */}
-        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center mb-4 sm:mb-0">
+        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center mb-4 sm:mb-0 lg:ml-11">
           <img src="/images/drishti.png" alt="Mentor 2" className="w-16 h-auto rounded-full mb-4" />
           <h3 className="text-xl font-bold mb-2 font-hiragino-mincho-pro-center-small">Drishti Mamtani</h3>
           <img src="/images/google.png" alt="Company 2" className="w-20 h-auto mb-4" />
@@ -47,7 +47,7 @@ const MentorsSection = () => {
           <p className="text-lg font-bold">Data Science and Analytics Part</p>
         </div>
         {/* Mentor Card 3 */}
-        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+        <div className="w-full sm:w-1/3 bg-white rounded-lg shadow-md p-6 flex flex-col items-center lg:ml-11">
           <img src="/images/shubham.png" alt="Mentor 3" className="w-16 h-auto rounded-full mb-4" />
           <h3 className="text-xl font-bold mb-2 font-hiragino-mincho-pro-center-small">Shubham Mondal</h3>
           <img src="/images/mastercard.png" alt="Company 3" className="w-20 h-auto mb-4" />

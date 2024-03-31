@@ -27,6 +27,8 @@ import Strip2 from '@/components/Strip2';
 import FrameComponent4 from '@/components/SampleDpiit';
 import { useMediaQuery } from '@react-hook/media-query';
 import Courses from '@/components/SlidingCards';
+import Slider from '@/components/Slider';
+
 
 
 
@@ -51,6 +53,7 @@ export default function Home() {
         <StudentsPlaced/>
         
         
+        
         {/* <Frame/> */}
         <div className="container mx-auto max-w-[1180px] ">
         {/* <CoursesOffered/> */}
@@ -59,7 +62,13 @@ export default function Home() {
         </div>
         {/* <ChartBar/> */}
         {/* <CourseCard icon="/images/Tools.png" title="Specialised Skills and Tools " column1Heading="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects" column1Para="Learn with real work experience and get guaranteed placement as a Full-Stack or Backend Developer at product-based companies.srgsmgsdmglsdmglmdl;gm;lsdmglsdmlgsmldglsdgmm;" /> */}
-        <div className="mb-16 container mx-auto max-w-[1300px]"><Component/>
+        <div className="mb-16 container mx-auto max-w-[1300px]">
+          <Component/>
+          
+          
+          
+          
+      
         </div>
         
         <CourseDetails />
