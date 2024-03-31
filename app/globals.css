@@ -19,3 +19,15 @@
     background-image: linear-gradient(to right, #D1D1D6, #D1D1D6);
   }
   
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }

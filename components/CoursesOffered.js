@@ -9,6 +9,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 
 
 const CoursesOffered = () => {
+  
   const [isXsScreen, setIsXsScreen] = useState(false);
 
   const handleResize = () => {
