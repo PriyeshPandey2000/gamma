@@ -1,13 +1,39 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export const Dppit = () => {
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="flex justify-center h-screen ml-0 mr-6">
       <div className="relative w-full max-w-screen-lg mx-auto">
         <div className="top-4 left-4 absolute w-full">
           <div className="top-0 left-0 absolute w-full">
-            <div className="inline-flex items-center gap-8 xs:gap-2 absolute top-0 left-0 w-full ">
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-5/12">
+            {/* Conditionally render flex direction based on screen size */}
+            <div className={`inline-flex items-center gap-8 xs:gap-2 absolute top-0 left-0 w-full ${isXsScreen ? 'flex-col ' : 'flex-row'}`}>
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-full xs:mt-5">
                 <p className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Still looking to find a tech job? Gammaprep is your solution
                 </p>
@@ -26,7 +52,7 @@ export const Dppit = () => {
                   </div>
                 </div>
               </div>
-              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-5/12">
+              <div className="inline-flex flex-col items-start justify-center gap-2 px-2 py-2 relative flex-0_0_auto bg-[#f6f6f6] w-full xs:w-full xs:mt-5">
                 <div className="relative w-full mt-[-1.5px] font-normal text-black text-lg md:text-xl lg:text-2xl tracking-normal leading-normal">
                   Startup India DPIIT Recognised
                 </div>
@@ -45,7 +71,4 @@ export const Dppit = () => {
     </div>
   );
 };
-
-
-
 

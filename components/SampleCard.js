@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from "react";
+import { React ,useState, useEffect, useRef } from "react";
 import { useMediaQuery } from '@react-hook/media-query';
 import dynamic from "next/dynamic";
 
