@@ -27,7 +27,7 @@ export const Dppit = () => {
 
   const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
-    <div className="flex justify-center h-screen ml-0 mr-6">
+    <div className="flex justify-center h-[50vh] ml-0 mr-6">
       <div className="relative w-full max-w-screen-lg mx-auto">
         <div className="top-4 left-4 absolute w-full">
           <div className="top-0 left-0 absolute w-full">
