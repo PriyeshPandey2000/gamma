@@ -9,9 +9,9 @@ const Slider = () => {
   const [animateMiddleCard, setAnimateMiddleCard] = useState(false);
 
   const slides = [1, 2, 3]; // Number of slides
-  const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
-
+  
   useEffect(() => {
+    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
     const containerWidth = sliderRef.current.offsetWidth;
     const totalSlidesWidth = slides.length * slideWidth;
     const newScrollPosition = (totalSlidesWidth - containerWidth) / 2;
@@ -23,7 +23,7 @@ const Slider = () => {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, [slides, slideWidth]);
+  }, [slides]);
 
   useEffect(() => {
     if (sliderRef.current && scrollPosition !== null) {
@@ -42,10 +42,11 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
+    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
     const newScrollPosition = middleCardIndex * slideWidth;
     setScrollPosition(newScrollPosition);
     setAnimateMiddleCard(false); // Reset animateMiddleCard to false after updating scroll position
-  }, [middleCardIndex, slideWidth]);
+  }, [middleCardIndex]);
 
   return (
     <div className="slider-container" ref={sliderRef}>
