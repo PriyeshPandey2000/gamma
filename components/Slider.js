@@ -48,6 +48,12 @@ const Slider = () => {
     setAnimateMiddleCard(false); // Reset animateMiddleCard to false after updating scroll position
   }, [middleCardIndex]);
 
+  const slideWidth = useRef(0);
+
+  useEffect(() => {
+    slideWidth.current = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
+  }, []);
+
   return (
     <div className="slider-container" ref={sliderRef}>
       <div className="slides">
