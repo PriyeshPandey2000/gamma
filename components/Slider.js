@@ -15,7 +15,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="slider-container" ref={sliderRef}>
+    <div className="slider-container mt-9" ref={sliderRef}>
       <div className="slides">
         {/* Render each slide directly */}
         <div className="slide">
@@ -59,7 +59,7 @@ const Slider = () => {
         }
 
         .card.middle {
-          transform: scale(1.08);
+          transform: scale(1.05);
         }
 
         .slide:last-child {

@@ -66,7 +66,8 @@ export default function Home() {
           <Component/>
           
            </div> */}
-           <Slider/>
+           <div className="mb-8 mt-5"> <Slider/></div>
+          
         
         <CourseDetails />
         </div>
