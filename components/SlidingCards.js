@@ -82,7 +82,7 @@ const Courses = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCourseIndex((prevIndex) => (prevIndex + 1) % 3); // Cycle through the courses array
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

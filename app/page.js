@@ -74,13 +74,14 @@ export default function Home() {
         <MentorsSection/>
         <Strip2/>
         <WhyGamma/>
-        <div className="mb-0 container mx-auto max-w-[1300px]">
-        <Dppit/>
-        </div>
-        {/* <FrameComponent4/> */}
-        <div className="container mx-auto max-w-[1300px] mb-18">
-        <Faq/>
-        </div>
+        <div className="container mx-auto max-w-[1300px] flex flex-col">
+  <div className="mb-0">
+    <Dppit />
+  </div>
+  <div className="mb-18">
+    <Faq />
+  </div>
+</div>
         
         <Strip3/>
         <div className="container mx-auto max-w-[1300px]">
