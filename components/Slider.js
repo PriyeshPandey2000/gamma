@@ -7,15 +7,6 @@ const Slider = () => {
   const [middleCardIndex, setMiddleCardIndex] = useState(0);
 
   useEffect(() => {
-    const containerWidth = sliderRef.current.offsetWidth;
-    const slideWidth = sliderRef.current ? sliderRef.current.querySelector('.slide').offsetWidth : 0;
-    const totalSlidesWidth = 3 * slideWidth; // Assuming you always have 3 slides
-    const newScrollPosition = (totalSlidesWidth - containerWidth) / 2;
-    sliderRef.current.scrollLeft = newScrollPosition;
-    localStorage.setItem('sliderScrollPosition', newScrollPosition);
-  }, []);
-
-  useEffect(() => {
     const intervalId = setInterval(() => {
       setMiddleCardIndex((prevIndex) => (prevIndex + 1) % 3); // Assuming you always have 3 slides
     }, 3000);
@@ -46,35 +37,33 @@ const Slider = () => {
       {/* eslint-disable-next-line */}
       <style jsx>{`
         .slider-container {
-          overflow: hidden; /* Hide horizontal overflow */
+          overflow: hidden;
           width: 100%;
-          position: relative;
-          white-space: nowrap; /* Prevent slides from wrapping */
+          display: flex;
+          justify-content: center; /* Center align the slides */
         }
 
         .slides {
-          display: inline-block; /* Use inline-block to keep slides in a line */
+          display: inline-flex; /* Use inline-flex to keep slides in a line */
         }
 
         .slide {
-          display: inline-block;
-          margin-right: 20px; /* Add margin between slides */
-          white-space: normal; /* Reset white-space to allow text wrapping inside slides */
-          vertical-align: top; /* Align slides to the top */
-          transition: transform 0.3s ease; /* Add transition effect */
+          margin-right: 20px;
+          white-space: nowrap; /* Prevent slides from wrapping */
+          transition: transform 0.3s ease;
         }
 
         .card {
-          display: inline-block;
           padding: 10px;
+          display: inline-block;
         }
 
         .card.middle {
-          transform: scale(1.08); /* Increase the scale of the middle card */
+          transform: scale(1.08);
         }
 
         .slide:last-child {
-          margin-right: 0; /* Remove margin from the last slide */
+          margin-right: 0;
         }
       `}</style>
     </div>
