@@ -75,7 +75,7 @@ export default function Home() {
         <Strip2/>
         <WhyGamma/>
         <div className="container mx-auto max-w-[1300px] flex flex-col">
-  <div className="mb-0">
+  <div className="mb-5">
     <Dppit />
   </div>
   <div className="mb-18">
