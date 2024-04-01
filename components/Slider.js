@@ -43,6 +43,7 @@ const Slider = () => {
           </div>
         </div>
       </div>
+      {/* eslint-disable-next-line */}
       <style jsx>{`
         .slider-container {
           overflow: hidden; /* Hide horizontal overflow */
