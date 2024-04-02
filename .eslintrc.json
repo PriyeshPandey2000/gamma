@@ -17,6 +17,7 @@
   },
   "rules": {
     "react/no-unescaped-entities": "off",
-    "react/jsx-no-undef": ["error", { "allowGlobals": true }] // Allow jsx in style tags
+    "react/jsx-no-undef": ["error", { "allowGlobals": true }] ,
+    "@next/next/no-img-element": "off"
   }
 }
