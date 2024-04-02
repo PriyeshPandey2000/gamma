@@ -4,6 +4,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import BulletPoints from './CircleWithLines';
 import "../styles/fonts.css";
 import dynamic from "next/dynamic";
+import Image from 'next/image';
 
 
 const JobBanner = () => {
@@ -19,7 +20,7 @@ const JobBanner = () => {
           // Render content for small screens
           <div className="grid grid-cols-1 gap-4">
             <div className="bg-white rounded-lg p-2 md:p-4">
-              <img className="img-responsive mt-[-30px]" src="/images/job-hunt.png" alt="Banner"/>
+              <Image className="img-responsive mt-[-30px]" src="/images/job-hunt.png" alt="Banner"/>
             </div>
             <div className="md:col-span-1 bg-white rounded-lg p-2 md:p-4">
               <div className="job-content-block mb-4 xs:w-full xs:mr-0 ml-0">
@@ -37,7 +38,7 @@ const JobBanner = () => {
                     <div className="flex mb-4">
                       <button className="btn btn-primary-new bg-custom-blue text-white rounded-full py-1 px-3 mr-4">Enroll now</button>
                       <button className="btn btn-primary-new border border-green-500 flex items-center px-3 rounded-full text-green-500">
-                        <img src="/images/whatsapp.png" className="w-6 h-6 mr-2 " alt="WhatsApp Icon" />
+                        <Image src="/images/whatsapp.png" className="w-6 h-6 mr-2 " alt="WhatsApp Icon" />
                         Contact on Whatsapp
                       </button>
                     </div>
@@ -45,11 +46,11 @@ const JobBanner = () => {
                     {/* Add new items here */}
                     <div className="flex justify-between mt-4 flex-col ">
                       <div className="flex items-center">
-                        <img src="/images/ok.png" className="w-4 h-4 mr-2" alt="Icon1" />
+                        <Image src="/images/ok.png" className="w-4 h-4 mr-2" alt="Icon1" />
                         <span className="text-sm">Assured referral on completion</span>
                       </div>
                       <div className="flex items-center mt-2">
-                        <img src="/images/ok.png" className="w-4 h-4 mr-2 " alt="Icon2" />
+                        <Image src="/images/ok.png" className="w-4 h-4 mr-2 " alt="Icon2" />
                         <span className="text-sm">Full refund if unplaced</span>
                       </div>
                     </div>
@@ -77,7 +78,7 @@ const JobBanner = () => {
                     <div className="flex mb-4">
                       <button className="btn btn-primary-new bg-custom-blue text-white rounded-full py-1 px-3 mr-4">Enroll now</button>
                       <button className="btn btn-primary-new border border-green-500 flex items-center px-3 rounded-full text-green-500">
-                        <img src="/images/whatsapp.png" className="w-6 h-6 mr-2 " alt="WhatsApp Icon" />
+                        <Image src="/images/whatsapp.png" className="w-6 h-6 mr-2 " alt="WhatsApp Icon" />
                         Contact on Whatsapp
                       </button>
                     </div>
@@ -85,11 +86,11 @@ const JobBanner = () => {
                     {/* Add new items here */}
                     <div className="flex justify-start mt-4">
                       <div className="flex items-center ">
-                        <img src="/images/ok.png" className="w-5 h-5 mr-2 " alt="Icon1" />
+                        <Image src="/images/ok.png" className="w-5 h-5 mr-2 " alt="Icon1" />
                         <span className="text-sm ">Assured referral on completion</span>
                       </div>
                       <div className="flex items-center ml-5" >
-                        <img src="/images/ok.png" className="w-5 h-5 mr-2" alt="Icon2" />
+                        <Image src="/images/ok.png" className="w-5 h-5 mr-2" alt="Icon2" />
                         <span className="text-sm">Full refund if unplaced</span>
                       </div>
                     </div>
