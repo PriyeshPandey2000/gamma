@@ -3,11 +3,11 @@ const nextConfig = {
     images: {
       domains: ['cdn.builder.io'],
     },
-    builder: {
-        settings: {
-          dangerouslyAllowSVG: true
-        }
-      }
+    // builder: {
+    //     settings: {
+    //       dangerouslyAllowSVG: true
+    //     }
+    //   }
   };
   
 
