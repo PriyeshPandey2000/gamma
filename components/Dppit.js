@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
+import Image from 'next/image';
 
 export const Dppit = () => {
   const [isXsScreen, setIsXsScreen] = useState(false);
@@ -46,7 +47,7 @@ export const Dppit = () => {
                   <span className="text-[#0075ff]">Read full Article</span>
                 </p>
                 <div className="inline-flex items-center gap-2 relative flex-0_0_auto">
-                  <img className="relative w-16 h-auto" alt="Tdb" src="/images/tdb 1.png" />
+                  < Image fill className="relative w-16 h-auto" alt="Tdb" src="/images/tdb 1.png" />
                   <div className="relative font-normal text-[#3c3c4399] text-sm md:text-base lg:text-lg tracking-normal leading-normal">
                     Source: The Daily Beat
                   </div>
@@ -61,12 +62,12 @@ export const Dppit = () => {
                 </div>
               </div>
             </div>
-            <img className="w-10 h-px top-48 right-40 absolute object-cover" alt="Line" src="/images/Line 5.png" />
+            < Image fill className="w-10 h-px top-48 right-40 absolute object-cover" alt="Line" src="/images/Line 5.png" />
           </div>
           <img className="w-px h-14 top-35 right-8 absolute object-cover" alt="Line" src="images/Line 6.png" style={{ right: '150px' }} /> {/* Adjusted right value */}
         </div>
-        <img className="w-10 h-px top-0 left-0 absolute object-cover" alt="Line" src="images/Line 3.png" />
-        <img className="w-px h-14 top-0 -left-0 absolute object-cover" alt="Line" src="images/Line 7.png" />
+        < Image fill className="w-10 h-px top-0 left-0 absolute object-cover" alt="Line" src="/images/Line 3.png" />
+        < Image fill className="w-px h-14 top-0 -left-0 absolute object-cover" alt="Line" src="/images/Line 7.png" />
       </div>
     </div>
   );

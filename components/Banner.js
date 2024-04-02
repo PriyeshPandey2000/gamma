@@ -100,7 +100,7 @@ const JobBanner = () => {
             </div>
 
             <div className={`md:col-span-1 bg-white rounded-lg p-2 md:p-4 relative ${isXsScreen ? 'order-1' : ''}`}>
-              <img className="img-responsive mt-[-30px]" src="/images/job-hunt.png" alt="Banner"/>
+              <Image className="img-responsive mt-[-30px]" src="/images/job-hunt.png" alt="Banner"/>
             </div>
           </div>
         )}
