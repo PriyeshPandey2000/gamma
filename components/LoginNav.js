@@ -1,4 +1,5 @@
 import * as React from "react";
+import PropTypes from 'prop-types';
 
 function Logo() {
   return (
@@ -48,6 +49,9 @@ function Header() {
     </header>
   );
 }
+NavItem.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default function App() {
   return (

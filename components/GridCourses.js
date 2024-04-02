@@ -51,6 +51,15 @@ const CourseSection = ({ title, icon, courses }) => (
     </div>
   </>
 );
+CourseSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+  }).isRequired,
+  courses: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 function MyComponent() {
  

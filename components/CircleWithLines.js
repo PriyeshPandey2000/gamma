@@ -1,11 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
+
 
 const BulletPoints = () => {
   return (
     <div className="flex items-center">
       <div className="mr-4" style={{ marginTop: '-4px' }}> {/* Reduced margin and negative margin top */}
-        <Image src="/images/bullet.png" alt="Bullet Points" className="h-28" /> {/* Reduced height to h-28 */}
+        <img src="/images/bullet.png" alt="Bullet Points" className="h-28" /> {/* Reduced height to h-28 */}
       </div>
       <div>
         <h2 className="mb-3 mt-2 text-sm">Enroll With Us</h2> {/* Increased margin top and bottom */}
