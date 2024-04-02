@@ -1,5 +1,7 @@
 import * as React from "react";
 import { useRouter } from 'next/navigation';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 const CourseCard = ({ course }) => {
   const router = useRouter();
@@ -23,6 +25,14 @@ const CourseCard = ({ course }) => {
       </button>
     </div>
   );
+};
+CourseCard.propTypes = {
+  course: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    startDate: PropTypes.string.isRequired,
+  }).isRequired,
 };
 const CourseSection = ({ title, icon, courses }) => (
   <>
