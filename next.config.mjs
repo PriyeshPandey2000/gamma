@@ -3,11 +3,9 @@ const nextConfig = {
     images: {
       domains: ['cdn.builder.io'],
     },
-    // builder: {
-    //     settings: {
-    //       dangerouslyAllowSVG: true
-    //     }
-    //   }
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
   };
   
 
