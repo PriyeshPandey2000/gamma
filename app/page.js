@@ -31,7 +31,7 @@ import Courses from '@/components/SlidingCards';
 import Slider from '@/components/Slider';
 import MyComponent from '@/pages/AllCourses';
 import AllCourses from '@/pages/AllCourses';
-import Asessment from '@/pages/Asessment';
+
 import SingleCourse from '@/pages/SingleCourse';
 
 
