@@ -1,11 +1,8 @@
 
 "use client"
-
-
-
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Html, Head, Main, NextScript } from 'next/document'
 
@@ -16,9 +13,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 const CoursesOffered = () => {
   const router = useRouter(); 
-  const handler = function() {
+  const handler = () => {
     console.log("thank god");
-    router.push('/AllCourses'); // Navigate to AllCourses page
+    // router.push('/AllCourses'); // Navigate to AllCourses page
   };
   
   const [isXsScreen, setIsXsScreen] = useState(false);

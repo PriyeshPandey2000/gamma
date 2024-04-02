@@ -1,8 +1,14 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
+import { useRouter } from 'next/navigation';
 
 const Courses = () => {
+  const router = useRouter(); 
+  const handler = function() {
+    console.log("thank god");
+    router.push('/AllCourses'); // Navigate to AllCourses page
+  };
   const [cards, setCards] = useState([]);
   const popularCourses = [
     {
@@ -161,7 +167,7 @@ const Courses = () => {
 
       {/* View All Courses Button */}
       <div className="flex justify-center mt-4">
-        <button className="btn btn-primary-new border border-custom-blue  text-custom-blue rounded-full px-6 py-1">View All Courses</button>
+        <button className="btn btn-primary-new border border-custom-blue  text-custom-blue rounded-full px-6 py-1" onClick={handler}>View All Courses</button>
       </div>
     </div>
   );

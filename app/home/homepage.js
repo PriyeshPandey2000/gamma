@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      
+      <CoursesOffered/>
       <div className="container mx-auto max-w-[1300px] mb-10"> {/* Set specific width */}
       <div className="my-4 flex flex-col "> {/* Flexbox layout for vertical stacking */}
           <div className="relative mb-0"> {/* Added relative positioning and margin bottom */}
@@ -58,9 +58,9 @@ export default function Home() {
         <div>
         <StudentsPlaced/>
        
-        {/* <AllCourses/> */}
+        <AllCourses/>
         {/* <Asessment/> */}
-        {/* <SingleCourse/> */}
+        <SingleCourse/>
        
         
         
