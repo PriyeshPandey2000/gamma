@@ -83,3 +83,10 @@
   line-height: 44px;
   
 }
+.font-gotham-book-xs {
+  font-family: 'Gotham-Black', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 25px;
+  
+}

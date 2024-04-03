@@ -38,7 +38,7 @@ function SBanner() {
             />
             <div className="my-auto">Most Popular Course</div>
           </div>
-          <div className="self-stretch mt-5 text-4xl font-medium text-sky-800 max-md:max-w-full font-gotham-book">
+          <div className={`self-stretch mt-5 text-4xl font-medium text-sky-800 max-md:max-w-full  ${isXsScreen ? 'font-gotham-book-xs' : 'font-gotham-book'}  `}>
             DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects
           </div>
           <div className="self-stretch mt-5 text-xl leading-8 text-black max-md:max-w-full">
