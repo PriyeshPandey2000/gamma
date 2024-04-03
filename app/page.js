@@ -33,6 +33,7 @@ import MyComponent from '@/pages/AllCourses';
 import AllCourses from '@/pages/AllCourses';
 import AssessmentOptions from '@/components/AssesmentOptions';
 import SingleCourse from '@/pages/SingleCourse';
+import SBanner from '@/components/SingleCourse/SBanner';
 
 
 
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      {/* <SBanner/> */}
       
       
       <div className="container mx-auto max-w-[1300px] mb-10"> {/* Set specific width */}

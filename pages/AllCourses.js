@@ -5,6 +5,7 @@ import App from "@/components/LoginNav";
 import Navbar from "@/components/Navbar";
 import * as React from "react";
 import "tailwindcss/tailwind.css"
+import '../styles/fonts.css'
 
 
 

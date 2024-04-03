@@ -71,3 +71,15 @@
   line-height: 20px;
   text-align: left;
 }
+@font-face {
+  font-family: 'Gotham-Black';
+  src: url('/fonts/Gotham-Black.woff') format('woff');
+}
+
+.font-gotham-book {
+  font-family: 'Gotham-Black', sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 44px;
+  
+}

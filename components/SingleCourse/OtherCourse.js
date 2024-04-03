@@ -2,8 +2,8 @@ import * as React from "react";
 
 function Other() {
   return (
-    <div className="flex flex-col">
-      <div className="w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full">
+    <div className="flex flex-col mt-7 mb-7">
+      <div className="w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full font-hiragino-mincho-pro-center-small-left">
         Our Other Courses
       </div>
       <div className="px-5 mt-10 w-full max-md:max-w-full">
@@ -13,7 +13,7 @@ function Other() {
               <img
                 loading="lazy"
                 src="/images/courseimage.png"
-                className="w-full aspect-[2.38] max-md:max-w-full"
+                className="w-full aspect-[2] max-md:max-w-full "
               />
               <div className="mt-3 text-lg font-medium leading-8 text-sky-800 max-md:max-w-full">
                 DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental
@@ -41,7 +41,7 @@ function Other() {
               <img
                 loading="lazy"
                 src="/images/courseimage.png"
-                className="w-full aspect-[2.38] max-md:max-w-full"
+                className="w-full aspect-[2] max-md:max-w-full"
               />
               <div className="mt-3 text-lg font-medium leading-8 text-sky-800 max-md:max-w-full">
                 DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental
@@ -69,7 +69,7 @@ function Other() {
               <img
                 loading="lazy"
                 src="/images/courseimage.png"
-                className="w-full aspect-[2.38] max-md:max-w-full"
+                className="w-full aspect-[2] max-md:max-w-full"
               />
               <div className="mt-3 text-lg font-medium leading-8 text-sky-800 max-md:max-w-full">
                 DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental

@@ -1,63 +1,76 @@
-import * as React from "react";
-import PropTypes from 'prop-types';
+"use client";
+import React, { useState, useEffect } from 'react';
+import "tailwindcss/tailwind.css"
 
-function Logo() {
-  return (
-    <img
-      loading="lazy"
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/2c2950ccf96b5561193f565b9a9c00471f01f0919f9f3b8371ee7a714cabe308?apiKey=f15eb0618dfb42cfbb22d68ba1ebee7d&"
-      alt="Company Logo"
-      className="shrink-0 max-w-full aspect-[3.33] w-[164px]"
-    />
-  );
-}
+const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-function NavItem({ children }) {
-  return <div className="self-stretch my-auto">{children}</div>;
-}
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-function ProfileIcon() {
-  return (
-    <img
-      loading="lazy"
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/4820ec729e4199d5594281d88711b46bcf8dd0016605e46bd895917ea9661c2d?apiKey=f15eb0618dfb42cfbb22d68ba1ebee7d&"
-      alt="Profile Icon"
-      className="shrink-0 self-stretch w-12 aspect-square"
-    />
-  );
-}
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
-function Header() {
-  const navItems = [
-    "Home",
-    "About us", 
-    "Testimonials",
-    "Hire from Us",
-    "FAQ",
-    "Contact Us",
-  ];
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
-    <header className="flex gap-5 justify-between px-12 py-3 text-lg text-black border-b border-solid backdrop-blur-[50px] bg-white bg-opacity-80 border-zinc-300 max-md:flex-wrap max-md:px-5">
-      <Logo />
-      <nav className="flex gap-5 justify-between items-center self-start max-md:flex-wrap">
-        {navItems.map((item, index) => (
-          <NavItem key={index}>{item}</NavItem>
-        ))}
-        <ProfileIcon />
-      </nav>
-    </header>
+    <nav className={`bg-white py-${isMobile ? '2' : '4'} px-${isMobile ? '3' : '4'} ${isMobile ? 'flex justify-between items-center ' : ''}`} >
+      <div className=" w-full flex justify-between items-center"> {/* Add w-full class */}
+        {/* Dropdown icon and menu */}
+        {isMobile && (
+          <div className="relative">
+            <button onClick={toggleMenu} className="focus:outline-none">
+              <svg className="w-6 h-6 fill-current text-custom-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M3 6h18v2H3V6zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
+              </svg>
+            </button>
+            {showMenu && (
+              <div className="absolute mt-2 ml-0 sm:ml-4 w-48 bg-white rounded-lg shadow-xl z-10">
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">About Us</a>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Testimonials</a>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Hire from Us</a>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">FAQ</a>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Contact Us</a>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Logo on the left side */}
+        <div className={`flex items-center ${isMobile ? 'ml-2' : 'ml-4'} ${isMobile && showMenu ? 'ml-8' : ''}`}>
+          <a href="#">
+            <img src="/images/logo.png" alt="Logo" className="h-8" />
+          </a>
+        </div>
+
+        {/* Navigation items for larger screens */}
+        {!isMobile && (
+          <div className="hidden md:flex items-center space-x-6 ml-auto mr-6">
+            <a href="#" className="text-sm text-black hover:text-gray-300">About Us</a>
+            <a href="#" className="text-sm text-black hover:text-gray-300">Testimonials</a>
+            <a href="#" className="text-sm text-black hover:text-gray-300">Hire from Us</a>
+            <a href="#" className="text-sm text-black hover:text-gray-300">FAQ</a>
+            <a href="#" className="text-sm text-black hover:text-gray-300">Contact Us</a>
+          </div>
+        )}
+
+        {/* Login and Signup buttons */}
+        <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>
+        <img src="/images/profile.png" alt="profile" className="cursor-pointer w-10" />
+</div>
+      </div>
+    </nav>
   );
-}
-NavItem.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
-export default function App() {
-  return (
-    <div>
-      <Header />
-      {/* Rest of the app content */}
-    </div>
-  );
-}
+export default Navbar;

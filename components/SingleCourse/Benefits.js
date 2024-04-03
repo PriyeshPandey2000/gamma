@@ -4,7 +4,7 @@ function Benefit() {
   return (
     <div className="flex flex-col justify-start">
       <div className="w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0 justify-start ml-11 xs:ml-0">
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow p-8 border border-solid border-zinc-300 max-md:px-5 max-md:mt-5 max-md:max-w-full">
               <div className="text-2xl font-semibold leading-8 text-black max-md:max-w-full">
@@ -15,7 +15,7 @@ function Benefit() {
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/21b1c054ea925a529c8fe629951b44265f520cbe710fe11cd6d28db77d168c28?"
-                    className="shrink-0 self-start aspect-square w-[30px]"
+                    className="shrink-0 self-start aspect-square w-[30px] h-auto"
                   />
                   <div className="flex flex-col">
                     <div className="text-sm leading-5 text-zinc-700 text-opacity-60">
@@ -161,31 +161,31 @@ function Benefit() {
         <div className="self-start text-2xl font-semibold leading-8 text-black max-md:max-w-full">
           Top Recruiters of this Course
         </div>
-        <div className="flex gap-5 self-center mt-7 ml-0 text-lg text-zinc-700 text-opacity-60 max-md:flex-wrap">
+        <div className="flex gap-5 self-center mt-5 ml-0 text-lg text-zinc-700 text-opacity-60 max-md:flex-wrap">
           <img
             loading="lazy"
             src="/images/barcley 1.png"
-            className="shrink-0 aspect-[2.38] w-[66px]"
+            className="shrink-0 aspect-[2.38] w-[66px] h-[60px]"
           />
           <img
             loading="lazy"
             src="/images/barcley 3.png"
-            className="shrink-0 aspect-[3.45] w-[98px]"
+            className="shrink-0 aspect-[3.45] w-[98px] h-[60px]"
           />
           <img
             loading="lazy"
             src="/images/barcley 4.png"
-            className="shrink-0 aspect-[3.45] w-[98px]"
+            className="shrink-0 aspect-[3.45] w-[98px] h-[60px]"
           />
           <img
             loading="lazy"
             src="/images/barcley 5.png"
-            className="shrink-0 max-w-full aspect-[4.17] w-[119px]"
+            className="shrink-0 max-w-full aspect-[4.17] w-[119px] h-[60px]"
           />
           <img
             loading="lazy"
-            src="/images/barcley 1.png"
-            className="shrink-0 max-w-full aspect-[4.17] w-[119px]"
+            src="/images/barcley 6.png"
+            className="shrink-0 max-w-full aspect-[4.17] w-[119px] h-[50px]"
           />
           <div className="my-auto">and more...</div>
         </div>
