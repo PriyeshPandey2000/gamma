@@ -93,7 +93,7 @@ function Signup() {
                     <span className="text-sky-800">Cookies Policy</span>
                     <span className="text-sky-800">.</span>
                   </div>
-                  <div className="text-base flex justify-center items-center px-16 py-3 mt-5 font-medium text-white bg-blue-900 rounded-lg leading-[129%] max-md:px-5 max-md:max-w-full">
+                  <div className="text-base flex justify-center items-center px-16 py-2 mt-5 font-medium text-white bg-blue-900 rounded-lg leading-[129%] max-md:px-5 max-md:max-w-full">
                     Sign up
                   </div>
                 </div>
