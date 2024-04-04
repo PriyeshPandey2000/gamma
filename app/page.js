@@ -34,6 +34,8 @@ import AllCourses from '@/pages/AllCourses';
 import AssessmentOptions from '@/components/AssesmentOptions';
 import SingleCourse from '@/pages/SingleCourse';
 import SBanner from '@/components/SingleCourse/SBanner';
+import Signup from '@/components/Signup';
+import Login from '@/components/Login';
 
 
 
@@ -44,7 +46,10 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      {/* <SBanner/> */}
+      {/* <div className="container mx-auto max-w-[1080px] "> */}
+      {/* <Signup/>
+      <Login/> */}
+      {/* </div> */}
       
       
       <div className="container mx-auto max-w-[1300px] mb-10"> {/* Set specific width */}

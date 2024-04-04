@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Login from '@/pages/Login';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -65,8 +67,12 @@ const Navbar = () => {
 
         {/* Login and Signup buttons */}
         <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>
-  <button className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Login</button>
+        <Link href="/Login">
+            <button className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Login</button>
+          </Link>
+          <Link href="/Signup">
   <button className={`bg-custom-blue text-white px-4 py-1 rounded-full text-sm hover:bg-blue-800 ${isMobile ? 'w-18 ' : 'mr-4'}`}>Sign Up</button>
+  </Link>
 </div>
       </div>
     </nav>

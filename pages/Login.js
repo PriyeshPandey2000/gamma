@@ -1,4 +1,6 @@
 import * as React from "react";
+import "tailwindcss/tailwind.css";
+import '../styles/fonts.css';
 
 function Login() {
   return (
@@ -29,29 +31,29 @@ function Login() {
                     srcSet="/images/logo.png"
                     className="max-w-full aspect-[3.33] w-[140px]"
                   />
-                  <div className="mt-8 text-2xl font-semibold max-md:max-w-full">
+                  <div className="mt-8 text-xl font-semibold max-md:max-w-full font-hiragino-mincho-pro-center-left">
                     Sign in
                   </div>
-                  <div className="justify-center items-start px-6 py-2 mt-7 whitespace-nowrap rounded-xl border border-solid border-zinc-300 text-zinc-700 text-opacity-60 max-md:px-5 max-md:max-w-full">
+                  <div className="text-base justify-center items-start px-6 py-2 mt-7 whitespace-nowrap rounded-xl border border-solid border-zinc-300 text-zinc-700 text-opacity-60 max-md:px-5 max-md:max-w-full">
                   <input
                       type="email"
                       placeholder="Email"
                       className="w-full h-full px-3 py-0 outline-none rounded-xl border-none bg-transparent text-black"
                     />
                   </div>
-                  <div className="justify-center items-start px-6 py-2 mt-3 whitespace-nowrap rounded-xl border border-solid border-zinc-300 text-zinc-700 text-opacity-60 max-md:px-5 max-md:max-w-full">
+                  <div className="text-base justify-center items-start px-6 py-2 mt-3 whitespace-nowrap rounded-xl border border-solid border-zinc-300 text-zinc-700 text-opacity-60 max-md:px-5 max-md:max-w-full">
                   <input
                       type="email"
                       placeholder="Password"
                       className="w-full h-full px-3 py-0 outline-none rounded-xl border-none bg-transparent text-black"
                     />
                   </div>
-                  <div className="flex justify-center items-center px-16 py-4 mt-6 text-white bg-blue-900 rounded-lg max-md:px-5 max-md:max-w-full">
+                  <div className="flex justify-center text-base items-center px-16 py-2 mt-6 text-white bg-blue-900 rounded-lg max-md:px-5 max-md:max-w-full">
                     Sign in
                   </div>
-                  <div className="self-center mt-7">or</div>
+                  <div className="self-center mt-4">or</div>
                 </div>
-                <div className="flex justify-center text-base items-center px-16 py-3 mt-6 max-w-[360px] text-white bg-red-400 rounded-lg w-[438px] max-md:px-5">
+                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[355px] text-white bg-red-400 rounded-lg w-[438px] max-md:px-5">
                   <div className="flex gap-5">
                     <img
                       loading="lazy"
@@ -61,9 +63,9 @@ function Login() {
                     <div>Sign in with Google</div>
                   </div>
                 </div>
-                <div className="mt-7 text-blue-900">Forgot Password?</div>
+                <div className="mt-4 text-sm text-blue-900">Forgot Password?</div>
               </div>
-              <div className="flex justify-center items-center px-5 py-6 mt-3.5 rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:max-w-full">
+              <div className="flex justify-center items-center px-5 py-3 mt-3.5 rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:max-w-full">
                 <div className="flex gap-2 justify-center">
                   <div className="text-black">Don’t have an account?</div>
                   <div className="text-blue-900">Sign up</div>
@@ -73,7 +75,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <div className="flex gap-5 justify-between mt-32 text-lg text-black max-md:flex-wrap max-md:mt-10">
+      <div className="text-base flex gap-5 justify-between mt-32  text-black max-md:flex-wrap max-md:mt-10">
         <div>About Us</div>
         <div>Contact Us</div>
         <div>Testimonial</div>
