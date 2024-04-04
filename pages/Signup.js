@@ -8,7 +8,7 @@ function Signup() {
       <img
         loading="lazy"
         srcSet="/images/logo.png"
-        className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9 xs:mt-1"
+        className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9 "
       />
       <div className="container mx-auto max-w-[1080px] ">
       <div className="flex flex-col items-center px-11 pt-7 pb-20 bg-white max-md:px-5">
