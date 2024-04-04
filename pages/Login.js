@@ -11,9 +11,9 @@ function Login() {
     className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9"
   />
    <div className="container mx-auto max-w-[1080px] ">
-    <div className="flex flex-col items-center px-11 pt-7 pb-20 bg-white max-md:px-5">
+    <div className="flex flex-col items-center px-11 pt-7 xs:pt-2 pb-20 bg-white max-md:px-5">
      
-      <div className="mt-29 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
+      <div className="mt-29 xs:mt-1 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[58%] max-md:ml-0 max-md:w-full">
             <img
@@ -53,7 +53,7 @@ function Login() {
                   </div>
                   <div className="self-center mt-4">or</div>
                 </div>
-                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[345px] text-white bg-red-400 rounded-lg w-[448px] max-md:px-5 xs:px-3">
+                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 md:max-w-[350px]  xs:max-w-[310px] text-white bg-red-400 rounded-lg w-[448px] max-md:px-5">
                   <div className="flex gap-5">
                     <img
                       loading="lazy"

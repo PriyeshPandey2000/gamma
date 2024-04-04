@@ -8,11 +8,11 @@ function Signup() {
       <img
         loading="lazy"
         srcSet="/images/logo.png"
-        className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9"
+        className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9 xs:mt-1"
       />
       <div className="container mx-auto max-w-[1080px] ">
       <div className="flex flex-col items-center px-11 pt-7 pb-20 bg-white max-md:px-5">
-        <div className="mt-18 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
+        <div className="mt-18 xs:mt-1 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[58%] max-md:ml-0 max-md:w-full">
               <img
