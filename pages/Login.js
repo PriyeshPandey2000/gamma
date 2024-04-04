@@ -53,14 +53,14 @@ function Login() {
                   </div>
                   <div className="self-center mt-4">or</div>
                 </div>
-                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[345px] text-white bg-red-400 rounded-lg w-[438px] max-md:px-5">
+                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[345px] text-white bg-red-400 rounded-lg w-[448px] max-md:px-5 xs:px-3">
                   <div className="flex gap-5">
                     <img
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/749053aa83b596a7c71261e620ffdbfd8102a4d358aa2f2287be01fdc5d074de?"
                       className="shrink-0 w-5 aspect-square"
                     />
-                    <div>Sign in with Google</div>
+                    <div >Sign in with Google</div>
                   </div>
                 </div>
                 <div className="mt-4 text-sm text-blue-900">Forgot Password?</div>
