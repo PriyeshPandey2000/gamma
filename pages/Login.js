@@ -53,7 +53,7 @@ function Login() {
                   </div>
                   <div className="self-center mt-4">or</div>
                 </div>
-                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[355px] text-white bg-red-400 rounded-lg w-[438px] max-md:px-5">
+                <div className="flex justify-center text-base items-center px-16 py-2 mt-4 max-w-[345px] text-white bg-red-400 rounded-lg w-[438px] max-md:px-5">
                   <div className="flex gap-5">
                     <img
                       loading="lazy"
