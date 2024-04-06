@@ -16,6 +16,7 @@ export default function VerifyEmailPage() {
             console.log(error.response.data);
         }
     };
+    //csdvmkd
 
     useEffect(() => {
         const urlToken = window.location.search.split("=")[1];
