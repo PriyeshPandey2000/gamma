@@ -1,8 +1,48 @@
-import * as React from "react";
+'use client'
+import React, { useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import '../styles/fonts.css';
+import {useRouter} from "next/navigation";
+import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+
+
 
 function Login() {
+    const router = useRouter();
+    const [user, setUser] = React.useState({
+      email: "",
+      
+      password: "",
+      
+  })
+
+  const [buttonDisabled, setButtonDisabled] = React.useState(false);
+const [loading, setLoading] = React.useState(false);
+
+  const onLogin = async () => {
+    try {
+        setLoading(true);
+        const response = await axios.post("/api/users/login", user);
+        console.log("Login success", response.data);
+        router.push("/login");
+    } catch (error) {
+        console.log("Signup failed", error.message);
+        toast.error(error.message);
+    } finally {
+        setLoading(false);
+    }
+  };
+//   useEffect(() => {
+//     if (user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
+//         setButtonDisabled(false);
+//     } else {
+//         setButtonDisabled(true);
+//     }
+//   }, [user]);
+
+
   return (
     <>
     <img
@@ -38,17 +78,21 @@ function Login() {
                   <input
                       type="email"
                       placeholder="Email"
+                      value={user.email}
+                      onChange={(e)=>setUser({...user,email:e.target.value})}
                       className="w-full h-full px-3 py-0 outline-none rounded-xl border-none bg-transparent text-black"
                     />
                   </div>
                   <div className="text-base justify-center items-start px-6 py-2 mt-3 whitespace-nowrap rounded-xl border border-solid border-zinc-300 text-zinc-700 text-opacity-60 max-md:px-5 max-md:max-w-full">
                   <input
-                      type="email"
+                      type="password"
                       placeholder="Password"
+                      value={user.password}
+                      onChange={(e)=>setUser({...user,password:e.target.value})}
                       className="w-full h-full px-3 py-0 outline-none rounded-xl border-none bg-transparent text-black"
                     />
                   </div>
-                  <div className="flex justify-center text-base items-center px-16 py-2 mt-6 text-white bg-blue-900 rounded-lg max-md:px-5 max-md:max-w-full">
+                  <div className="flex justify-center text-base items-center px-16 py-2 mt-6 text-white bg-blue-900 rounded-lg max-md:px-5 max-md:max-w-full cursor-pointer " onClick={onLogin}>
                     Sign in
                   </div>
                   <div className="self-center mt-4">or</div>
