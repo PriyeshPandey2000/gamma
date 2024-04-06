@@ -26,7 +26,7 @@ const [loading, setLoading] = React.useState(false);
         setLoading(true);
         const response = await axios.post("/api/users/login", user);
         console.log("Login success", response.data);
-        router.push("/login");
+        router.push("/");
     } catch (error) {
         console.log("Signup failed", error.message);
         toast.error(error.message);

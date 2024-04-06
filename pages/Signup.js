@@ -20,7 +20,7 @@ const onSignup = async () => {
       setLoading(true);
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
-      router.push("/login");
+      router.push("/Login");
   } catch (error) {
       console.log("Signup failed", error.message);
       toast.error(error.message);
