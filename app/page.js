@@ -41,6 +41,7 @@ import Login from '@/components/Login';
 
 
 
+
 export default function Home() {
  
   return (
@@ -75,8 +76,9 @@ export default function Home() {
         
         {/* <Frame/> */}
         <div className="container mx-auto max-w-[1180px] ">
+          <CoursesOffered/>
         {/* <CoursesOffered/> */}
-        <Courses/>
+        {/* <Courses/> */}
         
         </div>
         {/* <ChartBar/> */}
@@ -85,7 +87,7 @@ export default function Home() {
           <Component/>
           
            </div> */}
-           <div className="mb-8 mt-5"> <Slider/></div>
+           {/* <div className="mb-8 mt-5"> <Slider/></div> */}
           
         
         <CourseDetails />
