@@ -1,11 +1,12 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
 import '../styles/fonts.css';
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useMediaQuery } from '@react-hook/media-query';
 
 
 
@@ -17,6 +18,29 @@ function Login() {
       password: "",
       
   })
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
 
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
 const [loading, setLoading] = React.useState(false);
@@ -45,16 +69,18 @@ const [loading, setLoading] = React.useState(false);
 
   return (
     <>
-    <img
+     {!isXsScreen && (<img
     loading="lazy"
     srcSet="/images/logo.png"
     className="self-start max-w-full aspect-[3.33] w-[140px] ml-11 mt-9"
-  />
+  />)}
+    
    <div className="container mx-auto max-w-[1080px] ">
     <div className="flex flex-col items-center px-11 pt-7 xs:pt-2 pb-20 bg-white max-md:px-5">
      
       <div className="mt-29 xs:mt-1 w-full max-w-[1285px] max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+        {!isXsScreen && ( // Render the image if not xs screen
           <div className="flex flex-col w-[58%] max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
@@ -62,6 +88,7 @@ const [loading, setLoading] = React.useState(false);
               className="w-full aspect-square max-md:mt-10 max-md:max-w-full"
             />
           </div>
+        )}
           <div className="flex flex-col ml-5 w-[42%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col justify-center self-stretch my-auto text-lg font-medium leading-5 max-md:mt-10 max-md:max-w-full">
               <div className="flex flex-col items-center py-6 rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:max-w-full">
