@@ -26,6 +26,10 @@ const CoursesOffered = () => {
     console.log("thank god");
     router.push('/AllCourses'); // Navigate to AllCourses page
   };
+  const handle = function() {
+    
+    router.push('/SingleCourse'); // Navigate to AllCourses page
+  };
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -116,7 +120,7 @@ const CoursesOffered = () => {
               </div>
             ))}
           <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2 "  style={{ width: 'auto' }}>Learn More</button>
+          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2 "  style={{ width: 'auto' }}  onClick={handle}>Learn More</button>
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>
@@ -139,7 +143,7 @@ const CoursesOffered = () => {
               </div>
             ))}
           <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
+          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2"  onClick={handle}>Learn More</button>
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>
@@ -162,7 +166,7 @@ const CoursesOffered = () => {
               </div>
             ))}
           <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
+          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2"  onClick={handle}>Learn More</button>
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>
