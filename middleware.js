@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
   const path = request.nextUrl.pathname;
 
-  const isPublicPath = path === '/login' || path === '/signup' || path === '/verify';
+  const isPublicPath = path === '/Login' || path === '/Signup' || path === '/verify';
 
   const token = request.cookies.get('token')?.value || '';
 
@@ -12,7 +12,7 @@ export function middleware(request) {
   }
 
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL('/login', request.nextUrl));
+    return NextResponse.redirect(new URL('/Login', request.nextUrl));
   }
 }
 
@@ -20,8 +20,8 @@ export const config = {
   matcher: [
     '/',
     '/profile',
-    '/login',
-    '/signup',
+    '/Login',
+    '/Signup',
     '/verifyemail'
   ]
 };
