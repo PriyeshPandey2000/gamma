@@ -22,6 +22,11 @@ const CoursesOffered = () => {
   const [growthIndex, setGrowthIndex] = useState(0);
   const [specializedIndex, setSpecializedIndex] = useState(0);
 
+  const handler = function() {
+    console.log("thank god");
+    router.push('/AllCourses'); // Navigate to AllCourses page
+  };
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {
@@ -64,10 +69,7 @@ const CoursesOffered = () => {
   const specializedCourses = courses.filter(course => course.category === 'Specialised Skills and Tools');
 
 
-  const handler = function() {
-    console.log("thank god");
-    router.push('/AllCourses'); // Navigate to AllCourses page
-  };
+  
   
   const [isXsScreen, setIsXsScreen] = useState(false);
 
