@@ -21,14 +21,16 @@ const CoursesOffered = () => {
   const [popularIndex, setPopularIndex] = useState(0);
   const [growthIndex, setGrowthIndex] = useState(0);
   const [specializedIndex, setSpecializedIndex] = useState(0);
+  const [currentPopularCourseId, setCurrentPopularCourseId] = useState(null);
+  const [currentGrowthCourseId, setCurrentGrowthCourseId] = useState(null);
+  const [currentSpecializedCourseId, setCurrentSpecializedCourseId] = useState(null);
 
   const handler = function() {
     console.log("thank god");
     router.push('/AllCourses'); // Navigate to AllCourses page
   };
-  const handle = function() {
-    
-    router.push('/SingleCourse'); // Navigate to AllCourses page
+  const handleLearnMore = (courseId) => {
+    router.push(`/courses/${courseId}`);
   };
 
   useEffect(() => {
@@ -117,10 +119,16 @@ const CoursesOffered = () => {
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
+                <Link href={`/courses/course${index + 1}`}>
+        <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
+      </Link>
               </div>
             ))}
-          <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2 "  style={{ width: 'auto' }}  onClick={handle}>Learn More</button>
+          {/* <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> Added text after the description */}
+          {/* <Link href={`/courses/course${index + 1}`}>
+        <a className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2" style={{ width: 'auto' }}>Learn More</a>
+      </Link> */}
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>
@@ -140,10 +148,14 @@ const CoursesOffered = () => {
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
+                <Link href={`/courses/course${index + 4}`}>
+        <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
+      </Link>
+                
               </div>
             ))}
-          <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2"  onClick={handle}>Learn More</button>
+         
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>
@@ -163,10 +175,13 @@ const CoursesOffered = () => {
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
+                <Link href={`/courses/course${index + 7}`}>
+        <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
+      </Link>
               </div>
             ))}
-          <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-          <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2"  onClick={handle}>Learn More</button>
+         
           <div className="flex justify-center items-center mt-2">
             <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
           </div>

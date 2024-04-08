@@ -15,8 +15,12 @@ function SingleCourse() {
         <App/>
       
         <SBanner
-  title="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects"
-  description="DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  title="Full Stack Development
+  "
+  description="Available in MERN/JAVA
+  Includes Live Development Projects
+  Includes deployment on AWS
+  "
   reviewRating="4.0"
   reviewCount={230}
   studentsPlaced={329}

@@ -175,7 +175,9 @@ const [loading, setLoading] = React.useState(false);
                     <div className="text-black">
                       Already have an account?
                     </div>
-                    <div className="text-blue-900">Sign in</div>
+                    <Link href="/Login">
+  <div className="text-blue-900 cursor-pointer" onClick={() => router.push("/Login")}>Sign in</div>
+</Link>
                   </div>
                 </div>
               </div>

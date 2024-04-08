@@ -139,7 +139,9 @@ const [loading, setLoading] = React.useState(false);
               <div className="flex justify-center items-center px-5 py-3 mt-3.5 rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:max-w-full">
                 <div className="flex gap-2 justify-center">
                   <div className="text-black">Don’t have an account?</div>
-                  <div className="text-blue-900">Sign up</div>
+                  <Link href="/Signup">
+  <div className="text-blue-900 cursor-pointer" onClick={() => router.push("/Signup")}>Sign up</div>
+</Link>
                 </div>
               </div>
             </div>

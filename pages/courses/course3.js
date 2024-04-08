@@ -15,8 +15,14 @@ function SingleCourse() {
         <App/>
       
         <SBanner
-  title="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects"
-  description="DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  title="Complete App Development
+  "
+  description="You will learn cross-platform development
+  Includes Flutter with MERN/Java
+  With deployment on the play store
+  Includes Live Projects
+  
+  "
   reviewRating="4.0"
   reviewCount={230}
   studentsPlaced={329}

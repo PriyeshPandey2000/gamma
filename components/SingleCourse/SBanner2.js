@@ -4,7 +4,7 @@ import React from 'react';
 import Card from './Card'; // Import the Card component
 import '../../styles/fonts.css';
 
-function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced }) {
+function SBanner2({ title, description, reviewRating, reviewCount, studentsPlaced }) {
   const [isXsScreen, setIsXsScreen] = React.useState(false);
 
   React.useEffect(() => {
@@ -32,10 +32,10 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
           <div className="flex gap-2 text-lg font-bold text-red-500">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e694ddca739fb2a9eec50637be1b5d44dcea2024158c9cd241a4dc1b7029a393?"
+              src="/images/Graph.png"
               className="shrink-0 w-6 aspect-square"
             />
-            <div className="my-auto">Most Popular Course</div>
+            <div className="my-auto text-custom-green">For Career Growth</div>
           </div>
           <div className={`self-stretch mt-5 text-4xl font-medium text-sky-800 max-md:max-w-full  ${isXsScreen ? 'font-gotham-book-xs' : 'font-gotham-book'}  `}>
             {title}
@@ -82,4 +82,4 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
   );
 }
 
-export default SBanner;
+export default SBanner2;

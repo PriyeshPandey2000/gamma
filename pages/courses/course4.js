@@ -7,14 +7,15 @@ import Require from '@/components/SingleCourse/Requirements'
 import SBanner from '@/components/SingleCourse/SBanner'
 import StudentsPlaced from '@/components/StudentsPlaced'
 import React from 'react'
-import "tailwindcss/tailwind.css"
+import "tailwindcss/tailwind.css";
+import SBanner2 from '@/components/SingleCourse/SBanner2'
 
 function SingleCourse() {
   return (
     <div>
         <App/>
       
-        <SBanner
+        <SBanner2
   title="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects"
   description="DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   reviewRating="4.0"
