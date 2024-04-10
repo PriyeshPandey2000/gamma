@@ -4,7 +4,7 @@ import React from 'react';
 import Card from './Card'; // Import the Card component
 import '../../styles/fonts.css';
 
-function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced }) {
+function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced ,courseId}) {
   const [isXsScreen, setIsXsScreen] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,7 +22,7 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
       {/* Card component */}
       {!isXsScreen && (
         <div className="absolute top-14 right-24 z-10">
-          <Card />
+          <Card courseId={courseId} />
         </div>
       )}
 

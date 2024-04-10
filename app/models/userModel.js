@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    purchasedCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,

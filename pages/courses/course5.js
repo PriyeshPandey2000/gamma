@@ -11,6 +11,7 @@ import React from 'react'
 import "tailwindcss/tailwind.css"
 
 function SingleCourse() {
+    const courseId = "6611bfd5467c3ba9ab01695b";
   return (
     <div>
         <App/>
@@ -26,6 +27,7 @@ function SingleCourse() {
   reviewRating="4.0"
   reviewCount={230}
   studentsPlaced={329}
+  courseId={courseId}
 />
         <div className="justify-start">
         <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">

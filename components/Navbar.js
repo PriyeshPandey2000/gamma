@@ -7,12 +7,15 @@ import dynamic from "next/dynamic";
 import axios from 'axios';
 // import { isLoggedIn } from '@/app/helpers/auth';
 import { isLoggedIn } from '@/app/helpers/auth';
+import { useAuth } from '@/contexts/AuthContext';
 
 
-const Navbar = ( { authenticated, onLogout }) => {
+const Navbar = ( ) => {
  
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { isLoggedIn, logout } = useAuth();
+  console.log('isLoggedIn:', isLoggedIn);
   const router = useRouter(); 
   
 
@@ -33,23 +36,13 @@ const Navbar = ( { authenticated, onLogout }) => {
 
   const handleLogout = async () => {
     console.log('Logging out...');
-    
+
     try {
-      const response = await axios.get('/api/users/logout');
-  
-      if (response.status === 200) {
-        // Clear authentication token or session
-        // Redirect to login page
-        isLoggedIn(false);
-        router.push('/');
-      } else {
-        // Handle error response
-        console.error('Logout failed:', response.statusText);
-        // You can optionally show a message to the user that logout failed
-      }
+      await logout(); // Call the logout function from useAuth hook
+      router.push('/'); // Redirect to home page after logout
     } catch (error) {
       console.error('Logout error:', error.message);
-      // You can optionally show a message to the user that logout failed
+      // Handle logout error and provide feedback to the user
     }
   };
 
@@ -100,7 +93,7 @@ const Navbar = ( { authenticated, onLogout }) => {
         )}
 
         {/* Login and Signup buttons */}
-        {authenticated ? (
+        {isLoggedIn ? (
           <button onClick={handleLogout} className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Logout</button>
         ) : (
           <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import './globals.css';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const RootLayout = ({ children }) => {
   useEffect(() => {
@@ -61,9 +62,11 @@ const RootLayout = ({ children }) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <AuthProvider>
       <html lang="en">
         <body>{children}</body>
       </html>
+      </AuthProvider>
     </>
   );
 };

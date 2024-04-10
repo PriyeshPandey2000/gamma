@@ -11,6 +11,7 @@ import "tailwindcss/tailwind.css";
 import SBanner2 from '@/components/SingleCourse/SBanner2'
 
 function SingleCourse() {
+    const courseId = "6611bfc7467c3ba9ab016959";
   return (
     <div>
         <App/>
@@ -21,6 +22,7 @@ function SingleCourse() {
   reviewRating="4.0"
   reviewCount={230}
   studentsPlaced={329}
+  courseId={courseId}
 />
         <div className="justify-start">
         <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">

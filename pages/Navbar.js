@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Login from '@/pages/Login';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/router';
 import dynamic from "next/dynamic";
 import axios from 'axios';
 // import { isLoggedIn } from '@/app/helpers/auth';
-import { isLoggedIn } from '@/app/helpers/auth';
+// import { isLoggedIn } from '@/app/helpers/auth';
 import { useAuth } from '@/contexts/AuthContext';
 
 const Navbar = ( ) => {
@@ -14,7 +14,9 @@ const Navbar = ( ) => {
  
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
   const router = useRouter(); 
+
   
 
   

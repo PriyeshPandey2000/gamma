@@ -1,13 +1,19 @@
 // contexts/AuthContext.js
 import React, { createContext, useContext, useState } from 'react';
 import axios from 'axios'; 
+import { useRouter } from 'next/router';
 
-const AuthContext = createContext("");
+const AuthContext = createContext({
+    isLoggedIn: false,
+    login: () => {},
+    logout: () => {}
+  });
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+//   const router = useRouter();
 
   const login = async (email, password) => {
     try {

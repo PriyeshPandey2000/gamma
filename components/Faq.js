@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
+import '../styles/fonts.css'
 
 export const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -70,7 +71,7 @@ export const Faq = () => {
             {questions.slice(0, 4).map((item, index) => (
               <div key={index} className="mb-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleDropdown(index)}>
-                  <div className={`text-lg ${isXsScreen ? 'font-hiragino-mincho-pro-center-left' : 'font-hiragino-mincho-pro-center-left-heading'}`}>{item.question}</div>
+                  <div className={`text-lg ${isXsScreen ? 'font-gotham-book-sm' : 'font-gotham-book-ok'}`}>{item.question}</div>
                   <div style={{ fontSize: '1.5em', marginTop: '-4px' }}>{openIndex === index ? "-" : "+"}</div>
                 </div>
                 {openIndex === index && (
@@ -83,7 +84,7 @@ export const Faq = () => {
             {questions.slice(4, 8).map((item, index) => (
               <div key={index} className="mb-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleDropdown(index + 4)}>
-                  <div className={`text-lg ${isXsScreen ? 'font-hiragino-mincho-pro-center-left' : 'font-hiragino-mincho-pro-center-left-heading'}`}>{item.question}</div>
+                  <div className={`text-lg ${isXsScreen ? 'font-gotham-book-sm' : 'font-gotham-book-ok'}`}>{item.question}</div>
                   <div style={{ fontSize: '1.5em', marginTop: '-4px' }}>{openIndex === index + 4 ? "-" : "+"}</div>
                 </div>
                 {openIndex === index + 4 && (

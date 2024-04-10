@@ -7,11 +7,12 @@ import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useMediaQuery } from '@react-hook/media-query';
-
+import { useAuth } from '@/contexts/AuthContext';
 
 
 function Login() {
     const router = useRouter();
+    const { login } = useAuth();
     const [user, setUser] = React.useState({
       email: "",
       
@@ -50,6 +51,7 @@ const [loading, setLoading] = React.useState(false);
         setLoading(true);
         const response = await axios.post("/api/users/login", user);
         console.log("Login success", response.data);
+        
         router.push("/");
     } catch (error) {
         console.log("Signup failed", error.message);

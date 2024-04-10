@@ -4,6 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+import mongoose from "mongoose";
+
+
 connect();
 
 export async function POST(request) {
@@ -44,6 +47,22 @@ export async function POST(request) {
         response.cookies.set("token", token, {
             httpOnly: true
         });
+//         User.find()
+//    .then((allUsers) => {
+//     allUsers.forEach((userSchema) => {
+//            //create two new fields in each schema
+//            userSchema.purchasedCourses= [];
+           
+//            //save the schema we updated
+//            userSchema.save();
+//            return response;
+//        })
+//    })
+//    .catch((errors) => {
+//     console.error('Error updating schemas:', errors);
+       
+//        return NextResponse.json({ nomoviesfound: "Could not update schemas" }, { status: 400 });
+//    })
         
         return response;
     } catch (error) {

@@ -1,6 +1,12 @@
 import * as React from "react";
+import { useRouter } from 'next/router';
 
-function Card() {
+
+function Card({ courseId }) {
+  const router = useRouter();
+  const checkout = (courseId) => {
+   router.push(`/Checkout?courseId=${courseId}`); 
+  };
   return (
     <div className="flex flex-col p-3 mx-auto rounded-lg border border-solid shadow-sm border-gray-300 max-w-[350px] " style={{ background: 'linear-gradient(99.28deg, #FFFFFF 2.04%, #F2F4FB 149.73%)' }}>
       <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[200px]">
@@ -38,7 +44,7 @@ function Card() {
       <div className="mt-2 text-base font-medium text-red-600 text-opacity-60">
         Limited Period offer
       </div>
-      <div className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px]" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
+      <div onClick={() => checkout(courseId)} className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px] cursor-pointer" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
         Enroll for this Course
       </div>
       <div className="flex gap-2 self-center mt-4 text-base font-medium leading-6 text-blue-800">

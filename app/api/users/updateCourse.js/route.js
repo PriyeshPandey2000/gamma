@@ -1,5 +1,3 @@
-// 
-
 // import jwt from "jsonwebtoken";
 // import User from "@/app/models/userModel";
 // import Course from "@/app/models/courseModel";

@@ -90,3 +90,26 @@
   line-height: 25px;
   
 }
+.font-gotham-book-ok {
+  font-family: 'Gotham-Bold', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  
+}
+.font-gotham-book-sm {
+  font-family: 'Gotham-Bold', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 36px;
+  
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('/fonts/Gotham-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('/fonts/Gotham-Bold.woff') format('woff');
+}
