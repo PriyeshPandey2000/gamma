@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Cookies from 'js-cookie';
 import PayText from '../PayText';
 
-function CheckoutBanner({courseId}) {
+function CheckoutBannerOffline({courseId}) {
     const [courses, setCourses] = useState([]);
     const router=useRouter();
     // const courseId="6611bfe0467c3ba9ab01695d";
@@ -133,7 +133,7 @@ function CheckoutBanner({courseId}) {
                       <div className="flex flex-row justify-between w-full">
                       <div className="mt-3 max-md:max-w-full">Online</div>
                       <div className="my-auto text-2xl font-medium leading-8 text-black  mr-0">
-              ₹{course.price}
+              ₹{course.offlinePrice}
               </div>
 
                       </div>
@@ -156,7 +156,7 @@ function CheckoutBanner({courseId}) {
                                 <div className="flex flex-col md:w-[45vw] xs:[90vw]">
     <div className="flex gap-5 justify-between text-base leading-8 text-black whitespace-nowrap ">
       <div className="flex-grow md:ml-0 xs:ml-4">Subtotal</div>
-      <div className="font-medium md:ml-auto xs:mr-4"> ₹{course.price}</div>
+      <div className="font-medium md:ml-auto xs:mr-4"> ₹{course.offlinePrice}</div>
     </div>
     {/* <div className="flex gap-5 justify-between text-base leading-8 text-black whitespace-nowrap max-w-[810px] max-md:flex-wrap">
       <div className="max-md:max-w-full">Tax</div>
@@ -164,7 +164,7 @@ function CheckoutBanner({courseId}) {
     </div> */}
     <div className="flex gap-9 justify-between text-2xl font-bold leading-8 text-black whitespace-nowrap max-w-[227px] ml-auto xs:mr-4">
       <div>Total</div>
-      <div  className="ml-8">₹{course.price}</div>
+      <div  className="ml-8">₹{course.offlinePrice}</div>
     </div>
     <div className="flex flex-col py-5 text-base max-w-[834px] text-zinc-700 text-opacity-60">
       {/* <div className="w-full max-md:max-w-full">Have a Coupon code?</div> */}
@@ -221,4 +221,4 @@ function CheckoutBanner({courseId}) {
   );
 }
 
-export default CheckoutBanner;
+export default CheckoutBannerOffline;

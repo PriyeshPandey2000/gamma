@@ -26,11 +26,11 @@ const CoursesOffered = () => {
   const [currentSpecializedCourseId, setCurrentSpecializedCourseId] = useState(null);
 
   const handler = function() {
-    console.log("thank god");
+    
     router.push('/AllCourses'); // Navigate to AllCourses page
   };
   const handleLearnMore = (courseId) => {
-    router.push(`/courses/${courseId}`);
+    router.push(`/courses/online/${courseId}`);
   };
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const CoursesOffered = () => {
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-                <Link href={`/courses/course${index + 1}`}>
+                <Link href={`/courses/online/course${index + 1}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
       </Link>
               </div>
@@ -149,7 +149,7 @@ const CoursesOffered = () => {
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-                <Link href={`/courses/course${index + 4}`}>
+                <Link href={`/courses/online/course${index + 4}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
       </Link>
                 
@@ -176,7 +176,7 @@ const CoursesOffered = () => {
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
-                <Link href={`/courses/course${index + 7}`}>
+                <Link href={`/courses/online/course${index + 7}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
       </Link>
               </div>

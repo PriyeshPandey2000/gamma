@@ -1,13 +1,20 @@
-import { NextResponse } from "next/server";
+
+import { NextRequest, NextResponse } from 'next/server';
 import sha256 from "crypto-js/sha256";
 import axios from "axios";
 
+
 export async function POST(req, res) {
+  
+  
   const data = await req.formData();
   console.log(data);
   const status = data.get("code");
   const merchantId = data.get("merchantId");
   const transactionId = data.get("transactionId");
+  
+
+  
 
   const st =
     `/pg/v1/status/${merchantId}/${transactionId}` +
@@ -38,18 +45,32 @@ export async function POST(req, res) {
 
 
   if (response.data.code == "PAYMENT_SUCCESS"){
-    // const addCourseResponse = await axios.post('/api/users/addcourse', {
-    //   userId: 'userId', // Replace 'userId' with the actual userId
-    //   courseId: 'courseId', // Replace 'courseId' with the actual courseId
-    //   paymentStatus: 'PAYMENT_SUCCESS'
-    // });
-    // console.log(addCourseResponse.data);
-  
-  return NextResponse.redirect("http://localhost:3000/success/Success",{
-    status: 301,
-  });
+    
+    
+    
+    try {
+  //     const { courseId } = req.params;
+  // console.log("yo");
+  // console.log(courseId);
+  //     const backendResponse = await axios.post('http://localhost:3000/api/users/addcourse', {
+  //       userId: '6613deef44519fae0b46e6d8',
+  //       courseId: courseId,
+  //       paymentStatus:'PAYMENT_SUCCESS'
+  //     });
+
+  //     console.log("Backend response:", backendResponse.data);
+
+      return NextResponse.redirect("https://gamma-indol.vercel.app/success/Success", {
+        status: 301,
+      });
+    } catch (error) {
+      console.error("Error making POST request to backend:", error);
+      return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+        status: 301,
+      });
+    }
 }
-else return NextResponse.redirect("http://localhost:3000/failure/Failure",{
+else return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure",{
   // a 301 status is required to redirect from a POST to a GET route
   status: 301,
 });

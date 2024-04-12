@@ -36,6 +36,7 @@ export async function POST(request) {
             email: user.email
         };
        
+       
         // Create token
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, { expiresIn: "1d" });
        
@@ -43,10 +44,15 @@ export async function POST(request) {
         const response = NextResponse.json({
             message: "Login successful",
             success: true,
+            userId: user._id
         });
+        response.cookies.set("userId", user._id);
+       
         response.cookies.set("token", token, {
             httpOnly: true
         });
+        
+        
 //         User.find()
 //    .then((allUsers) => {
 //     allUsers.forEach((userSchema) => {

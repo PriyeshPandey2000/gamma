@@ -3,8 +3,9 @@
 import React from 'react';
 import Card from './Card'; // Import the Card component
 import '../../styles/fonts.css';
+import CardOnline from './CardOnline';
 
-function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced ,courseId}) {
+function SBanner3Online({ title, description, reviewRating, reviewCount, studentsPlaced,courseId }) {
   const [isXsScreen, setIsXsScreen] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,7 +23,7 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
       {/* Card component */}
       {!isXsScreen && (
         <div className="absolute top-14 right-24 z-10">
-          <Card courseId={courseId} />
+          <CardOnline courseId={courseId}/>
         </div>
       )}
 
@@ -32,10 +33,10 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
           <div className="flex gap-2 text-lg font-bold text-red-500">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e694ddca739fb2a9eec50637be1b5d44dcea2024158c9cd241a4dc1b7029a393?"
+              src="/images/Tools.png"
               className="shrink-0 w-6 aspect-square"
             />
-            <div className="my-auto">Most Popular Course</div>
+            <div className="my-auto text-custom-blue">Specialized Skills and Tools</div>
           </div>
           <div className={`self-stretch mt-5 text-4xl font-medium text-sky-800 max-md:max-w-full  ${isXsScreen ? 'font-gotham-book-xs' : 'font-gotham-book'}  `}>
             {title}
@@ -75,11 +76,11 @@ function SBanner({ title, description, reviewRating, reviewCount, studentsPlaced
       </div>
       {isXsScreen && (
         <div className="w-full  top-14 right-24 z-10" >
-          <Card courseId={courseId}/>
+          <CardOnline courseId={courseId}/>
         </div>
       )}
     </div>
   );
 }
 
-export default SBanner;
+export default SBanner3Online;

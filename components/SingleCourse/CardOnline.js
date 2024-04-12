@@ -2,21 +2,21 @@ import * as React from "react";
 import { useRouter } from 'next/router';
 
 
-function Card({ courseId }) {
+function CardOnline({ courseId }) {
   const router = useRouter();
   const courseRoutes = {
-    '6611bed1467c3ba9ab016953': '/courses/online/course1',
-    '6611bf63467c3ba9ab016955': '/courses/online/course2',
-    '6611bf77467c3ba9ab016957': '/courses/online/course3',
-    '6611bfc7467c3ba9ab016959': '/courses/online/course4',
-    '6611bfd5467c3ba9ab01695b': '/courses/online/course5',
-    '6611bfe0467c3ba9ab01695d': '/courses/online/course6',
-    '6611c020467c3ba9ab01695f': '/courses/online/course7',
-    '6611c028467c3ba9ab016961': '/courses/online/course8',
-    '6611c032467c3ba9ab016963': '/courses/online/course9',
+    '6611bed1467c3ba9ab016953': '/courses/offline/course1',
+    '6611bf63467c3ba9ab016955': '/courses/offline/course2',
+    '6611bf77467c3ba9ab016957': '/courses/offline/course3',
+    '6611bfc7467c3ba9ab016959': '/courses/offline/course4',
+    '6611bfd5467c3ba9ab01695b': '/courses/offline/course5',
+    '6611bfe0467c3ba9ab01695d': '/courses/offline/course6',
+    '6611c020467c3ba9ab01695f': '/courses/offline/course7',
+    '6611c028467c3ba9ab016961': '/courses/offline/course8',
+    '6611c032467c3ba9ab016963': '/courses/offline/course9',
     // Add more courseId and corresponding routes here
   };
-  const onlineclick = () => {
+  const offlineclick = () => {
     // Get the route corresponding to the courseId
     const route = courseRoutes[courseId];
     if (route) {
@@ -26,7 +26,7 @@ function Card({ courseId }) {
     }
 };
   const checkout = (courseId) => {
-   router.push(`/CheckoutOffline?courseId=${courseId}`); 
+   router.push(`/Checkout?courseId=${courseId}`); 
   };
   return (
     <div className="flex flex-col p-3 mx-auto rounded-lg border border-solid shadow-sm border-gray-300 max-w-[350px] " style={{ background: 'linear-gradient(99.28deg, #FFFFFF 2.04%, #F2F4FB 149.73%)' }}>
@@ -48,10 +48,10 @@ function Card({ courseId }) {
         </div>
       </div>
       <div className="flex gap-px mt-3 text-base">
-        <div onClick={onlineclick} className="justify-center px-6 py-3 text-black cursor-pointer">
+        <div className="justify-center px-6 py-3  font-medium border-b-2 text-blue-800 border-blue-800 border-solid cursor-pointer">
           Online Classes
         </div>
-        <div className="justify-center px-6 py-3 font-medium text-blue-800 border-b-2 border-blue-800 border-solid cursor-pointer">
+        <div onClick={offlineclick} className="justify-center px-6 py-3 text-black  cursor-pointer">
           Offline Classes
         </div>
       </div>
@@ -76,7 +76,7 @@ function Card({ courseId }) {
         />
         <div>Share this course</div>
       </div>
-      <div className="mt-6 text-base leading-6 text-center text-black">
+      {/* <div className="mt-6 text-base leading-6 text-center text-black">
         Available in 3 Locations
       </div>
       <div className="flex gap-3 justify-center px-6 mt-3 text-base leading-6 text-blue-800 whitespace-nowrap">
@@ -104,7 +104,7 @@ function Card({ courseId }) {
           />
           <div>Mumbai</div>
         </div>
-      </div>
+      </div> */}
       <div className="mt-6 text-base leading-6 text-center text-black">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -125,4 +125,4 @@ function Card({ courseId }) {
   );
 }
 
-export default Card;
+export default CardOnline;

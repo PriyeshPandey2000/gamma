@@ -8,8 +8,9 @@ connect();
 
 export async function POST(request) {
     try {
+        
         const reqBody = await request.json();
-        const { userId, courseId, paymentStatus } = reqBody;
+        const { userId, courseId,paymentStatus } = reqBody;
         if (paymentStatus !== "PAYMENT_SUCCESS") {
             return NextResponse.json({ error: "Payment failed" }, { status: 400 });
         }

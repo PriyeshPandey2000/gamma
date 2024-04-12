@@ -75,7 +75,7 @@ function SBanner2({ title, description, reviewRating, reviewCount, studentsPlace
       </div>
       {isXsScreen && (
         <div className="w-full  top-14 right-24 z-10" >
-          <Card />
+          <Card courseId={courseId}/>
         </div>
       )}
     </div>
