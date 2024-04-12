@@ -39,16 +39,43 @@ export async function POST(req, res) {
     },
   };
 
+  try {
+    const response = await axios.request(options);
+    console.log("Payment status:", response.data.code);
+
+    if (response.data.code === "PAYMENT_SUCCESS") {
+      // Handle payment success
+      // For example, update the database or log the payment success
+      // Then redirect to the success page
+      return NextResponse.redirect("https://gamma-indol.vercel.app/success/Success", {
+        status: 301,
+      });
+    } else {
+      // Handle payment failure
+      // For example, log the payment failure or show an error message
+      // Then redirect to the failure page
+      return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+        status: 301,
+      });
+    }
+  } catch (error) {
+    console.error("Error checking payment status:", error);
+    // If there's an error, redirect to the failure page
+    return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+      status: 301,
+    });
+  }
+}
   // CHECK PAYMENT STATUS
-  const response = await axios.request(options);
-  console.log("r===", response.data.code);
+  // const response = await axios.request(options);
+  // console.log("r===", response.data.code);
 
 
-  if (response.data.code == "PAYMENT_SUCCESS"){
+  // if (response.data.code == "PAYMENT_SUCCESS"){
     
     
     
-    try {
+  //   try {
   //     const { courseId } = req.params;
   // console.log("yo");
   // console.log(courseId);
@@ -60,20 +87,19 @@ export async function POST(req, res) {
 
   //     console.log("Backend response:", backendResponse.data);
 
-      return NextResponse.redirect("https://gamma-indol.vercel.app/success/Success", {
-        status: 301,
-      });
-    } catch (error) {
-      console.error("Error making POST request to backend:", error);
-      return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
-        status: 301,
-      });
-    }
-}
-else return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure",{
-  // a 301 status is required to redirect from a POST to a GET route
-  status: 301,
-});
+//       return NextResponse.redirect("https://gamma-indol.vercel.app/success/Success", {
+//         status: 301,
+//       });
+//     } catch (error) {
+//       console.error("Error making POST request to backend:", error);
+//       return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+//         status: 301,
+//       });
+//     }
+// }
+// else return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure",{
+//   // a 301 status is required to redirect from a POST to a GET route
+//   status: 301,
+// });
 
 
-}
