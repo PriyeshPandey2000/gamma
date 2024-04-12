@@ -40,6 +40,7 @@ export async function POST(req, res) {
   };
 
   
+  try {
     const response = await axios.request(options);
     console.log("Payment status:", response.data.code);
 
@@ -58,6 +59,13 @@ export async function POST(req, res) {
         status: 301,
       });
     }
+  } catch (error) {
+    console.error("Error checking payment status:", error);
+    // If there's an error, redirect to the failure page
+    return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+      status: 301,
+    });
+  }
   }
   //  catch (error) {
   //   console.error("Error checking payment status:", error);
