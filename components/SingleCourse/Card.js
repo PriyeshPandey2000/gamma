@@ -2,7 +2,7 @@ import * as React from "react";
 import { useRouter } from 'next/router';
 
 
-function Card({ courseId }) {
+function Card({ courseId ,canEnroll,course}) {
   const router = useRouter();
   const courseRoutes = {
     '6611bed1467c3ba9ab016953': '/courses/online/course1',
@@ -56,7 +56,7 @@ function Card({ courseId }) {
         </div>
       </div>
       <div className="flex gap-3 mt-4">
-        <div className="text-xl font-medium text-black">₹500</div>
+        <div className="text-xl font-medium text-black">₹{course.offlinePrice}</div>
         <div className="flex gap-2 my-auto">
           <div className="text-base text-gray-700">₹2000</div>
           <div className="my-auto text-sm text-red-600">50% off</div>
@@ -65,9 +65,19 @@ function Card({ courseId }) {
       <div className="mt-2 text-base font-medium text-red-600 text-opacity-60">
         Limited Period offer
       </div>
-      <div onClick={() => checkout(courseId)} className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px] cursor-pointer" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
-        Enroll for this Course
-      </div>
+      <div>
+      {/* Card content */}
+      {canEnroll ? (
+        <div onClick={() => checkout(courseId)} className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px] cursor-pointer" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
+          Enroll for this Course
+        </div>
+      ) : (
+        // <div className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px]" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
+        //   Already Enrolled
+        // </div>
+        <p className="text-lg ml-7 text-blue-800 ">You are already enrolled ...</p>
+      )}
+    </div>
       <div className="flex gap-2 self-center mt-4 text-base font-medium leading-6 text-blue-800">
         <img
           loading="lazy"
@@ -106,10 +116,7 @@ function Card({ courseId }) {
         </div>
       </div>
       <div className="mt-6 text-base leading-6 text-center text-black">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+       {course.longDescription}
       </div>
       <div className="flex flex-col justify-center self-center px-3 py-2 mt-4 max-w-full text-sm font-medium text-green-500 border-2 border-green-500 border-solid rounded-[30px] w-[200px]">
         <div className="flex gap-1 justify-center">

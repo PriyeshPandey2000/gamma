@@ -6,25 +6,70 @@ import Other from '@/components/SingleCourse/OtherCourse'
 import Require from '@/components/SingleCourse/Requirements'
 import SBanner from '@/components/SingleCourse/SBanner'
 import StudentsPlaced from '@/components/StudentsPlaced'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
 import SBanner2 from '@/components/SingleCourse/SBanner2'
 import SBanner2Online from '@/components/SingleCourse/SBanner2Online'
 
 function SingleCourse() {
     const courseId = "6611bfc7467c3ba9ab016959";
+    const [course, setCourse] = useState(null);
+    const router = useRouter();
+    const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const handleDashboardClick = () => {
+        router.push('/courses/offline/course1');
+      };
+       useEffect(() => {
+    async function fetchCourse() {
+      try {
+        const allCoursesResponse = await fetch('/api/users/courses');
+        if (!allCoursesResponse.ok) {
+            throw new Error('Failed to fetch courses');
+          }
+          const allCoursesData = await allCoursesResponse.json();
+          const allCourses = allCoursesData.data;
+          const specificCourse = allCourses.find(course => course._id === courseId);
+          if (!specificCourse) {
+            throw new Error('Course not found');
+          }
+      
+          setCourse(specificCourse);
+        const userResponse = await fetch('/api/users/me');
+                if (!userResponse.ok) {
+                    throw new Error('Failed to fetch user data');
+                }
+                const userData = await userResponse.json();
+                console.log('User data:', userData);
+                setUser(userData.data);
+      } catch (error) {
+        console.error('Error fetching course:', error);
+      }finally {
+        setIsLoading(false);
+    }
+    }
+
+    if (courseId) {
+      fetchCourse();
+    }
+  }, [courseId]);
+  const canEnroll = !isLoading && (!user || !user.purchasedCourses || !user.purchasedCourses.includes(courseId));
   return (
     <div>
         <App/>
       
-        <SBanner2Online
-  title="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects"
-  description="DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  reviewRating="4.0"
-  reviewCount={230}
+        {course &&  (<SBanner2Online
+  title={course.title}
+  description={course.longDescription}
+  reviewRating={course.rating.$numberDecimal.toString()}
+  reviewCount={course.totalReviews}
   studentsPlaced={329}
   courseId={courseId}
+  canEnroll={canEnroll}
+  course={course}
 />
+ )}
         <div className="justify-start">
         <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">
         <Benefit />

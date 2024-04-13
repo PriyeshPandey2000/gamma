@@ -55,14 +55,14 @@ export async function POST(req, res) {
       // Handle payment failure
       // For example, log the payment failure or show an error message
       // Then redirect to the failure page
-      return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+      return NextResponse.redirect("https://gamma-indol.vercel.app/Checkout", {
         status: 301,
       });
     }
   } catch (error) {
     console.error("Error checking payment status:", error);
     // If there's an error, redirect to the failure page
-    return NextResponse.redirect("https://gamma-indol.vercel.app/failure/Failure", {
+    return NextResponse.redirect("https://gamma-indol.vercel.app/Checkout", {
       status: 301,
     });
   }

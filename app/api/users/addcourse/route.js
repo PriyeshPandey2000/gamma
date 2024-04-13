@@ -26,6 +26,11 @@ export async function POST(request) {
         if (!course) {
             return NextResponse.json({ error: "Course not found" }, { status: 404 });
         }
+        const isCourseAlreadyPurchased = user.purchasedCourses.some(purchasedCourse => purchasedCourse.equals(course._id));
+        if (isCourseAlreadyPurchased) {
+            return NextResponse.json({ message: "Course already purchased by user" });
+        }
+
 
         user.purchasedCourses.push(course);
         await user.save();

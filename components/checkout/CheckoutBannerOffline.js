@@ -131,7 +131,7 @@ function CheckoutBannerOffline({courseId}) {
                         {course.title}
                       </div>
                       <div className="flex flex-row justify-between w-full">
-                      <div className="mt-3 max-md:max-w-full">Online</div>
+                      <div className="mt-3 max-md:max-w-full">Offline</div>
                       <div className="my-auto text-2xl font-medium leading-8 text-black  mr-0">
               ₹{course.offlinePrice}
               </div>

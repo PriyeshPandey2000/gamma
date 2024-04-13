@@ -5,7 +5,7 @@ import Card from './Card'; // Import the Card component
 import '../../styles/fonts.css';
 import CardOnline from './CardOnline';
 
-function SBannerOnline1({ title, description, reviewRating, reviewCount, studentsPlaced ,courseId}) {
+function SBannerOnline1({ title, description, reviewRating, reviewCount, studentsPlaced ,courseId,canEnroll,course}) {
   const [isXsScreen, setIsXsScreen] = React.useState(false);
 
   React.useEffect(() => {
@@ -23,7 +23,7 @@ function SBannerOnline1({ title, description, reviewRating, reviewCount, student
       {/* Card component */}
       {!isXsScreen && (
         <div className="absolute top-14 right-24 z-10">
-          <CardOnline courseId={courseId} />
+          <CardOnline courseId={courseId} canEnroll={canEnroll} course={course}/>
         </div>
       )}
 
@@ -76,7 +76,7 @@ function SBannerOnline1({ title, description, reviewRating, reviewCount, student
       </div>
       {isXsScreen && (
         <div className="w-full  top-14 right-24 z-10" >
-          <CardOnline courseId={courseId}/>
+          <CardOnline courseId={courseId} canEnroll={canEnroll} course={course}/>
         </div>
       )}
     </div>

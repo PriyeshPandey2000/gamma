@@ -12,6 +12,7 @@ import PayText from '../PayText';
 function CheckoutBanner({courseId}) {
     const [courses, setCourses] = useState([]);
     const router=useRouter();
+    
     // const courseId="6611bfe0467c3ba9ab01695d";
     useEffect(() => {
         const fetchCourses = async () => {
@@ -29,6 +30,7 @@ function CheckoutBanner({courseId}) {
           }
         };
         fetchCourses();
+        
       }, []);
 
     const makePayment=async(e)=>{
