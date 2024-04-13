@@ -14,13 +14,13 @@ function SingleCourse() {
     <div>
         <App/>
       
-        <SBanner
+        {/* <SBanner
   title="DSA [Java/C++] + Full Stack [MERN/JAVA] + CS fundamental subjects"
   description="DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   reviewRating="4.0"
   reviewCount={230}
   studentsPlaced={329}
-/>
+/> */}
         <div className="justify-start">
         <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">
         <Benefit />
