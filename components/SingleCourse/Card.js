@@ -58,7 +58,7 @@ function Card({ courseId ,canEnroll,course}) {
       <div className="flex gap-3 mt-4">
         <div className="text-xl font-medium text-black">₹{course.offlinePrice}</div>
         <div className="flex gap-2 my-auto">
-          <div className="text-base text-gray-700">₹2000</div>
+          <div className="text-base text-gray-700">₹24999</div>
           <div className="my-auto text-sm text-red-600">50% off</div>
         </div>
       </div>
