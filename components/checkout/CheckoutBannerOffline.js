@@ -80,7 +80,7 @@ function CheckoutBannerOffline({courseId}) {
     
     
         const UAT_PAY_API_URL =
-        "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
+        "https://api.phonepe.com/apis/hermes";
     
     
       const response = await axios.post(
