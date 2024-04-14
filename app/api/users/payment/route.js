@@ -3,6 +3,10 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import sha256 from "crypto-js/sha256";
 import { NextResponse } from 'next/server';
+const cors = Cors({
+  methods: ['POST'],
+  origin: 'https://gamma-indol.vercel.app' // Replace with your frontend domain
+});
 
 export async function POST(request) {
   try {
@@ -54,6 +58,7 @@ export async function POST(request) {
         },
       }
     );
+    
 
     // Redirect to PhonePe payment page
     return NextResponse.redirect(response.data.data.instrumentResponse.redirectInfo.url);
