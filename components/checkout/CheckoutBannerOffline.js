@@ -90,7 +90,7 @@ function CheckoutBannerOffline({courseId}) {
         },
         {
           headers: {
-            accept: "application/json",
+            accept: "text/plain",
             "Content-Type": "application/json",
              "X-VERIFY": checksum,
           },
