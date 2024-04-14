@@ -1,10 +1,34 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 function DashText() {
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
-    <div className="flex flex-col justify-center max-w-[645px]">
+    <div className="flex flex-col justify-center max-w-[645px] mt-7">
       <div className="flex gap-5 justify-between px-5 w-full max-md:flex-wrap max-md:max-w-full">
-        <div className="text-4xl font-semibold text-black">My Dashboard</div>
+        <div className={`text-4xl font-semibold text-black ${isXsScreen ? 'font-hiragino-mincho-xssssss' : 'font-hiragino-mincho-pro'}`}>My Dashboard</div>
         {/* <div className="flex flex-col justify-center items-start px-5 py-3 my-auto text-xl border border-solid border-zinc-300 rounded-[74px] text-zinc-700 text-opacity-60 max-md:pr-5"> */}
           {/* <div className="flex gap-1">
             <img

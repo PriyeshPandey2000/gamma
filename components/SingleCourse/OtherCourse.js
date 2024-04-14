@@ -28,7 +28,7 @@ function Other() {
   const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div className="flex flex-col mt-11 mb-7">
-      <div className={`w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full ${isXsScreen ? 'font-hiragino-mincho-s' : 'font-hiragino-mincho-pro-center-small-left'}`}>
+      <div className={`w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full ${isXsScreen ? 'font-hiragino-mincho-xssssss' : 'font-hiragino-mincho-pro-center-small-left'}`}>
         Our Other Courses
       </div>
       <div className="px-5 mt-10 w-full max-md:max-w-full">

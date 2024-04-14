@@ -113,3 +113,12 @@
   font-family: 'Gotham-Bold';
   src: url('/fonts/Gotham-Bold.woff') format('woff');
 }
+
+
+.font-hiragino-mincho-xssssss {
+  font-family: 'Hiragino Mincho Pro', serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+}
