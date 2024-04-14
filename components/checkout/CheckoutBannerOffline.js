@@ -51,9 +51,9 @@ function CheckoutBannerOffline({courseId}) {
             merchantTransactionId: transactionid,
             merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
             amount: course.price,
-            redirectUrl: `https://gamma-indol.vercel.app/api/users/status/${transactionid}?courseId=${courseId}`,
+            redirectUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
             redirectMode: "POST",
-            callbackUrl: `https://gamma-indol.vercel.app/api/users/status/${transactionid}?courseId=${courseId}`,
+            callbackUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
             mobileNumber: '9999999999',
             paymentInstrument: {
               type: "PAY_PAGE",
@@ -80,7 +80,7 @@ function CheckoutBannerOffline({courseId}) {
     
     
         const UAT_PAY_API_URL =
-        "https://api.phonepe.com/apis/hermes";
+        "https://api.phonepe.com/apis/hermes/pg/v1/pay";
     
     
       const response = await axios.post(
@@ -90,7 +90,7 @@ function CheckoutBannerOffline({courseId}) {
         },
         {
           headers: {
-            accept: "text/plain",
+            accept: "application/json",
             "Content-Type": "application/json",
              "X-VERIFY": checksum,
           },

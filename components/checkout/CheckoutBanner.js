@@ -64,48 +64,58 @@ function CheckoutBanner({courseId}) {
             
             
           };
-    
-    
-          const dataPayload = JSON.stringify(payload);
-          console.log(dataPayload);
-    
-          const dataBase64 = Buffer.from(dataPayload).toString("base64");
-          console.log(dataBase64);
-    
-    
-      const fullURL =
-            dataBase64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
-         const dataSha256 = sha256(fullURL);
-    
-          const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
-          console.log("c====",checksum);
-    
-    
-    
-        const UAT_PAY_API_URL =
-        "https://api.phonepe.com/apis/hermes/pg/v1/pay";
-    
-    
-      const response = await axios.post(
-        UAT_PAY_API_URL,
-        {
-          request: dataBase64,
-        },
-        {
-          headers: {
-            accept: "application/json",
-            "Content-Type": "application/json",
-             "X-VERIFY": checksum,
-          },
+          try {
+            // Call the backend to initiate the payment process
+            const response = await axios.post('https://gamma-indol.vercel.app/api/users/payment', payload);
+            const redirect = response.data.data.instrumentResponse.redirectInfo.url;
+            router.push(redirect);
+          } catch (error) {
+            console.error('Error making payment:', error);
+          }
         }
-      );
+
     
     
-      const redirect=response.data.data.instrumentResponse.redirectInfo.url;
-      router.push(redirect)
+      //     const dataPayload = JSON.stringify(payload);
+      //     console.log(dataPayload);
+    
+      //     const dataBase64 = Buffer.from(dataPayload).toString("base64");
+      //     console.log(dataBase64);
     
     
-      }
+      // const fullURL =
+      //       dataBase64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
+      //    const dataSha256 = sha256(fullURL);
+    
+      //     const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
+      //     console.log("c====",checksum);
+    
+    
+    
+      //   const UAT_PAY_API_URL =
+      //   "https://api.phonepe.com/apis/hermes/pg/v1/pay";
+    
+    
+      // const response = await axios.post(
+      //   UAT_PAY_API_URL,
+      //   {
+      //     request: dataBase64,
+      //   },
+      //   {
+      //     headers: {
+      //       accept: "application/json",
+      //       "Content-Type": "application/json",
+      //        "X-VERIFY": checksum,
+      //     },
+      //   }
+      // );
+    
+    
+      // const redirect=response.data.data.instrumentResponse.redirectInfo.url;
+      // router.push(redirect)
+    
+    
+      // }
       const [isXsScreen, setIsXsScreen] = useState(false);
 
   const handleResize = () => {
