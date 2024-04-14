@@ -56,7 +56,8 @@ function SingleCourse() {
   const canEnroll = !isLoading && (!user || !user.purchasedCourses || !user.purchasedCourses.includes(courseId));
   return (
     <div>
-        <App/>
+        
+        <Navbar/>
       
         {course && ( // Conditionally render SBannerOnline1 only if course is not null
       <SBannerOnline1

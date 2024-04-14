@@ -64,13 +64,13 @@ const RootLayout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       
-      <AuthProvider>
+      {/* <AuthProvider> */}
        
       <html lang="en">
         <body>{children}</body>
        
       </html>
-      </AuthProvider>
+      {/* </AuthProvider> */}
      
     </>
   );

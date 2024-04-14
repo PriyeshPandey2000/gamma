@@ -6,16 +6,19 @@ import { useRouter } from 'next/navigation';
 import dynamic from "next/dynamic";
 import axios from 'axios';
 // import { isLoggedIn } from '@/app/helpers/auth';
-import { isLoggedIn } from '@/app/helpers/auth';
+// import { isLoggedIn } from '@/app/helpers/auth';
 import { useAuth } from '@/contexts/AuthContext';
+
+import useAuthStore from '@/stores/authStore';
 
 
 const Navbar = ( ) => {
+  const { isLoggedIn, logout } = useAuthStore();
  
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const { isLoggedIn, logout } = useAuth();
-  console.log('isLoggedIn:', isLoggedIn);
+  // const { isLoggedIn, logout } = useAuth();
+  // console.log('isLoggedIn:', isLoggedIn);
   const router = useRouter(); 
   
 
@@ -36,9 +39,10 @@ const Navbar = ( ) => {
 
   const handleLogout = async () => {
     console.log('Logging out...');
-
+  
     try {
-      await logout(); // Call the logout function from useAuth hook
+      await axios.get('/api/users/logout'); // Call the logout route
+      await logout(); // Update the local state
       router.push('/'); // Redirect to home page after logout
     } catch (error) {
       console.error('Logout error:', error.message);
@@ -76,9 +80,9 @@ const Navbar = ( ) => {
 
         {/* Logo on the left side */}
         <div className={`flex items-center ${isMobile ? 'ml-2' : 'ml-4'} ${isMobile && showMenu ? 'ml-8' : ''}`}>
-          <a href="#">
+        <Link href="/">
             <img src="/images/logo.png" alt="Logo" className="h-8" />
-          </a>
+          </Link>
         </div>
 
         {/* Navigation items for larger screens */}
@@ -94,7 +98,12 @@ const Navbar = ( ) => {
 
         {/* Login and Signup buttons */}
         {isLoggedIn ? (
-          <button onClick={handleLogout} className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Logout</button>
+          <div>
+            <Link href="/Dashboard">
+          <button  className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100 cursor-pointer mr-3">Dashboard</button>
+          </Link>
+          <button onClick={handleLogout} className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100 cursor-pointer">Logout</button>
+          </div>
         ) : (
           <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>
             <Link href="/Login">

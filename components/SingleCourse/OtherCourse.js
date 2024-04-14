@@ -1,15 +1,40 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
+
 
 function Other() {
+  const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
-    <div className="flex flex-col mt-7 mb-7">
-      <div className="w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full font-hiragino-mincho-pro-center-small-left">
+    <div className="flex flex-col mt-11 mb-7">
+      <div className={`w-full text-2xl font-semibold leading-8 text-black max-md:max-w-full ${isXsScreen ? 'font-hiragino-mincho-s' : 'font-hiragino-mincho-pro-center-small-left'}`}>
         Our Other Courses
       </div>
       <div className="px-5 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow px-5 py-6 w-full text-base rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:mt-9 max-md:max-w-full">
+            <div className="flex flex-col grow px-5 py-4 w-full text-base rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:mt-9 max-md:max-w-full">
               <img
                 loading="lazy"
                 src="/images/courseimage.png"

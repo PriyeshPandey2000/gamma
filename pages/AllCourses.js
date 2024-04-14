@@ -14,7 +14,8 @@ function AllCourses() {
   return (
     <div>
       
-    <App/>
+    
+    <Navbar/>
     <div className="container mx-auto max-w-[1180px] mt-5">
     <div className="flex items-center justify-start p-4   rounded-md ">
       {/* Text */}

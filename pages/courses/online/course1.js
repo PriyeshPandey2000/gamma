@@ -10,9 +10,11 @@ import StudentsPlaced from '@/components/StudentsPlaced'
 import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
 import { useRouter } from 'next/router';
+import useAuthStore from '@/stores/authStore'
 
 
 function SingleCourse() {
+    const { isLoggedIn } = useAuthStore();
     const courseId = "6611bed1467c3ba9ab016953";
     const [course, setCourse] = useState(null);
     const router = useRouter();
@@ -62,7 +64,8 @@ function SingleCourse() {
 //   }
   return (
     <div>
-        <App/>
+        
+        <Navbar/>
         
       
         {course && ( // Conditionally render SBannerOnline1 only if course is not null

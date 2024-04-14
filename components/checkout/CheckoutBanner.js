@@ -8,6 +8,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import Cookies from 'js-cookie';
 import PayText from '../PayText';
+import { useMediaQuery } from '@react-hook/media-query';
 
 function CheckoutBanner({courseId}) {
     const [courses, setCourses] = useState([]);
@@ -105,6 +106,29 @@ function CheckoutBanner({courseId}) {
     
     
       }
+      const [isXsScreen, setIsXsScreen] = useState(false);
+
+  const handleResize = () => {
+    const xsScreen = window.matchMedia('(max-width: 640px)').matches;
+    setIsXsScreen(xsScreen);
+    window.localStorage.setItem('isXsScreen', JSON.stringify(xsScreen));
+  };
+
+  useEffect(() => {
+    const xsScreen = window.localStorage.getItem('isXsScreen');
+    if (xsScreen) {
+      setIsXsScreen(JSON.parse(xsScreen));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isXsScreenMediaQuery = useMediaQuery('(max-width: 639px)');
   return (
     <div>
       
@@ -117,17 +141,18 @@ function CheckoutBanner({courseId}) {
         if (course._id === courseId) {
             return (
               <div className="mt-7 ">
-              <div className="flex gap-5 justify-between max-md:flex-wrap">
-              <div className="max-md:max-w-full">
+              <div className="flex  justify-between max-md:flex-wrap">
+              <div className="w-full">
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                  <div className="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
+                  <div className={`flex flex-col w-[40vw] max-md:ml-0 max-md:w-full ${isXsScreen ? '  mx-auto' : 'justify-start'}`}>
+                    
                     <img
                       loading="lazy"
                       src="/images/courseimage.png"
-                      className="self-stretch my-auto md:w-full xs:w-[90vw] xs:mx-auto aspect-[2.38] max-md:mt-10 max-md:max-w-full"
+                      className="self-stretch mx-auto md:w-[27vw] xs:w-[90vw]   aspect-[2.38] max-md:mt-10 max-md:max-w-full"
                     />
                   </div>
-                  <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col ml-5 w-[70vw] max-md:ml-0 max-md:w-full">
                     <div className="flex flex-col grow px-5 text-base leading-8 text-black max-md:mt-10 max-md:max-w-full">
                       <div className="text-xl font-bold max-md:max-w-full">
                         {course.title}
@@ -155,7 +180,7 @@ function CheckoutBanner({courseId}) {
             </div>
             <div className=" xs:mx-auto md:flex justify-end mb-7 ">
                                 {/* <PayText /> */}
-                                <div className="flex flex-col md:w-[45vw] xs:[90vw]">
+                                <div className="flex flex-col md:w-[44vw] xs:[90vw]">
     <div className="flex gap-5 justify-between text-base leading-8 text-black whitespace-nowrap ">
       <div className="flex-grow md:ml-0 xs:ml-4">Subtotal</div>
       <div className="font-medium md:ml-auto xs:mr-4"> ₹{course.price}</div>

@@ -7,10 +7,12 @@ import dynamic from "next/dynamic";
 import axios from 'axios';
 // import { isLoggedIn } from '@/app/helpers/auth';
 // import { isLoggedIn } from '@/app/helpers/auth';
-import { useAuth } from '@/contexts/AuthContext';
+// import { useAuth } from '@/contexts/AuthContext';
+import { useAuthStore } from '@/stores/authStore';
 
 const Navbar = ( ) => {
-    const { isLoggedIn, logout ,login} = useAuth();
+    // const { isLoggedIn, logout ,login} = useAuth();
+    const { isLoggedIn, logout } = useAuthStore();
  
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

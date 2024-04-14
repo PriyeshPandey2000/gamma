@@ -57,7 +57,8 @@ function SingleCourse() {
   const canEnroll = !isLoading && (!user || !user.purchasedCourses || !user.purchasedCourses.includes(courseId));
   return (
     <div>
-        <App/>
+        
+        <Navbar/>
       
         {course &&  (<SBanner2Online
   title={course.title}

@@ -115,14 +115,14 @@ function CheckoutBannerOffline({courseId}) {
         if (course._id === courseId) {
             return (
               <div className="mt-7 ">
-              <div className="flex gap-5 justify-between max-md:flex-wrap">
-              <div className="max-md:max-w-full">
+              <div className="flex  justify-between max-md:flex-wrap">
+              <div className="w-full">
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                  <div className="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col w-[40%] max-md:ml-0 max-md:w-full">
                     <img
                       loading="lazy"
                       src="/images/courseimage.png"
-                      className="self-stretch my-auto md:w-full xs:w-[90vw] xs:mx-auto aspect-[2.38] max-md:mt-10 max-md:max-w-full"
+                      className="self-stretch mx-auto md:w-full xs:w-[90vw] xs:mx-auto aspect-[2.38] max-md:mt-10 max-md:max-w-full"
                     />
                   </div>
                   <div className="flex flex-col ml-5 w-[68%] max-md:ml-0 max-md:w-full">
@@ -153,7 +153,7 @@ function CheckoutBannerOffline({courseId}) {
             </div>
             <div className=" xs:mx-auto md:flex justify-end mb-7 ">
                                 {/* <PayText /> */}
-                                <div className="flex flex-col md:w-[45vw] xs:[90vw]">
+                                <div className="flex flex-col md:w-[44vw] xs:[90vw]">
     <div className="flex gap-5 justify-between text-base leading-8 text-black whitespace-nowrap ">
       <div className="flex-grow md:ml-0 xs:ml-4">Subtotal</div>
       <div className="font-medium md:ml-auto xs:mr-4"> ₹{course.offlinePrice}</div>

@@ -6,6 +6,9 @@ import Other from '@/components/SingleCourse/OtherCourse'
 import CheckoutBanner from '@/components/checkout/CheckoutBanner'
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import '../styles/fonts.css';
+
+import "tailwindcss/tailwind.css"
 
 
 const Checkout = () => {

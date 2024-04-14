@@ -37,12 +37,15 @@ import SBanner from '@/components/SingleCourse/SBanner';
 import Signup from '@/components/Signup';
 import Login from '@/components/Login';
 
+import useAuthStore from '@/stores/authStore';
+
 
 
 
 
 
 export default function Home() {
+  const { isLoggedIn } = useAuthStore();
  
   return (
     <div>
