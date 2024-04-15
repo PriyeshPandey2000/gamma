@@ -56,7 +56,7 @@ export async function POST(request) {
     const dataSha256 = sha256(fullURL);
     const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
 
-    const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay";
+    const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes";
 
     // Make request to PhonePe API
     const response = await axios.post(
