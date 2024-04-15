@@ -104,7 +104,7 @@ function CheckoutBanner({courseId}) {
             
         //   };
             // Call the backend to initiate the payment process
-            const response = await axios.post('https://www.gammaprep.in/api/users/payment', payloadString, {
+            const response = await axios.post('hhttps://gammaprep.com/api/users/payment', payloadString, {
               headers: {
                   'Content-Type': 'application/json'
               }
