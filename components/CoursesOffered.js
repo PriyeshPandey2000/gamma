@@ -50,6 +50,7 @@ const CoursesOffered = () => {
     };
     fetchCourses();
   }, []);
+  
 
   useEffect(() => {
     const popularTimer = setInterval(() => {

@@ -13,7 +13,7 @@ export async function GET(request) {
   //     // Add new fields to each course document
       
       
-  //       course.rating = 4.2;
+  //       course.imageData = null;
       
      
 

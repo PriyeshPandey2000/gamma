@@ -3,14 +3,26 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import sha256 from "crypto-js/sha256";
 import { NextResponse } from 'next/server';
-const cors = Cors({
-  methods: ['POST'],
-  origin: 'https://gamma-indol.vercel.app' // Replace with your frontend domain
-});
+import Cookies from 'js-cookie';
+
 
 export async function POST(request) {
   try {
-    const { courseId } = request.body;
+    
+    // const request = await request.json();
+    const courseId=request.body.courseId;
+    const  course  = request.body.course;
+
+        console.log('Received courseId:', courseId);
+        console.log('Received course:', course);
+
+    // const course = JSON.parse(Cookies.get('course'));
+    // console.log(course);
+
+    // if (!selectedCourse) {
+    //   console.error('Selected course not found in stored courses');
+    //   return NextResponse.error({ status: 404, message: 'Selected course not found' });
+    // }
     const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
     // const courseId = "6611c028467c3ba9ab016961";
 
@@ -27,10 +39,10 @@ export async function POST(request) {
       merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
       merchantTransactionId: `Tr-${uuidv4().toString(36).slice(-6)}`,
       merchantUserId: `MUID-${uuidv4().toString(36).slice(-6)}`,
-      amount: 1000,
-      redirectUrl: `https://gamma-indol.vercel.app/api/users/status/${transactionid}?courseId=${courseId}`,
+      amount: 100,
+      redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       redirectMode: "POST",
-      callbackUrl: `https://gamma-indol.vercel.app/api/users/status/api/users/status/${transactionid}?courseId=${courseId}`,
+      callbackUrl: `https://www.gammaprep.in/api/users/status/api/users/status/${transactionid}?courseId=${courseId}`,
       mobileNumber: '9999999999',
       paymentInstrument: {
         type: "PAY_PAGE",

@@ -53,6 +53,9 @@ includes: {
 requirements: {
   type: [String],
   default: []
+},
+imageData: {
+  type: Buffer
 }
     
 })

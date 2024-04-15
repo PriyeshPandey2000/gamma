@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useRouter } from 'next/router';
+import useAuthStore from "@/stores/authStore";
 
 
 function CardOnline({ courseId,canEnroll,course }) {
@@ -15,6 +16,15 @@ function CardOnline({ courseId,canEnroll,course }) {
     '6611c028467c3ba9ab016961': '/courses/offline/course8',
     '6611c032467c3ba9ab016963': '/courses/offline/course9',
     // Add more courseId and corresponding routes here
+  };
+  const handleEnrollClick = () => {
+    if (!useAuthStore.getState().isLoggedIn) {
+      // If the user is not logged in, redirect to the login page
+      router.push('/Login');
+    } else {
+      // If the user is logged in, proceed with the enrollment logic
+      router.push(`/Checkout?courseId=${courseId}`);
+    }
   };
   const offlineclick = () => {
     // Get the route corresponding to the courseId
@@ -33,8 +43,8 @@ function CardOnline({ courseId,canEnroll,course }) {
       <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[200px]">
         <img
           loading="lazy"
-          src="/images/courseimage.png"
-          className="object-cover absolute inset-0 w-full h-full"
+          src={`data:image/png;base64,${course.imageData}`}
+          className=" absolute inset-0 w-full h-full"
         />
         <div className="flex relative flex-col max-w-full w-[100px]">
           <img
@@ -68,7 +78,7 @@ function CardOnline({ courseId,canEnroll,course }) {
       <div>
       {/* Card content */}
       {canEnroll ? (
-        <div onClick={() => checkout(courseId)} className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px] cursor-pointer" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
+        <div onClick={handleEnrollClick} className="justify-center items-center px-10 py-3 mt-4 text-base font-medium text-white rounded-[30px] cursor-pointer" style={{ background: 'linear-gradient(90deg, #0B4B7F 0%, #1487E5 100%)' }}>
           Enroll for this Course
         </div>
       ) : (

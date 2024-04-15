@@ -5,10 +5,12 @@ import { connect } from "@/app/dbConfig/dbConfig";
 connect();
 
 export async function GET(request) {
+    console.log(request);
   try {
-    const {
-      query: { courseId },
-    } = request;
+    // const {
+    //   query: { courseId },
+    // } = request;
+   const  courseId="courseId=6611bed1467c3ba9ab016953";
 
     const course = await Course.findOne({ _id: courseId }).lean();
 

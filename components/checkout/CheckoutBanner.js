@@ -23,6 +23,10 @@ function CheckoutBanner({courseId}) {
             console.log(response.data.data[0].title);
           if (Array.isArray(response.data.data)) { // Access response.data.data
             setCourses(response.data.data);
+           
+       
+        
+            
             } else {
               console.error('Invalid response data structure:', response.data);
             }
@@ -42,31 +46,69 @@ function CheckoutBanner({courseId}) {
             console.error('Course not found');
             return;
         }
-        Cookies.set('courseId', courseId, { expires: 1 });
+        console.log(course);
+        // Cookies.set('courseId', courseId, { expires: 1 });
+        // Cookies.set('course', JSON.stringify(course), { expires: 1 });
+        
     
-        const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
+        // const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
         
 
         
     
-        const payload = {
-            merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
-            merchantTransactionId: transactionid,
-            merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
-            amount: course.price,
-            redirectUrl: `https://gamma-indol.vercel.app/api/users/status/${transactionid}?courseId=${courseId}`,
-            redirectMode: "POST",
-            callbackUrl: `https://gamma-indol.vercel.app/api/users/status/${transactionid}?courseId=${courseId}`,
-            mobileNumber: '9999999999',
-            paymentInstrument: {
-              type: "PAY_PAGE",
-            },
+        // const payload = {
+        //     merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
+        //     merchantTransactionId: transactionid,
+        //     merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
+        //     amount: course.price,
+        //     redirectUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     redirectMode: "POST",
+        //     callbackUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     mobileNumber: '9999999999',
+        //     paymentInstrument: {
+        //       type: "PAY_PAGE",
+        //     },
             
             
-          };
+        //   };
           try {
+        //     const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
+        
+        const course = courses.find(course => course._id === courseId);
+        if (!course) {
+            console.error('Course not found');
+            return;
+        }
+
+        const payload = {
+            course:course,
+            courseId:courseId,
+        };
+        const payloadString = JSON.stringify(payload);
+       
+      
+    
+        // const payload = {
+        //     merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
+        //     merchantTransactionId: transactionid,
+        //     merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
+        //     amount: course.price,
+        //     redirectUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     redirectMode: "POST",
+        //     callbackUrl: `http://localhost:3000/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     mobileNumber: '9999999999',
+        //     paymentInstrument: {
+        //       type: "PAY_PAGE",
+        //     },
+            
+            
+        //   };
             // Call the backend to initiate the payment process
-            const response = await axios.post('https://gamma-indol.vercel.app/api/users/payment', payload);
+            const response = await axios.post('https://www.gammaprep.in/api/users/payment', payloadString, {
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          });
             const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             router.push(redirect);
           } catch (error) {
