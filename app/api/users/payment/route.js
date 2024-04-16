@@ -70,10 +70,11 @@ export async function POST(request) {
         },
       }
     );
-    
+    const redirect=response.data.data.instrumentResponse.redirectInfo.url;
+      router.push(redirect)
 
     // Redirect to PhonePe payment page
-    return NextResponse.redirect(response.data.data.instrumentResponse.redirectInfo.url);
+    // return NextResponse.redirect(response.data.data.instrumentResponse.redirectInfo.url);
   } catch (error) {
     console.error('Error making payment:', error);
     return NextResponse.error({ status: 500, message: 'An error occurred while processing the payment.' });
