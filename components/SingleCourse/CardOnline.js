@@ -47,14 +47,14 @@ function CardOnline({ courseId,canEnroll,course }) {
           className=" absolute inset-0 w-full h-full"
         />
         <div className="flex relative flex-col max-w-full w-[100px]">
-          <img
+          {/* <img
             loading="lazy"
             src="/images/play_arrow.png"
             className="self-center rounded-full aspect-square backdrop-blur-[10px] bg-black bg-opacity-60 h-[50px] w-[50px]"
           />
           <div className="text-sm justify-center p-1 mt-8 bg-black bg-opacity-50 rounded-[30px]">
             Course Preview
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex gap-px mt-3 text-base">

@@ -1,9 +1,29 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 
 
 function Other() {
   const [isXsScreen, setIsXsScreen] = useState(false);
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await axios.get('/api/users/courses');
+        console.log('Response data:', response.data);
+        console.log(response.data.data[0].title);
+      if (Array.isArray(response.data.data)) { // Access response.data.data
+        setCourses(response.data.data);
+        } else {
+          console.error('Invalid response data structure:', response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    };
+    fetchCourses();
+  }, []);
+  
 
   const handleResize = () => {
     const xsScreen = window.matchMedia('(max-width: 640px)').matches;

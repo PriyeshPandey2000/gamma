@@ -112,12 +112,13 @@ const CoursesOffered = () => {
             <img src="/images/trending.png" alt="Course 1 Image" className="w-5 h-5 rounded-full mr-3" />
             <h2 className="text-12px font-bold text-custom-red mb-0.5">Most Popular Course</h2>
           </div>
-          <img src="/images/courseimage.png" alt="Course 1" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
+         
          
           {courses
             .filter((course) => course.category === 'Most Popular Course')
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
+                 <img src={`data:image/png;base64,${course.imageData}`} alt="Course 1" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
@@ -141,12 +142,13 @@ const CoursesOffered = () => {
             <img src="/images/Graph.png" alt="Course 2 Image" className="w-5 h-5 rounded-full mr-4" />
             <h2 className="text-12px font-bold text-custom-green mb-0.5">For Career Growth</h2>
           </div>
-          <img src="/images/courseimage.png" alt="Course 2" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
+          
           
           {courses
             .filter((course) => course.category === 'For Career Growth')
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
+                <img src={`data:image/png;base64,${course.imageData}`} alt="Course 2" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
@@ -168,12 +170,13 @@ const CoursesOffered = () => {
             <img src="/images/Tools.png" alt="Course 3 Image" className="w-5 h-5 rounded-full mr-4" />
             <h2 className="text-12px font-bold text-custom-blue mb-0.5">Specialised Skills and Tools</h2>
           </div>
-          <img src="/images/courseimage.png" alt="Course 3" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
+           {/* Added image after the heading */}
           
           {courses
             .filter((course) => course.category === 'Specialized Skills and Tools')
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
+                <img src={`data:image/png;base64,${course.imageData}`} alt="Course 3" className="w-full rounded-lg mb-2" />
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
