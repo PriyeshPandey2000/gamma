@@ -104,9 +104,9 @@ function CheckoutBanner({courseId}) {
             
         //   };
             // Call the backend to initiate the payment process
-            const response = await axios.post('/api/users/initiate');
-            // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
-            // router.push(redirect);
+            const response = await axios.post('/api/users/payment');
+            const redirect = response.data.data.instrumentResponse.redirectInfo.url;
+            router.push(redirect);
           } catch (error) {
             console.error('Error making payment:', error);
           }
