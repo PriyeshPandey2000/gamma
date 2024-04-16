@@ -107,6 +107,8 @@ function CheckoutBanner({courseId}) {
             const response = await axios.post('https://www.gammaprep.in/api/users/payment');
             // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             // router.push(redirect);
+            // const redirect =  response.data.data.instrumentResponse.redirectInfo.url; // Assuming your backend sends back the redirect URL in the response
+            // window.location.href = redirect;
           } catch (error) {
             console.error('Error making payment:', error);
           }

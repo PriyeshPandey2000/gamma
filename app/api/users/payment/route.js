@@ -4,9 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 import sha256 from "crypto-js/sha256";
 import { NextResponse } from 'next/server';
 import Cookies from 'js-cookie';
+import { cors } from 'next/middleware';
 
 
 export async function POST(request) {
+  await cors(req, res);
   try {
     // const headers = {
     //   'Access-Control-Allow-Origin': 'https://www.gammaprep.in',
