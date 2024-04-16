@@ -7,25 +7,13 @@ import Cookies from 'js-cookie';
 
 
 
-
-
-function setCorsHeaders(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
-  res.setHeader('Access-Control-Allow-Methods', 'POST'); // Allow POST requests
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow Content-Type header
-}
-
-
-
 export async function POST(request) {
-  
   try {
-    await setCorsHeaders(request.req, request.res);
-    // const headers = {
-    //   'Access-Control-Allow-Origin': 'https://www.gammaprep.in',
-    //   'Access-Control-Allow-Methods': 'POST',
-    //   'Access-Control-Allow-Headers': 'Content-Type',
-    // };
+    const headers = {
+      'Access-Control-Allow-Origin': 'https://www.gammaprep.in',
+      'Access-Control-Allow-Methods': 'POST',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
     
     // const request = await request.json();
     const courseId=request.body.courseId;
