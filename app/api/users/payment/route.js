@@ -8,6 +8,11 @@ import Cookies from 'js-cookie';
 
 export async function POST(request) {
   try {
+    const headers = {
+      'Access-Control-Allow-Origin': 'https://www.gammaprep.in',
+      'Access-Control-Allow-Methods': 'POST',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
     
     // const request = await request.json();
     const courseId=request.body.courseId;
@@ -67,6 +72,7 @@ export async function POST(request) {
           accept: "application/json",
           "Content-Type": "application/json",
           "X-VERIFY": checksum,
+          ...headers, 
         },
       }
     );
