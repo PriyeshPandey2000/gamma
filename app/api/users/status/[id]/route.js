@@ -48,21 +48,21 @@ export async function POST(req, res) {
       // Handle payment success
       // For example, update the database or log the payment success
       // Then redirect to the success page
-      return NextResponse.redirect("https://gammaprep.com/success/Success", {
+      return NextResponse.redirect("https://www.gammaprep.in/success/Success", {
         status: 301,
       });
     } else {
       // Handle payment failure
       // For example, log the payment failure or show an error message
       // Then redirect to the failure page
-      return NextResponse.redirect("https://gammaprep.com/Checkout", {
+      return NextResponse.redirect("https://www.gammaprep.in/Checkout", {
         status: 301,
       });
     }
   } catch (error) {
     console.error("Error checking payment status:", error);
     // If there's an error, redirect to the failure page
-    return NextResponse.redirect("https://gammaprep.com/Checkout", {
+    return NextResponse.redirect("https://www.gammaprep.in/Checkout", {
       status: 301,
     });
   }
