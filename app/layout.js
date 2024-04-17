@@ -5,8 +5,11 @@ import Head from 'next/head';
 import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
+import dynamic from "next/dynamic";
+import { useRouter } from 'next/router';
 
 const RootLayout = ({ children }) => {
+  
   useEffect(() => {
     const loadFonts = () => {
       const link = document.createElement('link');
@@ -55,6 +58,17 @@ const RootLayout = ({ children }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  //  useEffect(() => {
+  //   const isBrowser = typeof window !== 'undefined';
+  //   if (isBrowser) {
+  //   // require('react-hot-toast/index.css');
+  //     const toastContainer = document.createElement('div');
+  //     document.body.appendChild(toastContainer);
+  //     return () => {
+  //       document.body.removeChild(toastContainer);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <>
@@ -67,7 +81,12 @@ const RootLayout = ({ children }) => {
       {/* <AuthProvider> */}
        
       <html lang="en">
-        <body>{children}</body>
+        <body>
+      
+        <Toaster position="top-right"/>
+     
+     
+     {children}</body>
        
       </html>
       {/* </AuthProvider> */}
@@ -81,3 +100,4 @@ RootLayout.propTypes = {
 };
 
 export default RootLayout;
+// export default dynamic (() => Promise.resolve(RootLayout), {ssr: false});

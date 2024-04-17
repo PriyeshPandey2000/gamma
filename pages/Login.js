@@ -5,9 +5,11 @@ import '../styles/fonts.css';
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 import { useMediaQuery } from '@react-hook/media-query';
 import { useAuth } from '@/contexts/AuthContext';
+import {toast} from 'react-hot-toast';
+
 
 import useAuthStore from '@/stores/authStore';
 
@@ -53,8 +55,11 @@ const [loading, setLoading] = React.useState(false);
     try {
         setLoading(true);
         const response = await axios.post("/api/users/login", user);
+        toast.success("Login successful");
         console.log("Login success", response.data);
+        toast.success("Login successful");
         login();
+
         
         router.push("/");
     } catch (error) {
