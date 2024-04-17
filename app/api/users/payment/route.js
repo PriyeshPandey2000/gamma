@@ -46,7 +46,7 @@ export async function POST(request) {
       merchantTransactionId: `Tr-${uuidv4().toString(36).slice(-6)}`,
       merchantUserId: `MUID-${uuidv4().toString(36).slice(-6)}`,
       amount: 100,
-      redirectUrl: `https://www.gammaprep.in/users/status/${transactionid}?courseId=${courseId}`,
+      redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       redirectMode: "POST",
       callbackUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       mobileNumber: '9999999999',
@@ -73,6 +73,9 @@ export async function POST(request) {
           accept: "application/json",
           "Content-Type": "application/json",
           "X-VERIFY": checksum,
+          "Access-Control-Allow-Origin": "https://www.gammaprep.in",
+          "Access-Control-Allow-Methods": "POST",
+          "Access-Control-Allow-Headers": "Content-Type",
           
         },
       }
