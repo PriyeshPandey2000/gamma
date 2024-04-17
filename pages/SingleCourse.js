@@ -23,10 +23,10 @@ function SingleCourse() {
 /> */}
         <div className="justify-start">
         <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">
-        <Benefit />
+        
         </div>
         </div>
-        <Require/>
+        
        
         <StudentsPlaced/>
         <div className="container mx-auto max-w-[1200px]  ">
