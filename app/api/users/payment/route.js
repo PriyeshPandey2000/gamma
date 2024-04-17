@@ -10,7 +10,7 @@ import Cookies from 'js-cookie';
 export async function POST(request) {
   try {
     const headers = {
-      'Access-Control-Allow-Origin': 'https://www.gammaprep.in',
+      'Access-Control-Allow-Origin': 'https://mercury.phonepe.com',
       'Access-Control-Allow-Methods': 'POST',
       'Access-Control-Allow-Headers': 'Content-Type',
     };
