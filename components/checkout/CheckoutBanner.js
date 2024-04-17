@@ -104,7 +104,7 @@ function CheckoutBanner({courseId}) {
             
         //   };
             // Call the backend to initiate the payment process
-            const response = await axios.post('api/users/payment');
+            const response = await axios.post('https://www.gammaprep.in/api/users/payment');
             // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             // router.push(redirect);
             // const redirect =  response.data.data.instrumentResponse.redirectInfo.url; // Assuming your backend sends back the redirect URL in the response
