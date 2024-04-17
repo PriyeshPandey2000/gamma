@@ -9,11 +9,11 @@ import Cookies from 'js-cookie';
 
 export async function POST(request) {
   try {
-    const headers = {
-      'Access-Control-Allow-Origin': 'https://mercury.phonepe.com',
-      'Access-Control-Allow-Methods': 'POST',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    };
+    // const headers = {
+    //   'Access-Control-Allow-Origin': 'https://mercury.phonepe.com',
+    //   'Access-Control-Allow-Methods': 'POST',
+    //   'Access-Control-Allow-Headers': 'Content-Type',
+    // };
     
     // const request = await request.json();
     const courseId=request.body.courseId;
