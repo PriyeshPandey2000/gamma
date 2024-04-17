@@ -126,7 +126,7 @@ function Card({ courseId ,canEnroll,course}) {
         </div>
       </div>
       <div className="mt-6 text-base leading-6 text-center text-black">
-       {course.longDescription}
+       {course.cardDescription}
       </div>
       <div className="flex flex-col justify-center self-center px-3 py-2 mt-4 max-w-full text-sm font-medium text-green-500 border-2 border-green-500 border-solid rounded-[30px] w-[200px]">
         <div className="flex gap-1 justify-center">

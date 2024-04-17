@@ -70,11 +70,17 @@ function SingleCourse() {
 />
       )}
         <div className="justify-start">
-        <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">
-        <Benefit />
+        {course && (
+  
+  <div className="container md:ml-10 max-w-[850px]  xs:ml-0 ">
+    <Benefit includes={course.includes} />
+  
+</div>
+)}
         </div>
-        </div>
-        <Require/>
+        {course && ( <Require requirements={course.requirements}/>
+        )}
+       
        
         <StudentsPlaced/>
         <div className="container mx-auto max-w-[1200px]  ">

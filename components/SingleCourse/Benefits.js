@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Benefit() {
+function Benefit({ includes }) {
   return (
     <div className="flex flex-col justify-start">
       <div className="w-full max-md:max-w-full">
@@ -83,75 +83,21 @@ function Benefit() {
           <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow p-8 text-black border border-solid border-zinc-300 max-md:px-5 max-md:mt-5 max-md:max-w-full">
               <div className="text-2xl font-semibold leading-8 max-md:max-w-full">
-                You’ll Learn
+                Includes
               </div>
               <div className="flex flex-col p-5 mt-6 text-sm leading-5 bg-black bg-opacity-10 max-md:max-w-full">
-                <div className="flex gap-2">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec8b4e1f77789f19bc9bbb5a20439da51cc0ffa5e17cb52a18645820481bfdc7?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div>Project-led MERN or Backend Specialisation</div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/6699b5b79604cb041a5226d7aa2fedf083b86a82ab1a917747372c07e02c640b?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div>Externships with Real Tech Companies</div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ef4f618d20e1a4eee1eff80f7304e76268937d3cd66480af46f9de4138ece?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div className="flex-1">
-                    DS, Algo, and System Design curriculum
+              {includes.map((include, index) => (
+                  <div className="flex gap-2 mt-6" key={index}>
+                    {/* Assuming you have some default image */}
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ef4f618d20e1a4eee1eff80f7304e76268937d3cd66480af46f9de4138ece?"
+                      
+                      className="shrink-0 w-6 aspect-square"
+                    />
+                    <div>{include}</div>
                   </div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d0a9ef865983824a8c9035e9cb2855b20702084a142610a90b508591ba364ac?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div className="my-auto">
-                    Guaranteed Placement in top dev roles
-                  </div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/680559a4355d1b1154ec39d83c81c72f02748c1892e0e50886ffc980129fea8e?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div className="my-auto">
-                    Guaranteed Placement in top dev roles
-                  </div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d713cf90b86456a61ddb7dfe134d7f8862ae580c600a2d0ad066452d328ce8c?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div className="my-auto">
-                    Guaranteed Placement in top dev roles
-                  </div>
-                </div>
-                <div className="flex gap-2 mt-6">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f0cd7d9dad51401c366cfc1e47e4a006bdb47e000acbf36bc691fb412c5bd898?"
-                    className="shrink-0 w-6 aspect-square"
-                  />
-                  <div className="my-auto">
-                    Guaranteed Placement in top dev roles
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
