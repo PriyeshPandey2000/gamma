@@ -46,9 +46,9 @@ export async function POST(request) {
       merchantTransactionId: `Tr-${uuidv4().toString(36).slice(-6)}`,
       merchantUserId: `MUID-${uuidv4().toString(36).slice(-6)}`,
       amount: 100,
-      redirectUrl: `https://gammaprep.com/api/users/status/${transactionid}?courseId=${courseId}`,
+      redirectUrl: `https://gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       redirectMode: "POST",
-      callbackUrl: `https://gammaprep.com/api/users/status/${transactionid}?courseId=${courseId}`,
+      callbackUrl: `https://gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       mobileNumber: '9999999999',
       paymentInstrument: {
         type: "PAY_PAGE",
@@ -82,7 +82,7 @@ export async function POST(request) {
       console.log(redirect);
 
     // Redirect to PhonePe payment page
-    return NextResponse.redirect(redirect);
+    return NextResponse.json({ redirectUrl: redirect });
   } catch (error) {
     console.error('Error making payment:', error);
     return NextResponse.error({ status: 500, message: 'An error occurred while processing the payment.' });
