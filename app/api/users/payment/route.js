@@ -73,9 +73,7 @@ export async function POST(request) {
           accept: "application/json",
           "Content-Type": "application/json",
           "X-VERIFY": checksum,
-          "Access-Control-Allow-Origin": "https://www.gammaprep.in",
-          "Access-Control-Allow-Methods": "POST",
-          "Access-Control-Allow-Headers": "X-Requested-With,content-type,x-app-id, x-auth-token, id-mercury",
+          
           
         },
       }
