@@ -108,6 +108,7 @@ function CheckoutBanner({courseId}) {
             // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             // router.push(redirect);
             // const redirect =  response.data.data.instrumentResponse.redirectInfo.url; // Assuming your backend sends back the redirect URL in the response
+            console.log(response);
             window.location.href = response.redirectUrl;
           } catch (error) {
             console.error('Error making payment:', error);
