@@ -47,7 +47,10 @@ function CheckoutBanner({courseId}) {
             return;
         }
         console.log(course);
-        // Cookies.set('courseId', courseId, { expires: 1 });
+        console.log('Course ID:', courseId);
+        console.log(course.price);
+
+        Cookies.set('courseId', courseId, { expires: 1 });
         // Cookies.set('course', JSON.stringify(course), { expires: 1 });
         
     
@@ -74,11 +77,12 @@ function CheckoutBanner({courseId}) {
           try {
         //     const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
         
-        const course = courses.find(course => course._id === courseId);
-        if (!course) {
-            console.error('Course not found');
-            return;
-        }
+        // const course = courses.find(course => course._id === courseId);
+        // if (!course) {
+        //     console.error('Course not found');
+        //     return;
+        // }
+        // console.log(course);
 
         // const payload = {
         //     course:course,
@@ -104,7 +108,17 @@ function CheckoutBanner({courseId}) {
             
         //   };
             // Call the backend to initiate the payment process
-            const response = await axios.post('/api/users/payment');
+
+
+            const payload = {
+              courseId: courseId,
+              price: course.price
+          };
+            const response = await axios.post('/api/users/payment',payload,{
+              headers: {
+                'Content-Type': 'application/json',
+              },
+          });
             // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             // router.push(redirect);
             // const redirect =  response.data.data.instrumentResponse.redirectInfo.url; // Assuming your backend sends back the redirect URL in the response

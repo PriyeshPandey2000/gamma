@@ -14,13 +14,12 @@ export async function POST(request) {
     //   'Access-Control-Allow-Methods': 'POST',
     //   'Access-Control-Allow-Headers': 'Content-Type',
     // };
+    const reqBody = await request.json();
     
-    // const request = await request.json();
-    const courseId=request.body.courseId;
-    const  course  = request.body.course;
+    const { courseId, price } = reqBody;
 
         console.log('Received courseId:', courseId);
-        console.log('Received course:', course);
+        console.log('Received course:', price);
 
     // const course = JSON.parse(Cookies.get('course'));
     // console.log(course);
@@ -45,10 +44,10 @@ export async function POST(request) {
       merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
       merchantTransactionId: `Tr-${uuidv4().toString(36).slice(-6)}`,
       merchantUserId: `MUID-${uuidv4().toString(36).slice(-6)}`,
-      amount: 100,
-      redirectUrl: `https://gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
+      amount: 1*100,
+      redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       redirectMode: "POST",
-      callbackUrl: `https://gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
+      callbackUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       mobileNumber: '9999999999',
       paymentInstrument: {
         type: "PAY_PAGE",
