@@ -40,69 +40,87 @@ function CheckoutBannerOffline({courseId}) {
             return;
         }
         Cookies.set('courseId', courseId, { expires: 1 });
+        Cookies.set('mode', 'offline', { expires: 1 });
+
+
+        try {
+          const payload = {
+            courseId: courseId,
+            price: course.price
+        };
+          const response = await axios.post('/api/users/payment',payload,{
+            headers: {
+              'Content-Type': 'application/json',
+            },
+        });
+        window.location.href = response.data.redirectUrl;
+      } catch (error) {
+          console.error('Error making payment:', error);
+        }
+      }
     
-        const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
+        // const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
         
 
         
     
-        const payload = {
-            merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
-            merchantTransactionId: transactionid,
-            merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
-            amount: course.price,
-            redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
-            redirectMode: "POST",
-            callbackUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
-            mobileNumber: '9999999999',
-            paymentInstrument: {
-              type: "PAY_PAGE",
-            },
+        // const payload = {
+        //     merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
+        //     merchantTransactionId: transactionid,
+        //     merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
+        //     amount: course.price,
+        //     redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     redirectMode: "POST",
+        //     callbackUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
+        //     mobileNumber: '9999999999',
+        //     paymentInstrument: {
+        //       type: "PAY_PAGE",
+        //     },
             
             
-          };
+          // };
     
     
-          const dataPayload = JSON.stringify(payload);
-          console.log(dataPayload);
+      //     const dataPayload = JSON.stringify(payload);
+      //     console.log(dataPayload);
     
-          const dataBase64 = Buffer.from(dataPayload).toString("base64");
-          console.log(dataBase64);
-    
-    
-      const fullURL =
-            dataBase64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
-         const dataSha256 = sha256(fullURL);
-    
-          const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
-          console.log("c====",checksum);
+      //     const dataBase64 = Buffer.from(dataPayload).toString("base64");
+      //     console.log(dataBase64);
     
     
+      // const fullURL =
+      //       dataBase64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
+      //    const dataSha256 = sha256(fullURL);
     
-        const UAT_PAY_API_URL =
-        "https://api.phonepe.com/apis/hermes/pg/v1/pay";
-    
-    
-      const response = await axios.post(
-        UAT_PAY_API_URL,
-        {
-          request: dataBase64,
-        },
-        {
-          headers: {
-            accept: "application/json",
-            "Content-Type": "application/json",
-             "X-VERIFY": checksum,
-          },
-        }
-      );
+      //     const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
+      //     console.log("c====",checksum);
     
     
-      const redirect=response.data.data.instrumentResponse.redirectInfo.url;
-      router.push(redirect)
+    
+      //   const UAT_PAY_API_URL =
+      //   "https://api.phonepe.com/apis/hermes/pg/v1/pay";
     
     
-      }
+      // const response = await axios.post(
+      //   UAT_PAY_API_URL,
+      //   {
+      //     request: dataBase64,
+      //   },
+      //   {
+      //     headers: {
+      //       accept: "application/json",
+      //       "Content-Type": "application/json",
+      //        "X-VERIFY": checksum,
+      //     },
+      //   }
+      // );
+    
+    
+      // const redirect=response.data.data.instrumentResponse.redirectInfo.url;
+      // router.push(redirect)
+    
+    
+      // }
   return (
     <div>
       

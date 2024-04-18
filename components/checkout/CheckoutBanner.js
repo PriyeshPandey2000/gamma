@@ -51,6 +51,7 @@ function CheckoutBanner({courseId}) {
         console.log(course.price);
 
         Cookies.set('courseId', courseId, { expires: 1 });
+        Cookies.set('mode', 'online', { expires: 1 });
         // Cookies.set('course', JSON.stringify(course), { expires: 1 });
         
     
