@@ -6,7 +6,9 @@ import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import dynamic from "next/dynamic";
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+
+
 
 const RootLayout = ({ children }) => {
   
@@ -81,9 +83,12 @@ const RootLayout = ({ children }) => {
       {/* <AuthProvider> */}
        
       <html lang="en">
-        <body>
       
+      
+        <body>
         <Toaster position="top-right"/>
+      
+        
      
      
      {children}</body>
@@ -100,4 +105,5 @@ RootLayout.propTypes = {
 };
 
 export default RootLayout;
+// export default dynamic(() => Promise.resolve(RootLayout), { ssr: false });
 // export default dynamic (() => Promise.resolve(RootLayout), {ssr: false});

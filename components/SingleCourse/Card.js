@@ -40,11 +40,11 @@ function Card({ courseId ,canEnroll,course}) {
   };
   return (
     <div className="flex flex-col p-3 mx-auto rounded-lg border border-solid shadow-sm border-gray-300 max-w-[350px] " style={{ background: 'linear-gradient(99.28deg, #FFFFFF 2.04%, #F2F4FB 149.73%)' }}>
-      <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[200px]">
+      <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[140px]">
         <img
           loading="lazy"
           src={`data:image/png;base64,${course.imageData}`}
-          className="  absolute inset-0 w-full h-full"
+          className="  absolute inset-0 w-full "
         />
         <div className="flex relative flex-col max-w-full w-[100px]">
           {/* <img

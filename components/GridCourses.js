@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const CourseCard = ({ course }) => {
   const router = useRouter();
+  
+ 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     const fetchCourses = async () => {
@@ -24,6 +27,27 @@ const CourseCard = ({ course }) => {
     };
     fetchCourses();
   }, []);
+  const courseRoutes = {
+    '6611bed1467c3ba9ab016953': '/courses/online/course1',
+    '6611bf63467c3ba9ab016955': '/courses/online/course2',
+    '6611bf77467c3ba9ab016957': '/courses/online/course3',
+    '6611bfc7467c3ba9ab016959': '/courses/online/course4',
+    '6611bfd5467c3ba9ab01695b': '/courses/online/course5',
+    '6611bfe0467c3ba9ab01695d': '/courses/online/course6',
+    '6611c020467c3ba9ab01695f': '/courses/online/course7',
+    '6611c028467c3ba9ab016961': '/courses/online/course8',
+    '6611c032467c3ba9ab016963': '/courses/online/course9',
+    // Add more courseId and corresponding routes here
+  };
+  const onlineclick = () => {
+    // Get the route corresponding to the courseId
+    const route = courseRoutes[course._id];
+    if (route) {
+        router.push(route);
+    } else {
+        console.error(`Route not found for courseId: ${course._id}`);
+    }
+};
   const mostPopularTitle1 = courses.length > 0 ? courses[0].title : '';
   
 
@@ -41,7 +65,7 @@ const CourseCard = ({ course }) => {
         <span className="text-black leading-[160%]">Course Starts at:</span>
         <time className="font-medium text-center text-sky-800 leading-[133%]">{course.startDate}</time>
       </div>
-      <button className="justify-center self-start px-5 py-3 mt-6 font-medium text-center text-sky-800 border border-sky-800 border-solid leading-[133%] rounded-[63px]" onClick={handleLearnMore}>
+      <button className="justify-center self-start px-5 py-3 mt-6 font-medium text-center text-sky-800 border border-sky-800 border-solid leading-[133%] rounded-[63px]" onClick={onlineclick}>
         Learn More
       </button>
     </div>

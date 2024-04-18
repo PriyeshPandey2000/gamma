@@ -40,13 +40,13 @@ function CardOnline({ courseId,canEnroll,course }) {
   };
   return (
     <div className="flex flex-col p-3 mx-auto rounded-lg border border-solid shadow-sm border-gray-300 max-w-[350px] " style={{ background: 'linear-gradient(99.28deg, #FFFFFF 2.04%, #F2F4FB 149.73%)' }}>
-      <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[200px]">
+      <div className="flex overflow-hidden relative flex-col items-center px-10 pt-12 pb-3 text-base font-medium text-white min-h-[140px]">
         <img
           loading="lazy"
           src={`data:image/png;base64,${course.imageData}`}
-          className=" absolute inset-0 w-full h-full"
+          className=" absolute inset-0 w-full "
         />
-        <div className="flex relative flex-col max-w-full w-[100px]">
+        {/* <div className="flex relative flex-col max-w-full w-[100px]"> */}
           {/* <img
             loading="lazy"
             src="/images/play_arrow.png"
@@ -55,7 +55,7 @@ function CardOnline({ courseId,canEnroll,course }) {
           <div className="text-sm justify-center p-1 mt-8 bg-black bg-opacity-50 rounded-[30px]">
             Course Preview
           </div> */}
-        </div>
+        {/* </div> */}
       </div>
       <div className="flex gap-px mt-3 text-base">
         <div className="justify-center px-6 py-3  font-medium border-b-2 text-blue-800 border-blue-800 border-solid cursor-pointer">
