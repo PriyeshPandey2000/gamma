@@ -16,10 +16,10 @@ export async function POST(request) {
     // };
     const reqBody = await request.json();
     
-    const { courseId, price } = reqBody;
+    const { courseId, offlinePrice } = reqBody;
 
         console.log('Received courseId:', courseId);
-        console.log('Received course:', price);
+        console.log('Received course:', offlinePrice);
         // if (!Cookies.get('mode')) {
         //   console.error('Mode cookie not found');
         //   return NextResponse.error({ status: 400, message: 'Mode cookie not found' });
@@ -58,7 +58,7 @@ export async function POST(request) {
       merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
       merchantTransactionId: `Tr-${uuidv4().toString(36).slice(-6)}`,
       merchantUserId: `MUID-${uuidv4().toString(36).slice(-6)}`,
-      amount: price*100,
+      amount: offlinePrice*100,
       redirectUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,
       redirectMode: "POST",
       callbackUrl: `https://www.gammaprep.in/api/users/status/${transactionid}?courseId=${courseId}`,

@@ -46,10 +46,10 @@ function CheckoutBannerOffline({courseId}) {
         try {
           const payload = {
             courseId: courseId,
-            price: course.price,
+            
             offlinePrice:course.offlinePrice
         };
-          const response = await axios.post('/api/users/payment',payload,{
+          const response = await axios.post('/api/users/paymentoffline',payload,{
             headers: {
               'Content-Type': 'application/json',
             },

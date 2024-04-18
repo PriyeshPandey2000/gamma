@@ -51,7 +51,7 @@ function CheckoutBanner({courseId}) {
         console.log(course.price);
 
         Cookies.set('courseId', courseId, { expires: 1 });
-        Cookies.set('mode', 'online', { expires: 1 });
+        // Cookies.set('mode', 'online', { expires: 1 });
         // Cookies.set('course', JSON.stringify(course), { expires: 1 });
         
     
@@ -113,8 +113,7 @@ function CheckoutBanner({courseId}) {
 
             const payload = {
               courseId: courseId,
-              price: course.price,
-              offlinePrice:course.offlinePrice
+              price: course.price
           };
             const response = await axios.post('/api/users/payment',payload,{
               headers: {
