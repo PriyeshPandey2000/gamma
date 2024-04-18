@@ -42,7 +42,7 @@ function Congrats({course}) {
         </div>
       </div>
       <div className="mt-5 text-xl leading-8 text-center text-black max-md:max-w-full">
-        Your Invoice has sent to you through Email.
+        Your Invoice will be  sent to you through Email shortly.
       </div>
       <div onClick={handleDashboardClick} className="justify-center items-center px-16 py-4 mt-8 max-w-full text-xl font-medium leading-8 text-center text-white bg-sky-800 rounded-[70px] w-[599px] max-md:px-5 cursor-pointer">
         Access your Dashboard

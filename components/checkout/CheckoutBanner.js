@@ -113,7 +113,8 @@ function CheckoutBanner({courseId}) {
 
             const payload = {
               courseId: courseId,
-              price: course.price
+              price: course.price,
+              offlinePrice:course.offlinePrice
           };
             const response = await axios.post('/api/users/payment',payload,{
               headers: {
