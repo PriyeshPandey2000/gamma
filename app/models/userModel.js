@@ -33,6 +33,7 @@ const userSchema = new mongoose.Schema({
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
+    googleId: String,
 })
 
 const User = mongoose.models.users || mongoose.model("users", userSchema);

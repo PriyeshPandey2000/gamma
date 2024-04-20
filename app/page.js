@@ -38,6 +38,9 @@ import Signup from '@/components/Signup';
 import Login from '@/components/Login';
 
 import useAuthStore from '@/stores/authStore';
+import Authprovider from '@/components/AuthProvider/AuthProvider';
+import { SessionProvider } from 'next-auth/react';
+
 
 
 
@@ -49,6 +52,8 @@ export default function Home() {
   const { isLoggedIn } = useAuthStore();
  
   return (
+    <>
+    <Authprovider>
     <div>
       <Navbar />
       {/* <div className="container mx-auto max-w-[1080px] "> */}
@@ -120,5 +125,7 @@ export default function Home() {
       <FollowUs/>
       {/* <CirclesWithLines/> */}
     </div>
+    </Authprovider>
+    </>
   );
 }

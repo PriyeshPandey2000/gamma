@@ -10,13 +10,16 @@ import axios from 'axios';
 import { useAuth } from '@/contexts/AuthContext';
 
 import useAuthStore from '@/stores/authStore';
+import { signOut, useSession } from 'next-auth/react';
 
 
 const Navbar = ( ) => {
   const { isLoggedIn, logout } = useAuthStore();
- 
+  const { data: session } = useSession();
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  
+
   // const { isLoggedIn, logout } = useAuth();
   // console.log('isLoggedIn:', isLoggedIn);
   const router = useRouter(); 
@@ -39,10 +42,17 @@ const Navbar = ( ) => {
 
   const handleLogout = async () => {
     console.log('Logging out...');
-  
+
     try {
-      await axios.get('/api/users/logout'); // Call the logout route
-      await logout(); // Update the local state
+      if (session?.provider === 'google') {
+        await signOut({ redirect: true, callbackUrl: '/' });
+        await logout();
+         // Trigger NextAuth.js logout event
+      } else {
+        await axios.get('/api/users/logout');
+        await logout();
+        router.push('/'); // Call the logout route for other providers
+      }
       router.push('/'); // Redirect to home page after logout
     } catch (error) {
       console.error('Logout error:', error.message);
@@ -106,7 +116,7 @@ const Navbar = ( ) => {
           </div>
         ) : (
           <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>
-            <Link href="/Login">
+            <Link href="/reallogin">
               <button className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Login</button>
             </Link>
             <Link href="/Signup">

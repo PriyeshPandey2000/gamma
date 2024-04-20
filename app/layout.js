@@ -7,6 +7,17 @@ import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import dynamic from "next/dynamic";
 // import { useRouter } from 'next/router';
+// import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth'
+// import Provider from '@/components/Provider';
+// import SessionProvider from '@/components/Provider';
+import { SessionProvider } from 'next-auth/react';
+import Navbar from '@/components/Navbar';
+
+import Authprovider from '@/components/AuthProvider/AuthProvider';
+
+
+
 
 
 
@@ -81,19 +92,24 @@ const RootLayout = ({ children }) => {
       </Head>
       
       {/* <AuthProvider> */}
-       
+      
       <html lang="en">
       
       
         <body>
-        <Toaster position="top-right"/>
+       
+       <Authprovider>
       
+        <Toaster position="top-center"/>
         
-     
-     
-     {children}</body>
+   {children}
+    
+   </Authprovider>
+     </body>
        
       </html>
+      
+      
       {/* </AuthProvider> */}
      
     </>
@@ -102,6 +118,7 @@ const RootLayout = ({ children }) => {
 
 RootLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  
 };
 
 export default RootLayout;

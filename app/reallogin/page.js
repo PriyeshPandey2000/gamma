@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
-import '../styles/fonts.css';
+import '../../styles/fonts.css';
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
@@ -11,9 +11,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import {toast} from 'react-hot-toast';
 const GoogleProvider = require('next-auth/providers/google');
 import { signIn } from 'next-auth/react';
-import { Session } from 'next-auth';
-import Authprovider from '@/components/AuthProvider/AuthProvider';
-
+import { Session } from 'next-auth'
 
 
 import useAuthStore from '@/stores/authStore';
@@ -22,8 +20,16 @@ import { useSession,SessionProvider } from 'next-auth/react';
 
 function Login() {
     const router = useRouter();
-    const session=useSession();
+    // const session=useSession();
+    const { data: session, status } = useSession();
     console.log(session)
+    useEffect(() => {
+      if (status === 'authenticated') {
+        toast.success("Login successful");
+        login();
+        router.push('/');
+      }
+    }, [status]);
     // const { login } = useAuth();
     const { login } = useAuthStore();
     const [user, setUser] = React.useState({
@@ -44,7 +50,10 @@ function Login() {
     }
   };
   const handleSignIn = async () => {
-    await signIn('google'); // Initiates Google sign-in
+    await signIn('google');
+    if(session.status==='authenticated') {
+        router.push('/')
+    }// Initiates Google sign-in
   };
 
   const handleResize = () => {
@@ -79,7 +88,7 @@ const [loading, setLoading] = React.useState(false);
         const response = await axios.post("/api/users/login", user);
         toast.success("Login successful");
         console.log("Login success", response.data);
-        toast.success("Login successful");
+        // toast.success("Login successful");
         login();
 
         
@@ -101,7 +110,6 @@ const [loading, setLoading] = React.useState(false);
 
 
   return (
-    <Authprovider>
     <>
      {!isXsScreen && (<img
     loading="lazy"
@@ -193,7 +201,6 @@ const [loading, setLoading] = React.useState(false);
     </div>
     </div>
     </>
-    </Authprovider>
   );
 }
 

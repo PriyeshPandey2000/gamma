@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useMediaQuery } from '@react-hook/media-query';
 
+
 function Signup() {
   const router = useRouter();
   const [user, setUser] = React.useState({
@@ -17,6 +18,9 @@ function Signup() {
     phone: "",
 })
 const [isXsScreen, setIsXsScreen] = useState(false);
+const handleClick = () => {
+  router.push('/reallogin');
+};
 
 const handleResize = () => {
   const xsScreen = window.matchMedia('(max-width: 640px)').matches;
@@ -104,7 +108,7 @@ const [loading, setLoading] = React.useState(false);
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5caadc79e959e1f5b32c5b5ba5eedbcbd9ae09dadc1d3097cfb7baf726cd3a8?"
                         className="shrink-0 w-5 aspect-square"
                       />
-                      <div>Signup with Google</div>
+                      <div onClick={handleClick}>Signin with Google</div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center px-0 mt-3 text-black w-full max-md:max-w-full">
