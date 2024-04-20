@@ -14,6 +14,8 @@ export default function Contact() {
   useEffect(() => {
     if (status === 'authenticated') {
       toast.success("Login successful");
+
+      
       // router.push('/');
     }
   }, [status]);
