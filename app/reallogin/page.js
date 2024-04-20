@@ -51,9 +51,9 @@ function Login() {
   };
   const handleSignIn = async () => {
     await signIn('google');
-    if(session.status==='authenticated') {
+    await login();
         router.push('/')
-    }// Initiates Google sign-in
+    // Initiates Google sign-in
   };
 
   const handleResize = () => {
