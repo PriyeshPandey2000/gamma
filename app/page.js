@@ -117,7 +117,65 @@ export default function Home() {
         <Strip3/>
         <div className="container mx-auto max-w-[1300px]">
         <Placed/>
-        <Testimonial/>
+        <Testimonial testimonials={[
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. The",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    {
+      title: "Preeti Josh",
+      company: "Placed at Amazon",
+      description: "Gammaprep did a fantastic job. Their content is so well structured, have live classes, good projects and most important good mentors. They helped me at every thick and thins to get skilled and interview calls. I would recommend Gammaprep to everyone.",
+      image: "https://file.rendit.io/n/ZHdzQXiIfAyinm81Vutr.svg",
+      alt: "Ellipse"
+    },
+    // Add more testimonials as needed
+  ]}/>
         <GetInTouch/>
         </div>
         

@@ -1,16 +1,18 @@
 const { NextAuthOptions } = require('next-auth');
 const NextAuth = require('next-auth/next');
 const GoogleProvider = require('next-auth/providers/google').default;
+import axios from 'axios';
 
 
 // const User = require('../../../models/userModel');
 import User from '@/app/models/userModel';
 const { connect } = require('@/app/dbConfig/dbConfig');
 
-// connect();
+connect();
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const NEXTAUTH_URL=process.env.NEXTAUTH_URL;
 
 const authOption = {
   providers: [
@@ -22,12 +24,12 @@ const authOption = {
     }),
   ],
   callbacks: {
-    async session({session}){
-      const sessionUser= await User.findOne({email:session.user.email});
-      console.log(session);
-      return session;
-    },
-    async signIn({ signIn, profile, signOut}) {
+    // async session({session}){
+    //   const sessionUser= await User.findOne({email:session.user.email});
+    //   console.log(session);
+    //   return session;
+    // },
+    async signIn({ signIn, profile, signOut,url}) {
       console.log('Google Profile:', profile);
       try{
         await connect();
@@ -36,26 +38,49 @@ const authOption = {
         
         if (!userExist) {
           
-            const user=await User.create({
+            const user={
               email:profile.email,
               username:profile.name,
-              phone:'32482442',
-              password:'ewfwefe',
+              phone:'00000',
+              password:'google',
 
-            })
-            return "/"; 
+            }
+            const response=await axios.post(`${NEXTAUTH_URL}/api/users/signup`, user);
+            console.log("Signup success", response.data);
+            // toast.success("Signup successful");
+            const loginResponse = await axios.post(`${NEXTAUTH_URL}/api/users/login`, {
+              email: profile.email,
+              password: 'google', // Temporary password for Google sign-in
+            });
+
+            
+
+            return '/'; 
+        }else {
+          // User already exists, send email and password to login route
+          const loginResponse = await axios.post(`${NEXTAUTH_URL}/api/users/login`, {
+            email: profile.email,
+            password: 'google', // Temporary password for Google sign-in
+          });
+          return '/';
         }
           } catch (error) {
             console.error('Error saving new user:', error);
-          }
-          return true;
-        
-
-      
-     
-  
-    },
+            return { error: 'Custom error message' };
+          
+          
+         }
   },
+  async signOut({ url, redirect }) {
+    try {
+      await axios.post(`${NEXTAUTH_URL}/api/users/logout`); // Your logout API route
+      return redirect('/'); // Redirect to home page after logout
+    } catch (error) {
+      console.error('Error during sign-out:', error);
+      return { error: 'Custom error message' };
+    }
+  },
+},
 };
 
 const handler = NextAuth.default(authOption);

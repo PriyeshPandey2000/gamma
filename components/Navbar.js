@@ -15,7 +15,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 const Navbar = ( ) => {
   const { isLoggedIn, logout } = useAuthStore();
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
@@ -40,20 +40,43 @@ const Navbar = ( ) => {
     };
   }, []);
 
+  // const handleLogout = async () => {
+  //   console.log('Logging out...');
+
+  //   try {
+  //     if (session?.provider === 'google') {
+  //       await signOut({ redirect: true, callbackUrl: '/' });
+  //       await logout();
+  //        // Trigger NextAuth.js logout event
+  //     } else {
+  //       await axios.get('/api/users/logout');
+  //       await logout();
+  //       router.push('/'); // Call the logout route for other providers
+  //     }
+  //     router.push('/'); // Redirect to home page after logout
+  //   } catch (error) {
+  //     console.error('Logout error:', error.message);
+  //     // Handle logout error and provide feedback to the user
+  //   }
+  // };
   const handleLogout = async () => {
     console.log('Logging out...');
 
     try {
-      if (session?.provider === 'google') {
+      const isGoogleSignIn = document.cookie.includes('token=');
+
+      if (!isGoogleSignIn) {
+        // Sign out using NextAuth's signOut function
         await signOut({ redirect: true, callbackUrl: '/' });
         await logout();
-         // Trigger NextAuth.js logout event
       } else {
+        // Log out manually signed-in users
         await axios.get('/api/users/logout');
         await logout();
-        router.push('/'); // Call the logout route for other providers
       }
-      router.push('/'); // Redirect to home page after logout
+
+      // Redirect to home page after logout
+      router.push('/');
     } catch (error) {
       console.error('Logout error:', error.message);
       // Handle logout error and provide feedback to the user
