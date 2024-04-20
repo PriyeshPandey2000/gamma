@@ -12,10 +12,10 @@ export default function Contact() {
   const [phoneNumber, setPhoneNumber] = useState('');
   
   useEffect(() => {
-    if (status === 'authenticated') {
+    if (status === 'authenticated') { 
       toast.success("Login successful");
 
-      
+
       // router.push('/');
     }
   }, [status]);
