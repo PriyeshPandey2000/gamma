@@ -5,6 +5,8 @@ import Login from '@/pages/Login';
 import { useRouter } from 'next/navigation'; 
 import dynamic from "next/dynamic";
 import axios from 'axios';
+import { getCookie } from 'cookies-next';
+import { hasCookie } from 'cookies-next';
 // import { isLoggedIn } from '@/app/helpers/auth';
 // import { isLoggedIn } from '@/app/helpers/auth';
 import { useAuth } from '@/contexts/AuthContext';
@@ -59,22 +61,53 @@ const Navbar = ( ) => {
   //     // Handle logout error and provide feedback to the user
   //   }
   // };
+  // const handleLogout = async () => {
+  //   console.log('Logging out...');
+
+  //   try {
+  //     // const { token } = cookies();
+  //     // const isGoogleSignIn = document.cookie.includes('token');
+  //     // console.log(document.cookies);
+  //     console.log("work");
+  //     const token = hasCookie('token');
+
+  //     if (token )// => true) {
+        
+  //       // Sign out using NextAuth's signOut function
+  //       await axios.get('/api/users/logout');
+  //       await logout();
+  //       // await signOut({ redirect: true, callbackUrl: '/' });
+  //       // await logout();
+  //     } else {
+  //     //   // Log out manually signed-in users
+  //     await signOut({ redirect: true, callbackUrl: '/' });
+  //     await logout();
+  //     }
+    
+  //     // Redirect to home page after logout
+  //     router.push('/');
+  //   }catch (error) {
+  //     console.error('Logout error:', error.message);
+  //     // Handle logout error and provide feedback to the user
+  //   }
+  // };
+
   const handleLogout = async () => {
     console.log('Logging out...');
-
+  
     try {
-      const isGoogleSignIn = document.cookie.includes('token=');
-
-      if (!isGoogleSignIn) {
+      if (hasCookie('token')) {
+        // Token cookie exists
         // Sign out using NextAuth's signOut function
-        await signOut({ redirect: true, callbackUrl: '/' });
-        await logout();
-      } else {
-        // Log out manually signed-in users
         await axios.get('/api/users/logout');
         await logout();
+      } else {
+        // Token cookie does not exist
+        // Log out manually signed-in users
+        await signOut({ redirect: true, callbackUrl: '/' });
+        await logout();
       }
-
+      
       // Redirect to home page after logout
       router.push('/');
     } catch (error) {
@@ -82,7 +115,7 @@ const Navbar = ( ) => {
       // Handle logout error and provide feedback to the user
     }
   };
-
+  
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };

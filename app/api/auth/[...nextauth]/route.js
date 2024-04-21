@@ -71,9 +71,17 @@ const authOption = {
           
          }
   },
+  // async signOut({ url, redirect }) {
+  //   try {
+  //     await axios.post(`${NEXTAUTH_URL}/api/users/logout`); // Your logout API route
+  //     return redirect('/'); // Redirect to home page after logout
+  //   } catch (error) {
+  //     console.error('Error during sign-out:', error);
+  //     return { error: 'Custom error message' };
+  //   }
   async signOut({ url, redirect }) {
     try {
-      await axios.post(`${NEXTAUTH_URL}/api/users/logout`); // Your logout API route
+      await signOut({ callbackUrl: '/' }); // Sign out using NextAuth's signOut function
       return redirect('/'); // Redirect to home page after logout
     } catch (error) {
       console.error('Error during sign-out:', error);
