@@ -20,6 +20,7 @@ const CoursesOffered = () => {
   const [courses, setCourses] = useState([]);
   const [popularIndex, setPopularIndex] = useState(0);
   const [growthIndex, setGrowthIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
   const [specializedIndex, setSpecializedIndex] = useState(0);
   const [currentPopularCourseId, setCurrentPopularCourseId] = useState(null);
   const [currentGrowthCourseId, setCurrentGrowthCourseId] = useState(null);
@@ -55,12 +56,15 @@ const CoursesOffered = () => {
   useEffect(() => {
     const popularTimer = setInterval(() => {
       setPopularIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
     const growthTimer = setInterval(() => {
       setGrowthIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
     const specializedTimer = setInterval(() => {
       setSpecializedIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
 
     return () => {
@@ -69,6 +73,8 @@ const CoursesOffered = () => {
       clearInterval(specializedTimer);
     };
   }, []);
+
+  const images = ["/images/3-dot.png", "/images/Pagemiddle.png", "/images/Pagelast.png"];
 
 
   const popularCourses = courses.filter(course => course.category === 'Most Popular Course');
@@ -107,7 +113,7 @@ const CoursesOffered = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3  justify-center ">
         {/* Card 1 */}
-        <div className="[background:linear-gradient(99.28deg,_#fff,_#f1f4fb)] shadow-[0px_0px_10px_rgba(76,_76,_109,_0.07)] box-border border-[1px] border-solid border-#D1D1D6 rounded-lg  p-4  flex flex-col xs:mx-8 lg:w-4/5 lg:mx-auto lg:mr-0">
+        <div className="[background:linear-gradient(99.28deg,_#fff,_#f1f4fb)] shadow-[0px_0px_10px_rgba(76,_76,_109,_0.07)] box-border border-[1px] border-solid border-#D1D1D6 rounded-lg  p-4  flex flex-col xs:mx-8 lg:w-4/5 lg:mx-auto lg:mr-0" >
           <div className="flex items-center mb-2">
             <img src="/images/trending.png" alt="Course 1 Image" className="w-5 h-5 rounded-full mr-3" />
             <h2 className="text-12px font-bold text-custom-red mb-0.5">Most Popular Course</h2>
@@ -119,8 +125,11 @@ const CoursesOffered = () => {
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                  <img src={`data:image/png;base64,${course.imageData}`} alt="Course 1" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
+                 <div className="description-container" style={{ height: '160px', overflow: 'auto' }}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
+                
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                </div>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
                 <Link href={`/courses/online/course${index + 1}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
@@ -132,7 +141,7 @@ const CoursesOffered = () => {
         <a className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2" style={{ width: 'auto' }}>Learn More</a>
       </Link> */}
           <div className="flex justify-center items-center mt-2">
-            <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
           </div>
         </div>
         
@@ -149,8 +158,11 @@ const CoursesOffered = () => {
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                 <img src={`data:image/png;base64,${course.imageData}`} alt="Course 2" className="w-full rounded-lg mb-2" /> {/* Added image after the heading */}
+                <div className="description-container" style={{ height: '160px', overflow: 'auto' }}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
+               
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                </div>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
                 <Link href={`/courses/online/course${index + 4}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
@@ -160,7 +172,7 @@ const CoursesOffered = () => {
             ))}
          
           <div className="flex justify-center items-center mt-2">
-            <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
           </div>
         </div>
         
@@ -177,8 +189,11 @@ const CoursesOffered = () => {
             .map((course, index) => (
               <div key={index} className={index === popularIndex ? 'block' : 'hidden'}>
                 <img src={`data:image/png;base64,${course.imageData}`} alt="Course 3" className="w-full rounded-lg mb-2" />
+                <div className="description-container" style={{ height: '160px', overflow: 'auto' }}>
                 <p className="text-12px font-semibold mb-2 text-custom-blue">{course.title}</p>
+               
                 <p className="text-gray-400 mb-2 " style={{ fontSize: '14px' }}>{course.description}</p>
+                </div>
                 <p className="text-black mb-4 font-semibold"  style={{ fontSize: '14px' }}>Course starts at : <span className="text-custom-blue">15 March</span></p> {/* Added text after the description */}
                 <Link href={`/courses/online/course${index + 7}`}>
         <button className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-6 py-2">Learn More</button>
@@ -187,7 +202,7 @@ const CoursesOffered = () => {
             ))}
          
           <div className="flex justify-center items-center mt-2">
-            <img src="/images/3-dot.png" alt="Your Image"  /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
           </div>
         </div>
       </div>
