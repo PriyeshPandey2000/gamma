@@ -20,7 +20,9 @@ const CoursesOffered = () => {
   const [courses, setCourses] = useState([]);
   const [popularIndex, setPopularIndex] = useState(0);
   const [growthIndex, setGrowthIndex] = useState(0);
-  const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndexPopular, setImageIndexPopular] = useState(0);
+  const [imageIndexGrowth, setImageIndexGrowth] = useState(0);
+  const [imageIndexSpecialized, setImageIndexSpecialized] = useState(0);
   const [specializedIndex, setSpecializedIndex] = useState(0);
   const [currentPopularCourseId, setCurrentPopularCourseId] = useState(null);
   const [currentGrowthCourseId, setCurrentGrowthCourseId] = useState(null);
@@ -56,15 +58,15 @@ const CoursesOffered = () => {
   useEffect(() => {
     const popularTimer = setInterval(() => {
       setPopularIndex((prevIndex) => (prevIndex + 1) % 3);
-      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndexPopular((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
     const growthTimer = setInterval(() => {
       setGrowthIndex((prevIndex) => (prevIndex + 1) % 3);
-      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndexGrowth((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
     const specializedTimer = setInterval(() => {
       setSpecializedIndex((prevIndex) => (prevIndex + 1) % 3);
-      setImageIndex((prevIndex) => (prevIndex + 1) % 3);
+      setImageIndexSpecialized((prevIndex) => (prevIndex + 1) % 3);
     }, 3000);
 
     return () => {
@@ -141,7 +143,7 @@ const CoursesOffered = () => {
         <a className="btn btn-primary-new border border-blue-500 text-blue-500 rounded-full px-0 py-2" style={{ width: 'auto' }}>Learn More</a>
       </Link> */}
           <div className="flex justify-center items-center mt-2">
-          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndexPopular]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
           </div>
         </div>
         
@@ -172,7 +174,7 @@ const CoursesOffered = () => {
             ))}
          
           <div className="flex justify-center items-center mt-2">
-          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndexGrowth]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
           </div>
         </div>
         
@@ -202,7 +204,7 @@ const CoursesOffered = () => {
             ))}
          
           <div className="flex justify-center items-center mt-2">
-          <img src={images[imageIndex]} alt="Your Image" /> {/* Adjust the size and styling as needed */}
+          <img src={images[imageIndexSpecialized]} alt="Your Image" />{/* Adjust the size and styling as needed */}
           </div>
         </div>
       </div>
