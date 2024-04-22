@@ -2,6 +2,7 @@ const { NextAuthOptions } = require('next-auth');
 const NextAuth = require('next-auth/next');
 const GoogleProvider = require('next-auth/providers/google').default;
 import axios from 'axios';
+import { cookies } from 'next/headers'
 
 
 // const User = require('../../../models/userModel');
@@ -81,7 +82,8 @@ const authOption = {
   //   }
   async signOut({ url, redirect }) {
     try {
-      await signOut({ callbackUrl: '/' }); // Sign out using NextAuth's signOut function
+      await signOut({ callbackUrl: '/' });
+      cookies().delete('token'); // Sign out using NextAuth's signOut function
       return redirect('/'); // Redirect to home page after logout
     } catch (error) {
       console.error('Error during sign-out:', error);

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
-import '../styles/fonts.css';
+import '../../styles/fonts.css';
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
@@ -49,10 +49,10 @@ const onSignup = async () => {
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
       toast.success("Signup successful");
-      router.push("/Login");
+      router.push("/login");
   } catch (error) {
-      console.log("Signup failed", error.message);
-      toast.error(error.message);
+      console.log("Signup failed", error.response.data.error);
+      toast.error(error.response.data.error);
   } finally {
       setLoading(false);
   }

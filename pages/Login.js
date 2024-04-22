@@ -22,8 +22,8 @@ import { useSession,SessionProvider } from 'next-auth/react';
 
 function Login() {
     const router = useRouter();
-    const session=useSession();
-    console.log(session)
+    // const session=useSession();
+    // console.log(session)
     // const { login } = useAuth();
     const { login } = useAuthStore();
     const [user, setUser] = React.useState({

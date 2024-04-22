@@ -15,12 +15,15 @@ export async function POST(request) {
         const { username, email, password ,phone} = reqBody;
 
         console.log(reqBody);
+        if (!username || !email || !password || !phone) {
+            return NextResponse.json({ error: "Please provide all required fields" }, { status: 400 });
+        }
 
         // Check if user already exists
         const user = await User.findOne({ email });
 
         if (user) {
-            return NextResponse.json({ error: "User already exists" }, { status: 400 });
+            return NextResponse.json({ error: "Email already exists" }, { status: 400 });
         }
 
         // Hash password
@@ -38,7 +41,7 @@ export async function POST(request) {
         console.log(savedUser);
 
         // Send verification email
-        await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
+        // await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
 
         return NextResponse.json({
             message: "User created successfully",
@@ -46,6 +49,6 @@ export async function POST(request) {
             savedUser
         });
     } catch (error) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: "Internal server error"  }, { status: 500 });
     }
 }

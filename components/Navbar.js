@@ -96,17 +96,12 @@ const Navbar = ( ) => {
     console.log('Logging out...');
   
     try {
-      if (hasCookie('token')) {
+      
         // Token cookie exists
         // Sign out using NextAuth's signOut function
         await axios.get('/api/users/logout');
         await logout();
-      } else {
-        // Token cookie does not exist
-        // Log out manually signed-in users
-        await signOut({ redirect: true, callbackUrl: '/' });
-        await logout();
-      }
+      
       
       // Redirect to home page after logout
       router.push('/');
@@ -172,10 +167,10 @@ const Navbar = ( ) => {
           </div>
         ) : (
           <div className={`flex items-center space-x-4 ${isMobile ? 'ml-auto' : ''}`}>
-            <Link href="/reallogin">
+            <Link href="/login">
               <button className="border border-custom-blue text-blue-900 px-3 py-1 rounded-full text-sm hover:bg-blue-100">Login</button>
             </Link>
-            <Link href="/Signup">
+            <Link href="/signup">
               <button className={`bg-custom-blue text-white px-4 py-1 rounded-full text-sm hover:bg-blue-800 ${isMobile ? 'w-18 ' : 'mr-4'}`}>Sign Up</button>
             </Link>
           </div>

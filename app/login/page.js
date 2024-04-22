@@ -84,7 +84,7 @@ const [loading, setLoading] = React.useState(false);
   const onLogin = async () => {
     try {
         setLoading(true);
-        toast.success("Login successful");
+        // toast.success("Login successful");
         const response = await axios.post("/api/users/login", user);
         toast.success("Login successful");
         console.log("Login success", response.data);
@@ -94,8 +94,8 @@ const [loading, setLoading] = React.useState(false);
         
         router.push("/");
     } catch (error) {
-        console.log("Signup failed", error.message);
-        toast.error(error.message);
+        console.log("Login failed", error.response.data.error);
+        toast.error(error.response.data.error);
     } finally {
         setLoading(false);
     }
@@ -164,25 +164,25 @@ const [loading, setLoading] = React.useState(false);
                   <div className="flex justify-center text-base items-center px-16 py-2 mt-6 text-white bg-blue-900 rounded-lg max-md:px-5 max-md:max-w-full cursor-pointer " onClick={onLogin}>
                     Sign in
                   </div>
-                  <div className="self-center mt-4">or</div>
+                  {/* <div className="self-center mt-4">or</div> */}
                 </div>
-                <div onClick={handleSignIn} className="flex justify-center text-base items-center px-16 py-2 mt-4 md:max-w-[350px]  xs:max-w-[310px] text-white bg-red-400 rounded-lg w-[448px] max-md:px-5 cursor-pointer">
-                  <div className="flex gap-5">
+                {/* <div onClick={handleSignIn} className="flex justify-center text-base items-center px-16 py-2 mt-4 md:max-w-[350px]  xs:max-w-[310px] text-white bg-red-400 rounded-lg w-[448px] max-md:px-5 cursor-pointer"> */}
+                  {/* <div className="flex gap-5">
                     <img
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/749053aa83b596a7c71261e620ffdbfd8102a4d358aa2f2287be01fdc5d074de?"
                       className="shrink-0 w-5 aspect-square"
                     />
                     <div >Sign in with Google</div>
-                  </div>
-                </div>
-                <div className="mt-4 text-sm text-blue-900">Forgot Password?</div>
+                  </div> */}
+                {/* </div> */}
+                {/* <div className="mt-4 text-sm text-blue-900">Forgot Password?</div> */}
               </div>
               <div className="flex justify-center items-center px-5 py-3 mt-3.5 rounded-2xl border border-solid shadow-sm border-zinc-300 max-md:max-w-full">
                 <div className="flex gap-2 justify-center">
                   <div className="text-black">Don’t have an account?</div>
-                  <Link href="/Signup">
-  <div className="text-blue-900 cursor-pointer" onClick={() => router.push("/Signup")}>Sign up</div>
+                  <Link href="/signup">
+  <div className="text-blue-900 cursor-pointer" onClick={() => router.push("/signup")}>Sign up</div>
 </Link>
                 </div>
               </div>
