@@ -97,17 +97,17 @@ function Card({ courseId ,canEnroll,course}) {
         <div>Share this course</div>
       </div>
       <div className="mt-6 text-base leading-6 text-center text-black">
-        Available in 3 Locations
+        Available :
       </div>
       <div className="flex gap-3 justify-center px-6 mt-3 text-base leading-6 text-blue-800 whitespace-nowrap">
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/4f9ac36cf4d412ffd7379d5c821a0f8dff330343edf2ed8c8c944cc31ce994d2?"
             className="w-6 aspect-square"
           />
           <div>Kolkata</div>
-        </div>
+        </div> */}
         <div className="flex gap-2">
           <img
             loading="lazy"
@@ -116,14 +116,14 @@ function Card({ courseId ,canEnroll,course}) {
           />
           <div>Hyderabad</div>
         </div>
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/f937acb4e0713ed8a1bf74a25e7ec1e2740571eb5db14c14fbadb3a1e023655e?"
             className="w-6 aspect-square"
           />
           <div>Mumbai</div>
-        </div>
+        </div> */}
       </div>
       <div className="mt-6 text-base leading-6 text-center text-black">
        {course.cardDescription}

@@ -64,9 +64,10 @@ function Dashboard() {
   return (
     <div>
         <Navbar/>
-        <div className="container mx-auto max-w-[1200px]  ">
+        <div className="container mx-auto max-w-[1200px]   ">
         <DashText/>
         <DashTiles/>
+        <div className="flex flex-wrap justify-between">
         {loading ? (
           <div>Loading...</div> // Render a loading indicator
         ) : purchasedCourses.length > 0 ? (
@@ -80,6 +81,7 @@ function Dashboard() {
         ) : (
           <div>No purchased courses yet</div> // Render a message when there are no purchased courses
         )}
+        </div>
 
         </div>
         <FollowUs/>

@@ -35,21 +35,22 @@ const StudentsPlaced = () => {
       
       <div className="cards flex justify-center mt-8 animate-scrollLeftToLeft">
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Kunjika Arora" desc="Placed at Amdocs" logo="/images/kunjika.png" company="/images/amdocssmall.png"/>
+        <Frame name="Abhishek Mishra" desc="Placed at IBM" logo="/images/ibmpic.png" company="/images/ibm.png"/>
+        <Frame name="Ayushi Chaudhary" desc="Placed at Adobe" logo="/images/adobepic.png" company="/images/adobeee.png"/>
+        <Frame name="Nishant Padhi" desc="Placed at Walmart" logo="/images/walmartpic.jpg" company="/images/barcley 5.png"/>
+        <Frame name="Vishal Kumar" desc="Placed at AllState" logo="/images/allstatepic.jpg" company="/images/allstate.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         {/* Repeat for other cards */}
       </div>
       <div className="cards flex justify-center mt-8 animate-scrollLeftToLeft">
+     
+        <Frame name="Kunjika Arora" desc="Placed at Amdocs" logo="/images/kunjika.png" company="/images/amdocssmall.png"/>
+        <Frame name="Abhishek Mishra" desc="Placed at IBM" logo="/images/ibmpic.png" company="/images/ibm.png"/>
+        <Frame name="Ayushi Chaudhary" desc="Placed at Adobe" logo="/images/adobepic.png" company="/images/adobeee.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
-        <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
+        <Frame name="Nishant Padhi" desc="Placed at Walmart" logo="/images/walmartpic.jpg" company="/images/barcley 5.png"/>
+        <Frame name="Vishal Kumar" desc="Placed at AllState" logo="/images/allstatepic.jpg" company="/images/allstate.png"/>
         <Frame name="Brinda A" desc="Placed at Zoho" logo="/images/zohopic.png" company="/images/zoho.png"/>
         {/* Repeat for other cards */}
       </div>
