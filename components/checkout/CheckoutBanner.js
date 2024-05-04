@@ -41,16 +41,17 @@ function CheckoutBanner({courseId}) {
     const makePayment=async(e)=>{
 
         e.preventDefault();
-        const course = courses.find(course => course._id === courseId);
-        if (!course) {
-            console.error('Course not found');
-            return;
-        }
-        console.log(course);
-        console.log('Course ID:', courseId);
-        console.log(course.price);
+        window.location.href = "https://www.gammaprep.com";
+        // const course = courses.find(course => course._id === courseId);
+        // if (!course) {
+        //     console.error('Course not found');
+        //     return;
+        // }
+        // console.log(course);
+        // console.log('Course ID:', courseId);
+        // console.log(course.price);
 
-        Cookies.set('courseId', courseId, { expires: 1 });
+        // Cookies.set('courseId', courseId, { expires: 1 });
         // Cookies.set('mode', 'online', { expires: 1 });
         // Cookies.set('course', JSON.stringify(course), { expires: 1 });
         
@@ -111,21 +112,21 @@ function CheckoutBanner({courseId}) {
             // Call the backend to initiate the payment process
 
 
-            const payload = {
-              courseId: courseId,
-              price: course.price
-          };
-            const response = await axios.post('/api/users/payment',payload,{
-              headers: {
-                'Content-Type': 'application/json',
-              },
-          });
+          //   const payload = {
+          //     courseId: courseId,
+          //     price: course.price
+          // };
+          //   const response = await axios.post('/api/users/payment',payload,{
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //     },
+          // });
             // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
             // router.push(redirect);
             // const redirect =  response.data.data.instrumentResponse.redirectInfo.url; // Assuming your backend sends back the redirect URL in the response
             console.log(response);
             console.log(response.data);
-            window.location.href = response.data.redirectUrl;
+            // window.location.href = response.data.redirectUrl;
           } catch (error) {
             console.error('Error making payment:', error);
           }

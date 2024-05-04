@@ -34,30 +34,31 @@ function CheckoutBannerOffline({courseId}) {
     const makePayment=async(e)=>{
 
         e.preventDefault();
-        const course = courses.find(course => course._id === courseId);
-        if (!course) {
-            console.error('Course not found');
-            return;
-        }
-        Cookies.set('courseId', courseId, { expires: 1 });
-        Cookies.set('mode', 'offline', { expires: 1 });
+        window.location.href = "https://www.gammaprep.com";
+      //   const course = courses.find(course => course._id === courseId);
+      //   if (!course) {
+      //       console.error('Course not found');
+      //       return;
+      //   }
+      //   Cookies.set('courseId', courseId, { expires: 1 });
+      //   Cookies.set('mode', 'offline', { expires: 1 });
 
 
-        try {
-          const payload = {
-            courseId: courseId,
+      //   try {
+      //     const payload = {
+      //       courseId: courseId,
             
-            offlinePrice:course.offlinePrice
-        };
-          const response = await axios.post('/api/users/paymentoffline',payload,{
-            headers: {
-              'Content-Type': 'application/json',
-            },
-        });
-        window.location.href = response.data.redirectUrl;
-      } catch (error) {
-          console.error('Error making payment:', error);
-        }
+      //       offlinePrice:course.offlinePrice
+      //   };
+      //     const response = await axios.post('/api/users/paymentoffline',payload,{
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //   });
+      //   window.location.href = response.data.redirectUrl;
+      // } catch (error) {
+      //     console.error('Error making payment:', error);
+      //   }
       }
     
         // const transactionid = "Tr-"+uuidv4().toString(36).slice(-6);
